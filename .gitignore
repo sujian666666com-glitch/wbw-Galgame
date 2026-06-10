@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Local agent/session state
+.omc/
+.work/
+
+# Ren'Py generated files
+game/cache/
+game/saves/
+game/tl/*/common.rpym
+*.rpyc
+*.rpymc
+
+# Ren'Py logs and diagnostics
+log.txt
+errors.txt
+traceback.txt
+files.txt
+
+# Build outputs
+build/
+dist/
+releases/

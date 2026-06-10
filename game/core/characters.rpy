@@ -1,0 +1,6 @@
+define narrator = Character(None, what_prefix="", what_suffix="")
+define jl = Character("江临", color="#a9c9ff")
+define xw = Character("许晚晴", color="#f1bfdc")
+define wl = Character("王磊", color="#d7d7e2")
+define zh = Character("张浩", color="#e3c39c")
+define relative = Character("亲戚", color="#c8c8c8")

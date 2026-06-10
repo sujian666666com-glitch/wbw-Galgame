@@ -1,0 +1,2 @@
+label start:
+    jump prologue
