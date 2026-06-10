@@ -17,13 +17,13 @@ image bg startup_studio = "images/backgrounds/bg_startup_studio.png"
 
 image cg subway_meeting = "images/cg/cg_subway_meeting.png"
 
-image jianglin normal:
-    "images/characters/jianglin_normal.png"
+image wangbuwen normal:
+    "images/characters/wangbuwen_normal.png"
     xalign 0.16
     yalign 1.0
 
-image jianglin confident:
-    "images/characters/jianglin_confident.png"
+image wangbuwen confident:
+    "images/characters/wangbuwen_confident.png"
     xalign 0.16
     yalign 1.0
 

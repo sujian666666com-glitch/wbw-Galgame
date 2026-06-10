@@ -14,7 +14,7 @@ screen status_panel():
 
         vbox:
             spacing 30
-            text "江临的三个月" size 52 color "#f4cfe8" xalign 0.5
+            text "王不稳的三个月" size 52 color "#f4cfe8" xalign 0.5
             null height 8
             text "章节进度：[chapter_progress] / 6"
             text "许晚晴好感度：[affection]（[affection_level()]）"
