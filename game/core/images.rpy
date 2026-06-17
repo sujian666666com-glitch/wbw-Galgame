@@ -16,6 +16,7 @@ image bg train_platform = "images/backgrounds/bg_train_platform.png"
 image bg startup_studio = "images/backgrounds/bg_startup_studio.png"
 
 image cg subway_meeting = "images/cg/cg_subway_meeting.png"
+image cg four_friends_living_room = "images/cg/cg_four_friends_living_room.png"
 
 image wangbuwen normal:
     "images/characters/wangbuwen_normal.png"

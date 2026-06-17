@@ -60,10 +60,27 @@ Time: 7.632s
 ## 静态与素材检查
 
 - 所有公开状态变量均使用 `default` 在使用前初始化。
-- 所有 `scene`、`show` 使用的运行时图片均已定义并成功通过 lint。
-- 16 张背景与 1 张 CG 均为真正 PNG、`1920×1080`。
+- 既有基线中所有 `scene`、`show` 使用的运行时图片均已定义并成功通过 lint；本次新增 CG 已完成静态引用检查，待 SDK 回归。
+- 16 张背景与 2 张 CG 均为真正 PNG、`1920×1080`。
 - 12 张角色立绘均为真正 RGBA PNG，具备透明通道。
 - 除按用户要求删除旧主角江临的两张原始立绘外，其余 `image/` 原始素材未删除或覆盖。
+
+## 增量验收记录：2026-06-17
+
+本次变更加入用户提供的四人客厅合影，并接入第三章“小爆款”活动主视觉段落。
+
+已执行静态引用检查：
+
+```text
+defined_image_files= 30
+image_definitions= 30
+referenced_images= 84
+missing_files= []
+missing_defs= []
+new_cg= ((1920, 1080), 'RGB')
+```
+
+未执行 Ren'Py lint 与自动化测试：README 记录的 `/Volumes/renpy-8.5.3-sdk/renpy-8.5.3-sdk/renpy.app/Contents/MacOS/renpy` 当前未挂载，本机也未发现可替代的 Ren'Py SDK 命令入口。已确认旁边的 `Agent17.app` 为打包运行时，会直接启动原 app，不适合对本项目执行 lint/test。
 
 ## 主角更换回归
 

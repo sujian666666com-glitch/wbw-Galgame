@@ -69,6 +69,17 @@ label chapter_03:
     narrator "一周后的早晨，活动上线后数据一路上涨，最终成了当月的小爆款。王磊在早会上点名表扬。"
     wl "这次活动效果不错，许晚晴策划到位，王不稳数据分析很精准。"
     narrator "许晚晴在对面冲王不稳举了一下拳头，很小的一个动作，只有他看到。"
+
+    scene cg four_friends_living_room with dissolve
+    narrator "投屏上切到这次活动的主视觉：四位女孩站在温暖的客厅里，柔和、亲近，又足够抓眼。"
+    xw "这张我改了七版，最后还是选了最干净的一版。"
+    wbw "后台数据也选它。停留时长最高，转化最好。"
+    narrator "王不稳看着仍在上扬的曲线，第一次清楚地感觉到——好的画面和好的判断，会一起把结果推上去。"
+
+    scene bg office with dissolve
+    show wangbuwen normal
+    show xuwanqing normal
+    show wangley serious
     $ side_project_ready = True
     $ notify_change("合作项目经验已准备")
 
