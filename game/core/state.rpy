@@ -20,6 +20,7 @@ default spring_fragment = False
 default summer_fragment = False
 default autumn_fragment = False
 default winter_fragment = False
+default sequel_luna_observation_outcome = "unknown"
 
 default persistent.old_ending_route = None
 default persistent.old_endings_seen = []

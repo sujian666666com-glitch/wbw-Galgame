@@ -50,6 +50,8 @@ label chapter_04:
 
             xw "……你不在意自己的东西被拿走吗？"
 
+    call v21_chapter_04
+
     scene bg bedroom_night with dissolve
 
     narrator "深夜，电脑屏幕的光照着王不稳的脸。"

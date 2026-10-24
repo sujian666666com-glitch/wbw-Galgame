@@ -26,13 +26,13 @@ screen status_panel():
                     text "当前路线：共通线"
 
                 if sequel_origin_ending == "stable":
-                    text "旧篇回溯：稳定结局"
+                    text "事业回顾：稳定结局"
                 elif sequel_origin_ending == "rising":
-                    text "旧篇回溯：上升结局"
+                    text "事业回顾：上升结局"
                 elif sequel_origin_ending == "startup":
-                    text "旧篇回溯：创业结局"
+                    text "事业回顾：创业结局"
                 else:
-                    text "旧篇回溯：未知"
+                    text "事业回顾：未带入"
 
                 text "Ruby 信任：[ruby_affection]"
                 text "Dana 信任：[dana_affection]"

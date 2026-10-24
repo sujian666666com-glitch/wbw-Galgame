@@ -40,6 +40,7 @@ label sequel_chapter_03_summer:
         "潮水逼近观测台，王不稳决定——"
 
         "执行 Luna 的分组方案，带回二号点原始纸带。":
+            $ sequel_luna_observation_outcome = "paper_tape"
             $ luna_affection += 2
             $ sequel_insight += 1
             $ notify_change("Luna 信任 +2")
@@ -52,6 +53,7 @@ label sequel_chapter_03_summer:
             wbw "你的判断也完整。"
 
         "离开安全绳，直接冲向更近的三号设备。":
+            $ sequel_luna_observation_outcome = "aborted"
             wbw "三号点更近，我去那里。"
             luna "距离近不等于路线安全！"
             narrator "逆流在礁石间突然转向，迫使王不稳退回观测台。"
@@ -59,6 +61,7 @@ label sequel_chapter_03_summer:
             luna "调查不是证明个人胆量。下一次先服从现场方案。"
 
         "立即撤离，放弃全部现场数据。":
+            $ sequel_luna_observation_outcome = "evacuated"
             wbw "数据可以重做，先撤。"
             luna "人员撤离优先，但主设备可以远程导出。"
             narrator "两人退到安全线内。Luna 一边撤离，一边完成了残缺日志的离线备份。"
@@ -67,7 +70,14 @@ label sequel_chapter_03_summer:
     narrator "九十秒后，逆流骤然落回海面。浪声重新出现，所有电子设备上的异常曲线却开始变平。"
     show luna normal
     show wangbuwen normal
-    narrator "只有纸带和分散在众人手里的副本保留了原貌。"
+    if sequel_luna_observation_outcome == "paper_tape":
+        narrator "只有二号点的纸带，和分散在众人手里的副本，还保留着原貌。"
+    elif sequel_luna_observation_outcome == "evacuated":
+        narrator "纸带没有取回。留下的是一份残缺的离线备份，以及分散在众人手里的副本。"
+    elif sequel_luna_observation_outcome == "aborted":
+        narrator "纸带没有取回，三号设备也被切断。留下的只有分散在众人手里的副本。"
+    else:
+        narrator "现场留下了哪些记录，要按当时实际取回的东西来核对。"
     luna "和春庭一样。系统会自动生成一个‘从未异常’的结果。"
     wbw "但这次它没能同时改掉所有见证者。"
 
@@ -89,7 +99,14 @@ label sequel_chapter_03_summer:
             $ sequel_resolve += 1
             $ notify_change("Luna 信任 +1")
             $ notify_change("共同意志 +1")
-            wbw "先公布时间、观测点和原始纸带，不替大家下结论。"
+            if sequel_luna_observation_outcome == "paper_tape":
+                wbw "先公布时间、观测点和原始纸带，不替大家下结论。"
+            elif sequel_luna_observation_outcome == "evacuated":
+                wbw "先公布时间、观测点和残缺的离线备份，不替大家下结论。"
+            elif sequel_luna_observation_outcome == "aborted":
+                wbw "先公布时间、观测点和众人分开保存的副本，不替大家下结论。纸带没有取回。"
+            else:
+                wbw "先公布时间、观测点和当时实际留下的记录，不替大家下结论。"
             luna "每项证据标明来源和缺失部分，让见证者自行确认。"
             narrator "Luna 建立公开记录页，把不同人的观察并列保存，而不是压成唯一答案。"
 
@@ -123,5 +140,7 @@ label sequel_chapter_03_summer:
     irene "希望你听完以后，还能这么说。"
     narrator "她转身走下灯塔。远处海面已经恢复平静，仿佛逆流从未发生。"
     narrator "但春与夏的两枚碎片仍在黑暗中发光，证明这个夜晚无法再被彻底抹去。"
+
+    call v21_sequel_chapter_03_summer
 
     jump sequel_chapter_04_autumn

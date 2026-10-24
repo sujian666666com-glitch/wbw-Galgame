@@ -1,0 +1,15 @@
+旺不稳的奇妙冒险 — Third-party notices
+
+Ren'Py 8.5.3
+Official source: https://www.renpy.org/
+Engine source: https://github.com/renpy/renpy
+Dependency source: https://github.com/renpy/renpy-build
+The distributed engine retains the SDK license notices. See LICENSE.txt in the packaged application.
+
+Source Han Sans Lite for RenPy
+Copyright © 2014-2019 Adobe; Reserved Font Name 'Source'.
+Licensed under the SIL Open Font License 1.1.
+The font is included unchanged from the official Ren'Py SDK.
+The full font license is included at licenses/SourceHanSansLite-OFL.txt.
+
+This release contains no music, sound effects, or voice recordings.

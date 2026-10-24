@@ -11,6 +11,8 @@ game/saves/
 game/tl/*/common.rpym
 *.rpyc
 *.rpymc
+__pycache__/
+*.py[cod]
 
 # Ren'Py logs and diagnostics
 log.txt
@@ -25,3 +27,9 @@ releases/
 
 # Personal learning checklist
 ik.md
+
+# Production manifests must remain versioned even with a global *.json ignore.
+!doc/collaboration/**/*.json
+
+# Stable statement identities for save-compatible clean builds.
+!old-game/**/*.rpyc

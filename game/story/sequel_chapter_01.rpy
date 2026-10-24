@@ -7,8 +7,8 @@ label sequel_chapter_01:
     show wangbuwen normal
 
     narrator "第二天清晨，王不稳在旧宅二楼醒来。"
-    narrator "昨晚那把钥匙确实打开了白色栅栏后的房门。屋里没有灰尘，冰箱里甚至放着刚好够三天的食物。"
-    narrator "卧室书桌上摆着一张入住清单，末尾仍是那个像他、却不属于他的签名。"
+    narrator "他重新核对门锁，钥匙仍能打开白色栅栏后的房门。屋里没有灰尘，冰箱里放着刚好够三天的食物。"
+    narrator "卧室书桌上的入住清单，末尾仍是那个像他、却不属于他的签名，与录取材料、租约上的笔迹出自同一份样本。"
     wbw "准备得越周全，越说明不是意外。"
     narrator "他把录取材料、租约和照片各做了一份备份，随后才推门出去。"
 
@@ -129,5 +129,7 @@ label sequel_chapter_01:
     wbw "那就从能验证的异常开始。"
     narrator "Dana 抱紧花盆，率先走向庭院外。"
     dana "跟好。春庭的路可不在你的离线地图里。"
+
+    call v21_sequel_chapter_01
 
     jump sequel_chapter_02_spring

@@ -1,0 +1,186 @@
+[
+  {
+    "id": "v21_01_prologue_rain_ledger",
+    "source_heading": "【新增剧情 · 雨夜，第一笔账】",
+    "target_label": "v21_prologue",
+    "placement": "序章选择 01 的 menu 结束后、jump chapter_01 之前；call v21_prologue",
+    "condition_summary": "无条件；所有玩家播放完整版。",
+    "asset_ids": ["bg bedroom_night", "wangbuwen normal"]
+  },
+  {
+    "id": "v21_02_chapter_01_lunch",
+    "source_heading": "【新增剧情 · 第一周的午餐】",
+    "target_label": "v21_chapter_01",
+    "placement": "第一章选择 02 的 menu 结束后、jump chapter_02 之前；call v21_chapter_01",
+    "condition_summary": "affection >= 3 播放完整午餐互动；否则播放职业互助克制版。",
+    "asset_ids": ["bg pantry", "wangbuwen normal", "xuwanqing normal", "xuwanqing happy", "xuwanqing surprised"]
+  },
+  {
+    "id": "v21_03_chapter_02_rooftop_secret",
+    "source_heading": "【新增剧情 · 天台上的第二个秘密】",
+    "target_label": "v21_chapter_02",
+    "placement": "第二章选择 04 的 menu 结束后、jump chapter_03 之前；call v21_chapter_02",
+    "condition_summary": "affection >= 3 保留碰拳；否则改为克制的收手。职业动机全文保留。",
+    "asset_ids": ["bg rooftop_night", "wangbuwen normal", "xuwanqing normal", "xuwanqing serious", "xuwanqing happy"]
+  },
+  {
+    "id": "v21_04_chapter_03_umbrella",
+    "source_heading": "【新增剧情 · 伞下的距离】",
+    "target_label": "v21_chapter_03",
+    "placement": "第三章选择 07 的 menu 结束后、jump chapter_04 之前；call v21_chapter_03",
+    "condition_summary": "affection >= 8 使用 cg v21_xuwanqing_rain_close 播放近距离版；否则共用雨伞但保持距离，不播放 CG。",
+    "asset_ids": ["bg company_street_night", "cg v21_xuwanqing_rain_close", "wangbuwen normal", "xuwanqing normal"]
+  },
+  {
+    "id": "v21_05_chapter_04_signature",
+    "source_heading": "【新增剧情 · 失去的署名】",
+    "target_label": "v21_chapter_04",
+    "placement": "第四章 menu 回复之后、scene bg bedroom_night 之前；call v21_chapter_04（走廊→当晚办公室→回家备份）",
+    "condition_summary": "本段为当晚办公室回顾，发生在回家备份前。affection >= 8 播放并肩与手部相碰；否则保留共同取证并删除身体接触。",
+    "asset_ids": ["bg office_night", "wangbuwen normal", "xuwanqing normal", "xuwanqing serious"]
+  },
+  {
+    "id": "v21_06_chapter_05_victory",
+    "source_heading": "【新增剧情 · 胜利不是终点】",
+    "target_label": "v21_chapter_05",
+    "placement": "第五章天台对话结束后、jump chapter_06 之前；call v21_chapter_05",
+    "condition_summary": "affection >= 15 保留牵手与“顺便站你这边”；否则只保留职业互助与克制收束。",
+    "asset_ids": ["bg company_street_night", "wangbuwen normal", "xuwanqing normal", "xuwanqing happy"]
+  },
+  {
+    "id": "v21_07_chapter_06_unsent_messages",
+    "source_heading": "【新增剧情 · 三封未发出的消息】",
+    "target_label": "v21_chapter_06",
+    "placement": "第六章“那就看远一点。”之后、最终选择 10 的 menu 之前；call v21_chapter_06",
+    "condition_summary": "affection >= 15 保留“我们以后还有没有可能”的关系问句；否则不确认关系，只保留选择前的克制对话。",
+    "asset_ids": ["bg bedroom_night", "wangbuwen normal", "xuwanqing normal", "xuwanqing happy", "xuwanqing serious"]
+  },
+  {
+    "id": "v21_08_ending_stable_epilogue",
+    "source_heading": "【新增后日谈 · 稳定线】",
+    "target_label": "v21_ending_stable",
+    "placement": "ending_stable 的理想/普通条件分支结束后、persistent.old_ending_route 写入之前；call v21_ending_stable",
+    "condition_summary": "ability >= 7 and affection >= 15 播放理想版；否则播放普通版，不确认牵手。",
+    "asset_ids": ["bg company_street_night", "wangbuwen normal", "xuwanqing normal", "xuwanqing happy"]
+  },
+  {
+    "id": "v21_09_ending_rising_epilogue",
+    "source_heading": "【新增后日谈 · 上升线】",
+    "target_label": "v21_ending_rising",
+    "placement": "ending_rising 的理想/普通条件分支结束后、persistent.old_ending_route 写入之前；call v21_ending_rising",
+    "condition_summary": "ability >= 9 and affection >= 12 播放理想同车版，并以“到站以后”提出约会；否则播放异地版，只约下次吃饭和聊近况，不确认约会关系。",
+    "asset_ids": ["bg v21_train_interior_dusk", "wangbuwen normal", "xuwanqing normal", "xuwanqing happy"]
+  },
+  {
+    "id": "v21_10_ending_startup_epilogue",
+    "source_heading": "【新增后日谈 · 创业线】",
+    "target_label": "v21_ending_startup",
+    "placement": "ending_startup 的理想/普通条件分支结束后、persistent.old_ending_route 写入之前；call v21_ending_startup",
+    "condition_summary": "side_project_ready and ability >= 8 and affection >= 15 and money >= 1800 播放理想版；否则普通版明确版本晚了几个月才上线。",
+    "asset_ids": ["bg startup_studio", "wangbuwen normal", "xuwanqing normal", "xuwanqing happy"]
+  },
+  {
+    "id": "v21_11_sequel_prologue_broken_clock",
+    "source_heading": "【新增剧情 · 失效的钟】",
+    "target_label": "v21_sequel_prologue",
+    "placement": "sequel_prologue 最后一句王不稳内心独白之后、jump sequel_chapter_01 之前；call v21_sequel_prologue",
+    "condition_summary": "无条件；引入镜面提示与银铃。镜面与银铃同为四季镜提醒众人共同保存记忆的信号，在冬之章明确回收；银铃不是 Ruby 的水晶耳坠，不新增另一套魔法设定。",
+    "asset_ids": ["bg v21_old_house_mirror", "wangbuwen normal"]
+  },
+  {
+    "id": "v21_12_sequel_chapter_01_distances",
+    "source_heading": "【新增剧情 · 四个人的不同距离】",
+    "target_label": "v21_sequel_chapter_01",
+    "placement": "sequel_chapter_01 中 Dana“跟好。春庭的路可不在你的离线地图里。”之后、jump sequel_chapter_02_spring 之前；call v21_sequel_chapter_01",
+    "condition_summary": "无条件；初遇时 dana_affection 为 0，不设信任分支。Dana 保持体贴但尊重距离，不替王不稳安排午饭、不确认亲近；亲密阈值从春之章起使用。",
+    "asset_ids": ["bg academy_courtyard", "wangbuwen normal", "dana normal", "dana worried", "luna normal", "irene normal", "ruby normal"]
+  },
+  {
+    "id": "v21_13_sequel_chapter_02_spring_promise",
+    "source_heading": "【新增剧情 · 春庭的约定】",
+    "target_label": "v21_sequel_chapter_02_spring",
+    "placement": "sequel_chapter_02_spring 中 Luna 说完“可以。但到了现场，必须遵守我的安全方案。”之后、“夜色落下前，一行人向海边灯塔出发。”之前（仍在 jump sequel_chapter_03_summer 之前）；call v21_sequel_chapter_02_spring",
+    "condition_summary": "dana_affection >= 3 保留握手与单独看花约定；否则保留角色表达但不确认恋情。",
+    "asset_ids": ["bg spring_garden", "wangbuwen normal", "dana normal", "dana worried"]
+  },
+  {
+    "id": "v21_14_sequel_chapter_03_summer_temperature",
+    "source_heading": "【新增剧情 · 灯塔里的温差】",
+    "target_label": "v21_sequel_chapter_03_summer",
+    "placement": "sequel_chapter_03_summer 中“但春与夏的两枚碎片仍在黑暗中发光……”之后、jump sequel_chapter_04_autumn 之前；call v21_sequel_chapter_03_summer",
+    "condition_summary": "动作回忆只读 sequel_luna_observation_outcome 的 paper_tape/aborted/evacuated，unknown 用中性版；收束阶段 luna_affection >= 3 播放软化表达，否则克制。",
+    "asset_ids": ["bg lighthouse_night", "wangbuwen normal", "luna normal", "luna soft"]
+  },
+  {
+    "id": "v21_15_sequel_chapter_04_autumn_letter",
+    "source_heading": "【新增剧情 · 秋日未寄出的信】",
+    "target_label": "v21_sequel_chapter_04_autumn",
+    "placement": "sequel_chapter_04_autumn 中取得秋之碎片（autumn_fragment = True）并重新显示 bg archive_autumn / irene normal 之后、Irene 说“最后一页只记了一个称谓：冬之承载者。”之前（即“Ruby 只剩一夜”警告之前）；call v21_sequel_chapter_04_autumn",
+    "condition_summary": "irene_affection >= 3 保留靠肩与玩笑；否则以共同归档收束，不确认恋情，也不说“明天慢慢整理”。",
+    "asset_ids": ["bg archive_autumn", "wangbuwen normal", "irene normal", "irene shaken", "irene relieved"]
+  },
+  {
+    "id": "v21_16_sequel_chapter_05_winter_truth",
+    "source_heading": "【新增剧情 · Ruby 的真心】",
+    "target_label": "v21_sequel_chapter_05_winter",
+    "placement": "sequel_chapter_05_winter 中“那就去把规则改掉。”之后、jump sequel_finale 之前；call v21_sequel_chapter_05_winter",
+    "condition_summary": "ruby_affection >= 3 才摘耳坠并播放脸颊吻（立绘与文字，不用 CG），吻后把耳坠递还并戴好；否则保留角色表达、不摘耳坠、不确认恋情。本段同时明确旧宅镜面与银铃同源，银铃不是水晶耳坠。",
+    "asset_ids": ["bg sakurakagami_station_winter", "wangbuwen normal", "ruby normal", "ruby resolute"]
+  },
+  {
+    "id": "v21_17_sequel_finale_last_solitude",
+    "source_heading": "【新增剧情 · 最后的独处】",
+    "target_label": "v21_sequel_finale",
+    "placement": "sequel_finale 中“裂纹间开始推演几条仍可执行的道路。”之后、最终选择 12 的 menu 之前；call v21_sequel_finale",
+    "condition_summary": "四位角色各自在对应 trust >= 3 时使用原稿表达；低值使用不确认恋情的克制版。",
+    "asset_ids": ["bg mirror_chamber", "wangbuwen normal", "dana normal", "luna normal", "luna soft", "irene normal", "irene relieved", "ruby normal"]
+  },
+  {
+    "id": "v21_18_sequel_ending_dana_epilogue",
+    "source_heading": "【新增后日谈 · Dana 线】",
+    "target_label": "v21_sequel_ending_dana",
+    "placement": "sequel_ending_dana 最后一段“春风越过庭院……”之后、结局 marker“——Dana 结局《春日归邻》”之前；call v21_sequel_ending_dana",
+    "condition_summary": "入口已由 sequel_ending_dana 保证 dana_affection >= 3；播放完整后日谈。",
+    "asset_ids": ["bg spring_garden", "wangbuwen normal", "dana normal"]
+  },
+  {
+    "id": "v21_19_sequel_ending_luna_epilogue",
+    "source_heading": "【新增后日谈 · Luna 线】",
+    "target_label": "v21_sequel_ending_luna",
+    "placement": "sequel_ending_luna 最后一段“两人的未来，也有了共同标记的坐标。”之后、结局 marker“——Luna 结局《盛夏坐标》”之前；call v21_sequel_ending_luna",
+    "condition_summary": "入口已由 sequel_ending_luna 保证 luna_affection >= 3；播放完整后日谈。",
+    "asset_ids": ["bg lighthouse_night", "wangbuwen normal", "luna soft"]
+  },
+  {
+    "id": "v21_20_sequel_ending_irene_epilogue",
+    "source_heading": "【新增后日谈 · Irene 线】",
+    "target_label": "v21_sequel_ending_irene",
+    "placement": "sequel_ending_irene 最后一段“被保存的不只是过去……”之后、结局 marker“——Irene 结局《秋实之书》”之前；call v21_sequel_ending_irene",
+    "condition_summary": "入口已由 sequel_ending_irene 保证 irene_affection >= 3；播放完整后日谈。",
+    "asset_ids": ["bg archive_autumn", "wangbuwen normal", "irene normal", "irene relieved"]
+  },
+  {
+    "id": "v21_21_sequel_ending_ruby_epilogue",
+    "source_heading": "【新增后日谈 · Ruby 线】",
+    "target_label": "v21_sequel_ending_ruby",
+    "placement": "sequel_ending_ruby 最后一段“耳坠轻轻一响……”之后、结局 marker“——Ruby 结局《冬夜来信》”之前；call v21_sequel_ending_ruby",
+    "condition_summary": "入口已由 sequel_ending_ruby 保证 ruby_affection >= 3；cg v21_ruby_ending_kiss 只用于本结局唇吻。",
+    "asset_ids": ["bg sakurakagami_station_winter", "cg v21_ruby_ending_kiss", "wangbuwen normal", "ruby normal"]
+  },
+  {
+    "id": "v21_22_sequel_ending_return_epilogue",
+    "source_heading": "【新增后日谈 · 返回现实线】",
+    "target_label": "v21_sequel_ending_return",
+    "placement": "sequel_ending_return 最后一段“他走回灯火之中……”之后、结局 marker“——返回结局《回到灯火》”之前；call v21_sequel_ending_return",
+    "condition_summary": "无条件；邮件为未证实线索，不开启真结局。",
+    "asset_ids": ["bg city_anomaly", "wangbuwen normal"]
+  },
+  {
+    "id": "v21_23_sequel_ending_true_epilogue",
+    "source_heading": "【新增后日谈 · 真结局】",
+    "target_label": "v21_sequel_ending_true",
+    "placement": "sequel_ending_true 最后一段“王不稳也终于明白……”之后、结局 marker“——真结局《四季同在》”之前；call v21_sequel_ending_true",
+    "condition_summary": "四碎片齐全、四位 trust >= 3、insight >= 6、resolve >= 4，且终章选择共同记忆；门只在四季交界与双向邀请下回应，不强迫任何人留下，下个四季交界双方可再邀请；返回邮件不构成通行证。",
+    "asset_ids": ["bg sakurakagami_station_rain", "wangbuwen normal", "dana normal", "luna normal", "irene normal", "ruby normal"]
+  }
+]

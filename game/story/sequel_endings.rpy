@@ -12,6 +12,7 @@ label sequel_ending_dana:
     dana "一起去。以后每一次见面，我们都一起记住。"
     wbw "好。"
     narrator "她不再用热闹掩饰离别，也不再把留下谁当成自己一个人的责任。春风越过庭院，新的名字落在他们共同翻开的第一页。"
+    call v21_sequel_ending_dana
     narrator "——Dana 结局《春日归邻》"
     return
 
@@ -30,6 +31,7 @@ label sequel_ending_luna:
     narrator "Luna 看了他两秒，嘴角极轻地弯了一下。"
     luna "合格。那就陪我把下一组坐标算完。"
     narrator "海灯在远处逐一亮起。事实不再属于最聪明的那个人，而属于所有愿意检查它的人。两人的未来，也有了共同标记的坐标。"
+    call v21_sequel_ending_luna
     narrator "——Luna 结局《盛夏坐标》"
     return
 
@@ -49,6 +51,7 @@ label sequel_ending_irene:
     wbw "这算邀请还是加班？"
     irene "今晚可以先算邀请。"
     narrator "红叶落在打开的窗台。被保存的不只是过去，也包括两个人终于允许彼此参与的以后。"
+    call v21_sequel_ending_irene
     narrator "——Irene 结局《秋实之书》"
     return
 
@@ -67,6 +70,7 @@ label sequel_ending_ruby:
     wbw "哪里错？"
     ruby "不该只写明年。"
     narrator "Ruby 把两个人的名字并排写在信尾。耳坠轻轻一响，这一次保存的是他们亲自选择的未来。"
+    call v21_sequel_ending_ruby
     narrator "——Ruby 结局《冬夜来信》"
     return
 
@@ -90,6 +94,7 @@ label sequel_ending_return:
     narrator "行李不见了，手里却多出一本写满名字、潮汐和四季的笔记。最后一页有四种颜色的签名。"
     wbw "（内心）它们发生过。有人会记得，就不是梦。"
     narrator "他走回灯火之中。从此每逢雨夜，他都会在列车到站的风声里听见一声很轻的耳坠鸣响。"
+    call v21_sequel_ending_return
     narrator "——返回结局《回到灯火》"
     return
 
@@ -112,5 +117,6 @@ label sequel_ending_true:
     wbw "这次我的行李是自己的。"
     narrator "四个人同时笑了。春花、夏潮、秋叶和冬雪在同一片天空短暂交汇，却没有任何一季因此停下。"
     narrator "他们不再是被规则挑中的四季之女，而是共同写下新规则的人。王不稳也终于明白，留下来从来不是困在某个地方，而是愿意为自己的选择持续负责。"
+    call v21_sequel_ending_true
     narrator "——真结局《四季同在》"
     return
