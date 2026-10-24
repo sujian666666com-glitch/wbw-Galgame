@@ -23,6 +23,13 @@ init 999 python hide:
             observer["label"] = name
             emit({"event": "label", "name": name, "abnormal": abnormal})
 
+        def on_say(event, interact=True, **kwargs):
+            if event == "begin" and interact:
+                said = renpy.last_say()
+                emit({"event": "say", "label": observer["label"],
+                      "what": getattr(said, "what", None),
+                      "who": getattr(getattr(said, "who", None), "name", None)})
+
         def on_frame():
             screens = []
             for name in ("confirm", "save", "load", "history", "preferences", "status_panel", "choice", "main_menu", "say"):
@@ -49,4 +56,5 @@ init 999 python hide:
                 emit(record)
 
         config.label_callbacks.append(on_label)
+        config.all_character_callbacks.append(on_say)
         config.periodic_callbacks.append(on_frame)
