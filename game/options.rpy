@@ -34,6 +34,12 @@ init python:
 
     build.classify("doc/**", None)
     build.classify("image/**", None)
+    # 根目录说明与 old-game 留在 git archive 的 source.zip，不进 app。
+    # *.md 只命中项目根的单层文件；licenses 与 THIRD_PARTY_NOTICES 是 txt。
+    build.classify("old-game/**", None)
+    build.classify("README.md", None)
+    build.classify("AGENTS.md", None)
+    build.classify("*.md", None)
     build.classify("ik.md", None)
     build.classify("**/ik.md", None)
     build.classify("tools/**", None)

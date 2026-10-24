@@ -1,89 +1,24 @@
-# 测试报告
+# v2.1.0 验收报告
 
-## 测试环境与结论
+更新：2026-10-25。当前处于发行候选验收阶段，以下按实际证据区分状态。
 
-| 项目 | 记录 |
-| --- | --- |
-| 测试日期 | 2026-07-13 |
-| 游戏版本 | `2.0.0` |
-| Ren'Py SDK | 官方 Ren'Py 8.5.3，构建号 `8.5.3.26051504` |
-| SDK SHA-256 | `eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45` |
-| 操作系统 | macOS 26.2，Apple Silicon |
-| 设计分辨率 | `1920×1080` |
-| 总体结论 | 双篇 v2 通过 lint、真实素材加载和全部自动化路线验收；发布包尚未生成 |
-
-## 隔离验证方式
-
-最终测试没有直接使用用户现有存档和缓存。仓库被复制到 `.work/renpy-final-audit.*`，排除 `.git`、`.work`、`game/saves`、`game/cache` 与编译产物，并通过独立 `RENPY_PATH_TO_SAVES` 运行。
-
-```bash
-PROJECT="/Users/ik/Desktop/02_学习与资料/game/my-renpy-game"
-RENPY="$PROJECT/.work/renpy-sdk/renpy-8.5.3-sdk/renpy.sh"
-
-RENPY_PATH_TO_SAVES="<isolated-saves>" \
-  "$RENPY" "<isolated-project>" lint \
-  --error-code --check-unclosed-tags --all-problems
-
-RENPY_PATH_TO_SAVES="<isolated-saves>" \
-  "$RENPY" "<isolated-project>" test global --report-detailed
-```
-
-自动化还会在 suite 开始时备份 `persistent.old_ending_route` 与 `persistent.old_endings_seen`，teardown 时恢复并保存，避免测试结局写入用户记录。
-
-## 最终结果
-
-### Ren'Py lint
-
-```text
-Dialogue blocks: 686
-Menus: 22（旧篇 10，续篇 12）
-Image definitions: 50
-Screens: 14
-Errors: 0
-Warnings: 0
-```
-
-### 自动化
-
-```text
-Test suites:  1/1 passed
-Test cases:  14/14 passed
-Test hooks:  15/15 passed
-Assertions:  29/29 passed
-Time:        11.783 s
-Status:      PASSED
-```
-
-| 用例 | 覆盖内容 | 状态 |
+| 范围 | 当前结果 | 证据 |
 | --- | --- | --- |
-| `full_flow_stable_ideal` | 旧篇从主菜单到稳定理想结局；验证双篇状态隔离 | 通过 |
-| `rising_ideal` / `startup_ideal` | 旧篇上升、创业理想表现 | 通过 |
-| `stable_normal` / `rising_normal` / `startup_normal` | 旧篇三个普通表现 | 通过 |
-| `save_load_smoke` | 标准保存、继续选择、读取及能力值恢复 | 通过 |
-| `sequel_full_flow_true_ending` | 续篇 12 个自然选择、四碎片、全信任与真结局 | 通过 |
-| `sequel_dana_ending` | Dana《春日归邻》 | 通过 |
-| `sequel_luna_ending` | Luna《盛夏坐标》 | 通过 |
-| `sequel_irene_ending` | Irene《秋实之书》 | 通过 |
-| `sequel_ruby_ending` | Ruby《冬夜来信》 | 通过 |
-| `sequel_return_ending` | 返回现实《回到灯火》 | 通过 |
-| `sequel_origin_rising_smoke` | 旧篇 rising persistent 在续篇开场可读取，随后恢复 | 通过 |
+| 两篇剧情／23新增片段 | 全部接入，静态交叉审查通过 | collaboration/v2.1/story/final-cross-review.md |
+| 原有数值规则与菜单 | 22菜单／61选项caption与条件不变 | integration-static-check.json |
+| 全量自动回归 | cold/warm各24/24用例、81/81断言通过 | qa/final-automated-report.md |
+| 原两个失败 | 单跑及顺序组合通过；native旧篇存读档已复现恢复成功 | QA报告、native/progress.md |
+| 选项／新增片段覆盖 | 61选项覆盖；23片段动态经过审计通过 | qa/coverage-matrix.json |
+| 代表性v2.0存档 | 4/4恢复原菜单、旧值与persistent；新状态unknown | qa/compat-report.json |
+| lint | 无错误或警告，998对白／22菜单／68图片声明／15屏幕 | 隔离正常模式副本，02:14运行 |
+| 美术 | 9张新增逐张审查，110原图片哈希不变 | art/manifest.json、art/review.md |
+| 原生完整游玩 | 旧篇高／低流程完成；三类结局普通／理想六种完成；续篇待完成 | native/progress.md |
+| 实机发现UI缺陷 | slider溢出、标题折行、Esc返回已修；最终实机复测待完成 | tech/native-ui-fixes.md |
+| macOS独立包 | 待构建、解压启动、复测 | 构建回执生成后登记 |
+| GitHub同步 | 本轮提交尚未推送 | 最终提交与远程核对后更新 |
 
-## 素材与显示校验
+本报告下的短路径均相对于 `doc/collaboration/v2.1/`。自动化使用测试输入焦点适配；正常run和发行包不包含该适配。自动通过不替代原生完整游玩。
 
-- `game/images/` 共 51 张图片；所有文件可被 Ren'Py lint 和测试加载。
-- 9 张续篇背景与 6 张续篇 CG 均为真正的 `1920×1080` PNG。
-- 4 张续篇立绘运行时尺寸为 `682×1024`、RGBA，alpha 范围 `0..255`，四角 alpha 均为 `0`。
-- 主菜单实际使用 `1920×1080` 的 `bg_main_menu_cover_wide.jpg`，左侧有菜单留白、右侧保留原漫画人物。
-- 四位女主立绘与四人客厅合影逐一视觉比对：脸型、发色、服装和从左到右身份顺序一致。
-- 六张新增 CG 完成视觉抽检：人物无重复、关键道具与季节场景正确、无烘焙文字或水印。
+实际测试机器：macOS 26.2、Apple M4、arm64；Ren’Py 8.5.3.26051504。原生窗口虚拟1920×1080，drawable2736×1540。所有游戏测试使用隔离副本和隔离存档；兼容fixture是本任务自然生成的合成存档，未读取或重置个人存档。
 
-## 过程问题与处理
-
-第一次真实素材回归中，续篇全流程加载六张高分辨率 CG，超过测试原设的 25 秒单例上限；此前已执行的 24 个断言全部通过，日志明确为 `RenpyTestTimeoutError`，不是剧情或分支错误。测试预算随后调整为 60 秒，保留全部点击与断言，重新从空缓存执行后 14 个用例在 11.783 秒内全部通过。
-
-## 已知边界
-
-- 当前为静音版本，未验证音乐、音效或配音混合。
-- 自动化覆盖主线和所有结局，但不替代对每个非理想选项文案、连续回滚和快进节奏的发行前人工体验。
-- 尚未生成 Windows、macOS、Linux 发布包。
-- 正式发布前需复核 SDK 随附字体的再分发条款。
+范围：macOS静音版，未公证；Windows、Linux、音频、城市地图、日程探索不在本轮交付内。任意历史开发快照若没有同一编译语句映射，不在已验证旧档范围内。字体OFL及第三方声明已纳入打包配置。

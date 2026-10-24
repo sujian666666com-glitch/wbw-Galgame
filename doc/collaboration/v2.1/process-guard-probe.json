@@ -6,9 +6,15 @@
     "descendants_dead": true,
     "lock_released": true,
     "pids": [
-      42163,
-      42164
-    ]
+      53723,
+      53724,
+      53725
+    ],
+    "ignores_sigterm": [
+      "child",
+      "grandchild"
+    ],
+    "generations": 3
   },
   {
     "case": "deadline",
@@ -17,9 +23,15 @@
     "descendants_dead": true,
     "lock_released": true,
     "pids": [
-      42182,
-      42183
-    ]
+      53750,
+      53751,
+      53752
+    ],
+    "ignores_sigterm": [
+      "child",
+      "grandchild"
+    ],
+    "generations": 3
   },
   {
     "case": "signal",
@@ -28,9 +40,15 @@
     "descendants_dead": true,
     "lock_released": true,
     "pids": [
-      42210,
-      42211
-    ]
+      53764,
+      53765,
+      53766
+    ],
+    "ignores_sigterm": [
+      "child",
+      "grandchild"
+    ],
+    "generations": 3
   },
   {
     "case": "pause",
@@ -39,9 +57,15 @@
     "descendants_dead": true,
     "lock_released": true,
     "pids": [
-      42228,
-      42229
-    ]
+      53780,
+      53781,
+      53782
+    ],
+    "ignores_sigterm": [
+      "child",
+      "grandchild"
+    ],
+    "generations": 3
   },
   {
     "case": "owner",
@@ -50,8 +74,14 @@
     "descendants_dead": true,
     "lock_released": true,
     "pids": [
-      42251,
-      42252
-    ]
+      53792,
+      53793,
+      53794
+    ],
+    "ignores_sigterm": [
+      "child",
+      "grandchild"
+    ],
+    "generations": 3
   }
 ]
