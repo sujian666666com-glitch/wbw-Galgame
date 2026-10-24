@@ -1,5 +1,5 @@
-define config.name = _("三个月，留下来")
-define config.version = "1.0.0"
+define config.name = _("旺不稳的奇妙冒险")
+define config.version = "2.0.0"
 define build.name = "three_months_to_stay"
 
 define config.has_sound = True
@@ -26,3 +26,5 @@ init python:
     build.classify("**/.**", None)
     build.classify("game/**.rpy", "archive")
     build.classify("game/**.png", "archive")
+    build.classify("game/**.jpg", "archive")
+    build.classify("game/**.webp", "archive")

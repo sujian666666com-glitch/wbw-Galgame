@@ -18,6 +18,24 @@ image bg startup_studio = "images/backgrounds/bg_startup_studio.png"
 image cg subway_meeting = "images/cg/cg_subway_meeting.png"
 image cg four_friends_living_room = "images/cg/cg_four_friends_living_room.png"
 
+image bg city_anomaly = "images/sequel/backgrounds/bg_city_anomaly.png"
+image bg sakurakagami_station_rain = "images/sequel/backgrounds/bg_sakurakagami_station_rain.png"
+image bg old_house_day = "images/sequel/backgrounds/bg_old_house_day.png"
+image bg academy_courtyard = "images/sequel/backgrounds/bg_academy_courtyard.png"
+image bg spring_garden = "images/sequel/backgrounds/bg_spring_garden.png"
+image bg lighthouse_night = "images/sequel/backgrounds/bg_lighthouse_night.png"
+image bg archive_autumn = "images/sequel/backgrounds/bg_archive_autumn.png"
+image bg sakurakagami_station_winter = "images/sequel/backgrounds/bg_sakurakagami_station_winter.png"
+image bg mirror_chamber = "images/sequel/backgrounds/bg_mirror_chamber.png"
+
+image cg sequel_dana_spring = "images/sequel/cg/cg_sequel_dana_spring.png"
+image cg sequel_luna_tide = "images/sequel/cg/cg_sequel_luna_tide.png"
+image cg sequel_irene_archive = "images/sequel/cg/cg_sequel_irene_archive.png"
+image cg sequel_ruby_name = "images/sequel/cg/cg_sequel_ruby_name.png"
+image cg sequel_mirror_finale = "images/sequel/cg/cg_sequel_mirror_finale.png"
+image cg sequel_true_ending = "images/sequel/cg/cg_sequel_true_ending.png"
+image cg sequel_four_meeting = "images/cg/cg_four_friends_living_room.png"
+
 image wangbuwen normal:
     "images/characters/wangbuwen_normal.png"
     xalign 0.16
@@ -76,4 +94,24 @@ image zhanghao normal:
 image zhanghao smug:
     "images/characters/zhanghao_smug.png"
     xalign 0.68
+    yalign 1.0
+
+image ruby normal:
+    "images/sequel/characters/ruby_normal.png"
+    xalign 0.84
+    yalign 1.0
+
+image dana normal:
+    "images/sequel/characters/dana_normal.png"
+    xalign 0.34
+    yalign 1.0
+
+image luna normal:
+    "images/sequel/characters/luna_normal.png"
+    xalign 0.50
+    yalign 1.0
+
+image irene normal:
+    "images/sequel/characters/irene_normal.png"
+    xalign 0.66
     yalign 1.0

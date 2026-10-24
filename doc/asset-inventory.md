@@ -1,75 +1,82 @@
-# 素材清单与来源说明
+# 素材清单与生成记录
 
-## 原始素材盘点
-
-盘点范围为仓库根目录 `image/`，原始内容保持不变。
-
-| 分类 | 数量 | 说明 |
-| --- | ---: | --- |
-| 原始素材总数 | 39 | 正式素材 31 个、处理前备份 8 个 |
-| 人物正式素材 | 19 | 王不稳 2 张真人参考图与 2 张生成源图、许晚晴、王磊、张浩及替代版本 |
-| 场景正式素材 | 8 | 卧室、咖啡店、会议室、办公室、天台、学校、地铁出口等 |
-| CG / 插画 / 界面 | 4 | 地铁初遇 CG、四人客厅合影、初遇插画、旧主菜单 |
-| 处理前备份 | 8 | 位于 `image/_处理前备份_20260610` |
-
-原始素材中仍有 6 个扩展名为 `.png`、实际编码为 JPEG 的伪 PNG；其中 5 个角色文件没有透明通道，不能直接作为叠加立绘使用。旧主菜单含烘焙文字和按钮，不作为正式交互界面。
+> 更新日期：2026-07-13。`image/` 保存原始素材与生成源图，`game/images/` 保存游戏实际加载的规范化版本。
 
 ## 正式运行时素材
 
-`game/images/` 共 30 张图片，已完成格式、尺寸、透明通道、Ren'Py 引用与基础视觉检查。
+`game/images/` 共 51 张图片。
 
-| 分类 | 数量 | 验收结果 |
-| --- | ---: | --- |
-| 背景 | 16 | 全部为真正 PNG，统一为 `1920×1080` |
-| 角色立绘 | 12 | 全部为真正 RGBA PNG，具备透明通道 |
-| 剧情 CG | 2 | 真正 PNG，统一为 `1920×1080` |
-| 合计 | 30 | 既有素材 lint 与启动加载通过；新增 CG 静态引用检查通过，待 SDK 回归 |
+| 分类 | 旧篇 / 公共 | 续篇新增 | 合计 | 验收规格 |
+| --- | ---: | ---: | ---: | --- |
+| 背景与界面背景 | 18 | 9 | 27 | `1920×1080`，PNG 或 JPEG |
+| 角色立绘 | 12 | 4 | 16 | RGBA PNG，四角透明，显示高度不超过 1024 px |
+| 剧情 CG | 2 | 6 | 8 | `1920×1080` PNG |
+| 合计 | 32 | 19 | 51 | 已接入 Ren'Py image 定义或 GUI |
 
-### 背景与场景对应
+公共素材中保留用户提供的原始漫画主菜单 `bg_main_menu_cover.jpg`，实际界面使用同图扩展的 `bg_main_menu_cover_wide.jpg`；四人客厅合影同时作为旧篇活动视觉与续篇四位女主身份锚点。
 
-| 运行时文件 | 剧情用途 | 来源 / 处理 |
+## 续篇背景
+
+| 运行时文件 | 场景 | 生成与处理 |
 | --- | --- | --- |
-| `bg_subway_exit_rain.png` | 开场地铁出口 | 原始场景，复制后缩放 |
-| `bg_bedroom_small_day.png` | 第一章出租屋白天 | Image Gen 新增原创背景 |
-| `bg_bedroom_night.png` | 第四、六章出租屋夜晚 | 原始场景，复制后缩放 |
-| `bg_office.png` | 公司日间办公区 | 原始场景，复制后缩放 |
-| `bg_office_night.png` | 第二、三章加班 | Image Gen 新增原创背景 |
-| `bg_meeting_room.png` | 第三至五章会议 | 原始场景，复制后缩放 |
-| `bg_rooftop_night.png` | 第二章天台 | 原始场景，复制后缩放 |
-| `bg_rooftop_sunset.png` | 第五章天台夕阳 | Image Gen 新增原创背景 |
-| `bg_pantry.png` | 第一章茶水间 | Image Gen 新增原创背景 |
-| `bg_convenience_store_night.png` | 第三章深夜讨论 | Image Gen 新增原创背景 |
-| `bg_company_street_night.png` | 第三章下班路上 | Image Gen 新增原创背景 |
-| `bg_corridor.png` | 第四章公司走廊 | Image Gen 新增原创背景 |
-| `bg_company_entrance_morning.png` | 稳定结局 | Image Gen 新增原创背景 |
-| `bg_train_platform.png` | 上升结局 | Image Gen 新增原创背景 |
-| `bg_startup_studio.png` | 创业结局 | Image Gen 新增原创背景 |
-| `bg_main_menu_sunset.png` | 主菜单 | Image Gen 新增原创背景 |
+| `bg_city_anomaly.png` | 王不稳穿越前的城市异象 | 新生成；银色四季涡流与雨夜城市 |
+| `bg_sakurakagami_station_rain.png` | 初到樱镜町车站 | 新生成；旧木车站、海、雨与透明伞 |
+| `bg_old_house_day.png` | 旧宅与四人会面 | 新生成；海边旧宅室内 |
+| `bg_academy_courtyard.png` | 成人大学部校园 | 新生成；海景、木构校园与庭院 |
+| `bg_spring_garden.png` | Dana 的春季花园 | 新生成；花圃、水渠与园艺工具 |
+| `bg_lighthouse_night.png` | Luna 的逆潮灯塔 | 新生成；灯塔、月夜逆潮与海上灯火 |
+| `bg_archive_autumn.png` | Irene 的秋季档案馆 | 新生成；旧档案室、修补记录与红叶 |
+| `bg_sakurakagami_station_winter.png` | Ruby 的冬季车站 | 以雨季车站定向编辑；保留透明伞与暖灯 |
+| `bg_mirror_chamber.png` | 四季镜终局 | 新生成；破镜、轨道、四季并存与记忆丝线 |
 
-### 角色与 CG
+运行时文件统一缩放为 `1920×1080`；未覆盖生成源图。场景生成源图位于 `image/续篇/生成源图/backgrounds/`。
 
-- 王不稳：以用户提供的 `王不稳_参考图_全身.png`、`王不稳_参考图_近景.png` 锁定真实脸型、眼镜、发型与壮实但不胖的身形。新服装为深蓝通勤衬衫、深灰 T 恤和黑裤，不采用参考照片中的毕业服；使用 Image Gen 生成普通、自信两张绿幕源图，再本地色键抠图并输出 `wangbuwen_normal.png`、`wangbuwen_confident.png`。
-- 许晚晴：使用已有透明版本，接入普通、开心、严肃、忧虑、生气、惊讶 6 个表情。
-- 王磊：优先使用透明 `_v2` 版本，接入普通、严肃 2 个表情。
-- 张浩：使用已有透明版本，接入普通、得意 2 个表情。
-- 地铁初遇 CG：从原始伪 PNG 复制、转码并缩放为 `cg_subway_meeting.png`。
-- 四人客厅合影 CG：使用用户本轮提供的竖幅图片，原图保存为 `image/插画/四人客厅合影_原始.png`；运行时版本 `cg_four_friends_living_room.png` 处理为 `1920×1080`，完整人物居中显示，两侧使用同图虚化扩展填充。第三章作为新品推广活动主视觉成片出现。
+## 续篇角色与 CG
 
-## Image Gen 记录
+四位女主的统一身份锚点是 `game/images/cg/cg_four_friends_living_room.png`：画面从左到右为 Dana、Ruby、Irene、Luna。生成立绘和 CG 时固定发色、服装色系、年龄感与人物位置关系，不按单张提示重新设计人物。
 
-新增背景与王不稳立绘使用本会话 Image Gen 生成，保存在项目目录后作为本项目新增原创素材使用。背景统一提示要求为：二次元写实视觉小说背景、无人、无文字、无水印、现代中国城市环境、电影感光影、16:9、`1920×1080`。王不稳立绘以两张真人照片作为身份参考，明确保持圆方脸、厚重刘海、黑框眼镜和宽肩壮实体型，并使用纯绿背景生成后本地去背。
+| 角色 | 运行时立绘 | 身份不变量 |
+| --- | --- | --- |
+| Ruby | `ruby_normal.png` | 四人图第二位；红色系、安静克制、冬季记忆线 |
+| Dana | `dana_normal.png` | 四人图最左；绿色系、温暖主动、春季花园线 |
+| Irene | `irene_normal.png` | 四人图第三位；蓝 / 深色系、成熟理性、秋季档案线 |
+| Luna | `luna_normal.png` | 四人图最右；浅色系、敏锐自由、夏季灯塔线 |
 
-生成背景覆盖了原剧情缺失的茶水间、走廊、便利店、公司街道、公司门口、火车站、创业工作室等场景。当前六章与三个结局不存在阻塞性背景缺口。
+立绘先生成纯色 chroma 背景版本，源图保存在 `image/续篇/生成源图/characters/`，再使用 Image Gen skill 随附的 `remove_chroma_key.py` 去背并规范化为 RGBA PNG。
 
-## 字体与非美术资源
+新增 CG：
 
-- `game/fonts/SourceHanSansLite.ttf` 来自 Ren'Py 官方 8.5.3 SDK 的 `sdk-fonts/`，用于跨平台简体中文渲染。
-- 正式发布前仍需复核 Ren'Py SDK 随附许可证与字体再分发条款。
-- v1 不引入外部音乐、音效、配音或其他美术素材。
+- `cg_sequel_dana_spring.png`：Dana 与王不稳修复春季花园。
+- `cg_sequel_luna_tide.png`：Luna 在逆潮灯塔确认夏季碎片。
+- `cg_sequel_irene_archive.png`：Irene 在秋季档案馆修补被撕毁的记录。
+- `cg_sequel_ruby_name.png`：Ruby 在冬季车站重新写下自己的名字。
+- `cg_sequel_mirror_finale.png`：五人在四季镜前拒绝旧有牺牲规则。
+- `cg_sequel_true_ending.png`：四季同在后的海边团体后日谈。
 
-## 无法直接使用或未采用素材
+CG 生成源图位于 `image/续篇/生成源图/cg/`，运行时版本位于 `game/images/sequel/cg/`。
 
-- 原始剩余 5 个无透明通道角色伪 PNG：运行时使用透明替代版。
-- 原始旧主菜单：含不可交互的烘焙按钮，仅保留在原始素材区。
-- 学校、咖啡店与初遇插画：当前主线不需要，保留供后续扩写。
-- 原始处理前备份：仅用于追溯，不接入运行时。
+## Image Gen 模式与提示词集合
+
+本轮仓库可用能力中没有名为 `imagine` 的 skill，因此使用官方内置 `imagegen` skill 和 `image_gen` 模式完成位图生成与参考图编辑。提示词采用以下可复现骨架，并为每张图补充场景事实：
+
+1. **背景骨架**：`finished 16:9 anime visual-novel background, cinematic lighting, coherent architecture, no characters, no legible text, no watermark, leave foreground room for sprites and dialogue UI`。
+2. **角色骨架**：`full-body anime visual-novel character, preserve identity from the four-women reference, fixed hair/clothes/age cues, neutral readable pose, flat chroma-key background, no text, no props touching frame`。
+3. **CG 骨架**：`cinematic 16:9 visual-novel CG, preserve all supplied character identities, one clear emotional beat, season-specific light and props, no text, no watermark, safe lower area for dialogue UI`。
+4. **同源编辑骨架**：`preserve exact identity, architecture, camera and line work; change only the requested season, weather or canvas extension`。冬季车站以雨季车站为参考，主菜单以用户提供的黑白漫画为参考。
+
+这些约束用于避免同一人物跨图漂移、同一地点换季后变成另一栋建筑，以及主菜单扩图时重新设计人物。
+
+## 旧篇与公共素材来源
+
+- 王不稳：用户提供真人参考图锁定脸型、眼镜、发型与壮实但不胖的身形；运行时使用普通、自信两张透明立绘。
+- 许晚晴：普通、开心、严肃、忧虑、生气、惊讶 6 个透明表情。
+- 王磊：普通、严肃 2 个透明表情；张浩：普通、得意 2 个透明表情。
+- 地铁初遇 CG：原始素材转码并缩放为 `cg_subway_meeting.png`。
+- 四人客厅合影：完整人物居中，两侧同图虚化扩展为 `1920×1080`。
+- 旧篇缺失背景通过 Image Gen 补齐；原始图片和处理前备份继续保存在 `image/`，不覆盖、不删除。
+
+## 字体与发布边界
+
+- `game/fonts/SourceHanSansLite.ttf` 来自 Ren'Py 8.5.3 SDK 随附字体，用于跨平台简体中文渲染。
+- 当前未引入音乐、音效、配音或外部音频素材。
+- 正式发布前需复核 SDK 与字体许可证，并在目标平台发布包中做加载检查。

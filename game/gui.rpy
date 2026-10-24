@@ -26,7 +26,7 @@ define gui.hover_muted_color = "#81769b"
 define gui.text_color = "#ffffff"
 define gui.interface_text_color = "#ffffff"
 
-define gui.main_menu_background = "images/backgrounds/bg_main_menu_sunset.png"
+define gui.main_menu_background = "images/backgrounds/bg_main_menu_cover_wide.jpg"
 define gui.game_menu_background = Solid("#171625ee")
 
 define gui.dialogue_xpos = 330

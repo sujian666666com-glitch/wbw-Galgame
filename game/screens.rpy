@@ -85,7 +85,8 @@ screen navigation():
         yalign 0.52
         spacing 22
         if main_menu:
-            textbutton "开始游戏" action Start()
+            textbutton "新篇：樱镜町" action Start("sequel_start")
+            textbutton "旧篇：三个月，留下来" action Start("original_story_start")
         else:
             textbutton "返回游戏" action Return()
             textbutton "历史" action ShowMenu("history")
@@ -108,7 +109,7 @@ screen main_menu():
         vbox:
             spacing 28
             text config.name size 62 color "#ffffff"
-            text "在这座城市，写下答案。" size 30 color "#e6b7da"
+            text "旺不稳的奇妙冒险，开始了。" size 30 color "#e6b7da"
             null height 50
             use navigation
 

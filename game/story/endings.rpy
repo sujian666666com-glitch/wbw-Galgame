@@ -32,6 +32,11 @@ label ending_stable:
 
         narrator "他们并肩走向办公区。前路稳定，关系也在不急不缓地靠近。"
 
+    $ persistent.old_ending_route = "stable"
+    if "stable" not in persistent.old_endings_seen:
+        $ persistent.old_endings_seen = persistent.old_endings_seen + ["stable"]
+    $ renpy.save_persistent()
+
     return
 
 
@@ -78,6 +83,11 @@ label ending_rising:
         xw "等你站稳了，记得告诉我。"
 
         narrator "列车进站。王不稳独自出发，但他们都知道，这不是告别。"
+
+    $ persistent.old_ending_route = "rising"
+    if "rising" not in persistent.old_endings_seen:
+        $ persistent.old_endings_seen = persistent.old_endings_seen + ["rising"]
+    $ renpy.save_persistent()
 
     return
 
@@ -130,5 +140,10 @@ label ending_startup:
         wbw "好。"
 
         narrator "条件还不算充足，但这间小工作室已经亮起了第一盏灯。"
+
+    $ persistent.old_ending_route = "startup"
+    if "startup" not in persistent.old_endings_seen:
+        $ persistent.old_endings_seen = persistent.old_endings_seen + ["startup"]
+    $ renpy.save_persistent()
 
     return

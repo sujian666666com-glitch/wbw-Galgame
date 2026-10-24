@@ -1,4 +1,6 @@
-# 游戏剧本 —— 对话与选择
+# 旧篇剧本基线：《三个月，留下来》
+
+> 本文保留 v1 旧篇原稿。续篇完整大纲见 [`new-chapter-outline.md`](new-chapter-outline.md)，Ren'Py 实际脚本位于 `game/story/sequel_*.rpy`。
 
 > **好感度系统：** 许晚晴初始好感度 0，满分 100。好感度影响部分对话细节和最终结局走向。
 

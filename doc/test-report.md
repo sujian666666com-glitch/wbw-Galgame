@@ -4,94 +4,86 @@
 
 | 项目 | 记录 |
 | --- | --- |
-| 测试日期 | 2026-06-10 |
-| 游戏版本 | `1.0.0` |
-| Ren'Py SDK | 官方 Ren'Py 8.5.3 |
+| 测试日期 | 2026-07-13 |
+| 游戏版本 | `2.0.0` |
+| Ren'Py SDK | 官方 Ren'Py 8.5.3，构建号 `8.5.3.26051504` |
+| SDK SHA-256 | `eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45` |
 | 操作系统 | macOS 26.2，Apple Silicon |
 | 设计分辨率 | `1920×1080` |
-| 中文字体 | `game/fonts/SourceHanSansLite.ttf` |
-| 总体结论 | 第一版通过运行、lint 与自动化主流程验收；发布包尚未生成 |
+| 总体结论 | 双篇 v2 通过 lint、真实素材加载和全部自动化路线验收；发布包尚未生成 |
 
-## 已执行命令
+## 隔离验证方式
+
+最终测试没有直接使用用户现有存档和缓存。仓库被复制到 `.work/renpy-final-audit.*`，排除 `.git`、`.work`、`game/saves`、`game/cache` 与编译产物，并通过独立 `RENPY_PATH_TO_SAVES` 运行。
 
 ```bash
-RENPY="/Volumes/renpy-8.5.3-sdk/renpy-8.5.3-sdk/renpy.app/Contents/MacOS/renpy"
 PROJECT="/Users/ik/Desktop/02_学习与资料/game/my-renpy-game"
+RENPY="$PROJECT/.work/renpy-sdk/renpy-8.5.3-sdk/renpy.sh"
 
-"$RENPY" "$PROJECT" lint --error-code --check-unclosed-tags --all-problems
-"$RENPY" "$PROJECT" test global --report-detailed
-"$RENPY" "$PROJECT" run
+RENPY_PATH_TO_SAVES="<isolated-saves>" \
+  "$RENPY" "<isolated-project>" lint \
+  --error-code --check-unclosed-tags --all-problems
+
+RENPY_PATH_TO_SAVES="<isolated-saves>" \
+  "$RENPY" "<isolated-project>" test global --report-detailed
 ```
 
-## 测试结果
+自动化还会在 suite 开始时备份 `persistent.old_ending_route` 与 `persistent.old_endings_seen`，teardown 时恢复并保存，避免测试结局写入用户记录。
 
-| 编号 | 测试项 | 实际结果 | 状态 |
-| --- | --- | --- | --- |
-| T-001 | Ren'Py lint | 234 个对话块、10 个菜单、29 张图片、14 个 screens；无错误与警告 | 通过 |
-| T-002 | 项目启动 | 正常进入主菜单，标题、中文字体和背景显示正常 | 通过 |
-| T-003 | 完整主线 | 从主菜单推进开场、六章并进入稳定理想结局 | 通过 |
-| T-004 | 稳定结局 | 普通与理想表现均可到达 | 通过 |
-| T-005 | 上升结局 | 普通与理想表现均可到达 | 通过 |
-| T-006 | 创业结局 | 普通与理想表现均可到达 | 通过 |
-| T-007 | 状态变量 | 章节、好感度、能力、金钱和路线断言通过 | 通过 |
-| T-008 | label 与分支回收 | 六章顺序跳转与三个结局跳转无死路 | 通过 |
-| T-009 | 存档与读档 | 保存后改变能力值，再读档正确恢复 | 通过 |
-| T-010 | 素材显示 | 运行时素材均可载入；角色透明通道与主菜单背景视觉检查正常 | 通过 |
-| T-011 | 回滚与全部普通选项人工通读 | 未逐项人工执行 | 未执行 |
-| T-012 | 目标平台打包 | 未生成发布包 | 未执行 |
+## 最终结果
 
-自动化汇总：
+### Ren'Py lint
 
 ```text
-Test suites: 1/1 passed
-Test cases: 7/7 passed
-Hooks: 7/7 passed
-Assertions: 10/10 passed
-Time: 7.632s
+Dialogue blocks: 686
+Menus: 22（旧篇 10，续篇 12）
+Image definitions: 50
+Screens: 14
+Errors: 0
+Warnings: 0
 ```
 
-## 自动化用例
-
-- `full_flow_stable_ideal`：完整理想稳定路线。
-- `stable_normal`、`rising_normal`、`startup_normal`：三个普通结局表现。
-- `rising_ideal`、`startup_ideal`：上升与创业理想表现。
-- `save_load_smoke`：标准保存、读取及状态恢复。
-
-## 静态与素材检查
-
-- 所有公开状态变量均使用 `default` 在使用前初始化。
-- 既有基线中所有 `scene`、`show` 使用的运行时图片均已定义并成功通过 lint；本次新增 CG 已完成静态引用检查，待 SDK 回归。
-- 16 张背景与 2 张 CG 均为真正 PNG、`1920×1080`。
-- 12 张角色立绘均为真正 RGBA PNG，具备透明通道。
-- 除按用户要求删除旧主角江临的两张原始立绘外，其余 `image/` 原始素材未删除或覆盖。
-
-## 增量验收记录：2026-06-17
-
-本次变更加入用户提供的四人客厅合影，并接入第三章“小爆款”活动主视觉段落。
-
-已执行静态引用检查：
+### 自动化
 
 ```text
-defined_image_files= 30
-image_definitions= 30
-referenced_images= 84
-missing_files= []
-missing_defs= []
-new_cg= ((1920, 1080), 'RGB')
+Test suites:  1/1 passed
+Test cases:  14/14 passed
+Test hooks:  15/15 passed
+Assertions:  29/29 passed
+Time:        11.783 s
+Status:      PASSED
 ```
 
-未执行 Ren'Py lint 与自动化测试：README 记录的 `/Volumes/renpy-8.5.3-sdk/renpy-8.5.3-sdk/renpy.app/Contents/MacOS/renpy` 当前未挂载，本机也未发现可替代的 Ren'Py SDK 命令入口。已确认旁边的 `Agent17.app` 为打包运行时，会直接启动原 app，不适合对本项目执行 lint/test。
+| 用例 | 覆盖内容 | 状态 |
+| --- | --- | --- |
+| `full_flow_stable_ideal` | 旧篇从主菜单到稳定理想结局；验证双篇状态隔离 | 通过 |
+| `rising_ideal` / `startup_ideal` | 旧篇上升、创业理想表现 | 通过 |
+| `stable_normal` / `rising_normal` / `startup_normal` | 旧篇三个普通表现 | 通过 |
+| `save_load_smoke` | 标准保存、继续选择、读取及能力值恢复 | 通过 |
+| `sequel_full_flow_true_ending` | 续篇 12 个自然选择、四碎片、全信任与真结局 | 通过 |
+| `sequel_dana_ending` | Dana《春日归邻》 | 通过 |
+| `sequel_luna_ending` | Luna《盛夏坐标》 | 通过 |
+| `sequel_irene_ending` | Irene《秋实之书》 | 通过 |
+| `sequel_ruby_ending` | Ruby《冬夜来信》 | 通过 |
+| `sequel_return_ending` | 返回现实《回到灯火》 | 通过 |
+| `sequel_origin_rising_smoke` | 旧篇 rising persistent 在续篇开场可读取，随后恢复 | 通过 |
 
-## 主角更换回归
+## 素材与显示校验
 
-- 删除旧主角江临的原始与运行时立绘，代码、界面及剧情统一改为王不稳。
-- 王不稳普通、自信立绘均为真正 RGBA PNG，四角透明，统一显示高度为 1024 像素。
-- 两张真人参考图与两张 Image Gen 生成源图保存在 `image/人物/王不稳/`，正式透明立绘保存在 `game/images/characters/`。
-- 使用办公室背景按游戏实际定位合成预览，立绘尺寸、透明边缘和站位检查通过。
+- `game/images/` 共 51 张图片；所有文件可被 Ren'Py lint 和测试加载。
+- 9 张续篇背景与 6 张续篇 CG 均为真正的 `1920×1080` PNG。
+- 4 张续篇立绘运行时尺寸为 `682×1024`、RGBA，alpha 范围 `0..255`，四角 alpha 均为 `0`。
+- 主菜单实际使用 `1920×1080` 的 `bg_main_menu_cover_wide.jpg`，左侧有菜单留白、右侧保留原漫画人物。
+- 四位女主立绘与四人客厅合影逐一视觉比对：脸型、发色、服装和从左到右身份顺序一致。
+- 六张新增 CG 完成视觉抽检：人物无重复、关键道具与季节场景正确、无烘焙文字或水印。
 
-## 已知问题与剩余风险
+## 过程问题与处理
 
-- v1 为静音版本，尚无音乐、音效和配音。
-- 未逐项人工通读所有非理想选择，也未专项验证每次回滚后的变量体验。
+第一次真实素材回归中，续篇全流程加载六张高分辨率 CG，超过测试原设的 25 秒单例上限；此前已执行的 24 个断言全部通过，日志明确为 `RenpyTestTimeoutError`，不是剧情或分支错误。测试预算随后调整为 60 秒，保留全部点击与断言，重新从空缓存执行后 14 个用例在 11.783 秒内全部通过。
+
+## 已知边界
+
+- 当前为静音版本，未验证音乐、音效或配音混合。
+- 自动化覆盖主线和所有结局，但不替代对每个非理想选项文案、连续回滚和快进节奏的发行前人工体验。
 - 尚未生成 Windows、macOS、Linux 发布包。
 - 正式发布前需复核 SDK 随附字体的再分发条款。

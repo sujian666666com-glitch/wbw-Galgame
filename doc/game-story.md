@@ -1,4 +1,6 @@
-# 游戏剧情
+# 旧篇剧情基线：《三个月，留下来》
+
+> 本文保留 v1 旧篇设定。v2 默认续篇《樱镜町·四季镜》见 [`new-chapter-outline.md`](new-chapter-outline.md)，可执行分支见 [`sequel-route-map.md`](sequel-route-map.md)。
 
 ---
 
