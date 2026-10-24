@@ -66,7 +66,7 @@ label v21_chapter_01:
         narrator "王不稳险些呛到。她却轻轻笑出声，像是终于替枯燥的一天找到了乐趣。"
         show xuwanqing happy
         xw "放心，我也没打算让你现在回答。"
-        narrator "后来他才发现，自己桌边多了一盒退热贴。盒底用细字写着：你昨晚加班，别把自己熬坏。"
+        narrator "后来他才发现，自己桌边多了一盒退热贴。盒底用细字写着：别把自己熬坏，记得好好吃饭。"
     else:
         show xuwanqing normal
         xw "谢谢。至少微波炉比人好懂。"
@@ -169,7 +169,7 @@ label v21_chapter_04:
     show wangbuwen normal
     show xuwanqing normal
 
-    narrator "张浩把汇报文件发到群里的那天，王不稳反复点开附件，确认自己的名字确实从封面和修订记录摘要里消失了。"
+    narrator "当天晚上，王不稳再次点开张浩发到群里的汇报文件，确认自己的名字确实从封面和修订记录摘要里消失了。"
     narrator "他没有立刻点击发送键。冷静不代表不委屈，只是他知道没有证据的愤怒会更快消耗自己。"
     narrator "许晚晴坐到他旁边，递来一只纸杯。咖啡已经凉了。"
 
@@ -263,7 +263,7 @@ label v21_chapter_06:
         wbw "……我会认真选。"
         xw "好。选完再告诉我。"
         show xuwanqing serious
-        narrator "王不稳把那句没发出去的话留在草稿箱里。她看见了，却没有追问。"
+        narrator "王不稳把手机扣在桌上，没有重新输入那句已经删掉的问题。两人只继续讨论三条路各自的代价。"
         narrator "窗外的车流声盖过了短暂的沉默。"
 
     return
@@ -397,7 +397,7 @@ label v21_sequel_chapter_01:
     show wangbuwen normal
     show dana normal
 
-    narrator "午后的走廊里，Dana 一边领路一边介绍食堂。她说话总是很快，仿佛慢一点，身边的人便会突然消失。"
+    narrator "去春庭的路上，Dana 一边领路，一边指给他看学园食堂。她说话总是很快，仿佛慢一点，身边的人便会突然消失。"
     dana "你喜欢甜的还是咸的？对了，你有没有忌口？不喜欢太吵的位置也可以告诉我。"
     wbw "我只是来报到，你不用替我安排全部生活。"
     show dana worried
@@ -485,7 +485,7 @@ label v21_sequel_chapter_03_summer:
     wbw "现在呢？"
 
     if sequel_luna_observation_outcome == "paper_tape":
-        luna "现在我发现，你会在六十秒到达时主动回来。这个行为比口头保证更可靠。"
+        luna "现在我发现，你会在约定的六十秒内主动回来。这个行为比口头保证更可靠。"
         wbw "听上去像一份测试报告。"
         luna "对你而言，这是很高的评价。"
     elif sequel_luna_observation_outcome == "aborted":
@@ -569,6 +569,7 @@ label v21_sequel_chapter_05_winter:
     show wangbuwen normal
     show ruby normal
 
+    narrator "Ruby 把先前取下的水晶耳坠重新戴回耳边，听着广播里仍在延续的姓名。"
     narrator "通向镜室的门出现后，其他人先行检查阶梯。Ruby 却留在站台，注视着玻璃上自己刚刚写下的名字。"
     ruby "我第一次看见你的时候，其实很害怕。"
     wbw "怕我？"
