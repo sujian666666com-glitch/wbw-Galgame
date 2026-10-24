@@ -1,0 +1,207 @@
+{
+  "privacy": "Raw CLI logs and reasoning stay in ignored .work; only sanitized invocation metadata is delivered.",
+  "invocations": [
+    {
+      "invocation": "qa-baseline",
+      "models_observed": [
+        "deepseek-flash"
+      ],
+      "status": "interrupted",
+      "result_metadata": null,
+      "private_log": ".work/v21/logs/qa-baseline.jsonl",
+      "private_log_sha256": "f64b43798f65e1727d2c391dedd9629b48c6c392ff1ca3f7502cc83d58bd6f7c"
+    },
+    {
+      "invocation": "qa-compat-fix",
+      "models_observed": [
+        "deepseek-flash"
+      ],
+      "status": "completed",
+      "result_metadata": null,
+      "private_log": ".work/v21/logs/qa-compat-fix.jsonl",
+      "private_log_sha256": "fd73ecd4176e8a30cbcfa9356f5eda187fcbcc692647f13f143092edde8b2460"
+    },
+    {
+      "invocation": "qa-resume",
+      "models_observed": [
+        "deepseek-flash"
+      ],
+      "status": "completed",
+      "result_metadata": null,
+      "private_log": ".work/v21/logs/qa-resume.jsonl",
+      "private_log_sha256": "3a45b3dd0637716c7e5fd1443085ff5c9e2fc89128c3e85fbb69d4220e850f4b"
+    },
+    {
+      "invocation": "story-continuity",
+      "models_observed": [
+        "deepseek-flash",
+        "deepseek-flash[1m]"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 50780,
+        "num_turns": 18
+      },
+      "private_log": ".work/v21/logs/story-continuity.jsonl",
+      "private_log_sha256": "8bcc09093a347d928846108b47cc0668faa2770f84eb5d1b8c2aad8447a99591"
+    },
+    {
+      "invocation": "story-draft",
+      "models_observed": [
+        "deepseek-flash",
+        "deepseek-flash[1m]"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 403260,
+        "num_turns": 62
+      },
+      "private_log": ".work/v21/logs/story-draft.jsonl",
+      "private_log_sha256": "61969b3b802f90069e532f9a8a7a3f712ec78ee328a132a7c2b83dafdc3cd07d"
+    },
+    {
+      "invocation": "story-final-review",
+      "models_observed": [
+        "deepseek-flash",
+        "deepseek-flash[1m]"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 307974,
+        "num_turns": 50
+      },
+      "private_log": ".work/v21/logs/story-final-review.jsonl",
+      "private_log_sha256": "4682cf341e3b0b1a586a0a4a4d438e4435a058e048cc8e2a4a0cc55382059b0f"
+    },
+    {
+      "invocation": "story-revision",
+      "models_observed": [
+        "deepseek-flash",
+        "deepseek-flash[1m]"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 327530,
+        "num_turns": 103
+      },
+      "private_log": ".work/v21/logs/story-revision.jsonl",
+      "private_log_sha256": "432c31b9a5e0da02745928a2fd525f3e143b11d41d0cbb899499eb4f8f457e22"
+    },
+    {
+      "invocation": "story-runtime-review",
+      "models_observed": [
+        "deepseek-flash",
+        "deepseek-flash[1m]"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 314243,
+        "num_turns": 34
+      },
+      "private_log": ".work/v21/logs/story-runtime-review.jsonl",
+      "private_log_sha256": "531e7d12b737e59e9319aeb2751f7c3e0f31312eb79e08999face1d7d7b76a91"
+    },
+    {
+      "invocation": "tech-continuity",
+      "models_observed": [
+        "Grok 4.7 256K High"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 105368
+      },
+      "private_log": ".work/v21/logs/tech-continuity.jsonl",
+      "private_log_sha256": "66599be51a0a9427343dffc3af3cb3d83940e7c706117d18b256888429b6c322"
+    },
+    {
+      "invocation": "tech-final-fixes",
+      "models_observed": [
+        "Grok 4.7 256K High"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 166951
+      },
+      "private_log": ".work/v21/logs/tech-final-fixes.jsonl",
+      "private_log_sha256": "b5835ebaa08240e9000b60d903363df528d321ae3e8cc2029669708e7feb998d"
+    },
+    {
+      "invocation": "tech-foundation",
+      "models_observed": [
+        "Grok 4.7 256K High"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 1438027
+      },
+      "private_log": ".work/v21/logs/tech-foundation.jsonl",
+      "private_log_sha256": "cec698850c25503409613de90bc0dad306e0b42576156e5039a154c11d4f977a"
+    },
+    {
+      "invocation": "tech-native-ui-fix",
+      "models_observed": [
+        "Grok 4.7 256K High"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 641554
+      },
+      "private_log": ".work/v21/logs/tech-native-ui-fix.jsonl",
+      "private_log_sha256": "7f70b292168d4f6df23cb91c327a2ae04072730b997efdafd7c5f66569c53344"
+    },
+    {
+      "invocation": "tech-release-review",
+      "models_observed": [
+        "Grok 4.7 256K High"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 726781
+      },
+      "private_log": ".work/v21/logs/tech-release-review.jsonl",
+      "private_log_sha256": "751bf0e9f4c9798e8f1172e714404828cb61225ca10f17e0da43746eb2df5c92"
+    },
+    {
+      "invocation": "tech-story-integration",
+      "models_observed": [
+        "Grok 4.7  High"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 491720
+      },
+      "private_log": ".work/v21/logs/tech-story-integration.jsonl",
+      "private_log_sha256": "145292e6e42db191aee052b26105d7f14b53d6b7b04a1cf0446e77e665e9053f"
+    }
+  ],
+  "art": {
+    "agent": "Codex",
+    "model": "gpt-6.1-sol",
+    "accepted_assets": 9,
+    "serial_image_calls": 13,
+    "manifest": "art/manifest.json"
+  },
+  "in_progress": []
+}

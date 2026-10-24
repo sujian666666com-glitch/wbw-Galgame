@@ -25,6 +25,15 @@ def main():
         raise SystemExit(f'Ren\'Py SDK not found: {sdk}')
     if subprocess.check_output(['git', 'status', '--porcelain'], cwd=root).strip():
         raise SystemExit('Commit the reviewed source before packaging; working tree is not clean.')
+    lineage = root / 'doc/collaboration/v2.1/compiled-lineage.json'
+    if not lineage.is_file():
+        raise SystemExit('Freeze and verify old-game statement identities before packaging.')
+    mapping = json.loads(lineage.read_text())
+    for entry in mapping['files']:
+        for field in ('source', 'compiled'):
+            path = root / entry[field]
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != entry[field + '_sha256']:
+                raise SystemExit(f'Statement mapping is stale: {path}')
     commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
     output.mkdir(parents=True, exist_ok=True)
     work_parent = root / '.work/v21/builds'
@@ -44,7 +53,10 @@ def main():
     log = stage / 'build.log'
     print(f'Building commit {commit}; log: {log}', flush=True)
     with log.open('w') as stream:
-        subprocess.run([str(sdk / 'renpy.sh'), str(launcher), 'distribute', str(project),
+        subprocess.run(['python3', str(root / 'tools/v21_gui_lock_exec.py'),
+                        '--lock', str(root / '.work/v21/gui.lock'), '--label', 'macOS fixed-commit build',
+                        '--max-runtime', '900', '--',
+                        str(sdk / 'renpy.sh'), str(launcher), 'distribute', str(project),
                         '--package', 'mac', '--format', 'app-zip', '--no-update',
                         '--destination', str(stage / 'packages')],
                        cwd=stage, env=environment, stdout=stream, stderr=subprocess.STDOUT, check=True)
@@ -56,9 +68,9 @@ def main():
     with zipfile.ZipFile(mac_zip) as archive:
         paths = archive.namelist()
         forbidden = [name for name in paths if any(part in name.split('/') for part in
-                     ('.git', '.work', '.omc', 'ik.md', 'testcases.rpy', 'testcases.rpyc'))
+                     ('.git', '.work', '.omc', 'ik.md', 'AGENTS.md', 'testcases.rpy', 'testcases.rpyc'))
                      or '/game/saves/' in name or '/game/cache/' in name
-                     or '/image/' in name or '/doc/' in name or '/tools/' in name]
+                     or '/image/' in name or '/doc/' in name or '/tools/' in name or '/old-game/' in name]
         if forbidden:
             raise SystemExit(f'Development files found in game package: {forbidden[:10]}')
         if not any(name.endswith('/licenses/SourceHanSansLite-OFL.txt') for name in paths):
@@ -70,7 +82,7 @@ def main():
     artifacts = {p.name: {'bytes': p.stat().st_size,
                  'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in (source_zip, mac_zip)}
     receipt = {'source_commit': commit, 'sdk': str(sdk), 'build_log': str(log),
-               'notarized': False, 'artifacts': artifacts,
+               'notarized': False, 'artifacts': artifacts, 'statement_mapping_sha256': hashlib.sha256(lineage.read_bytes()).hexdigest(),
                'runtime_acceptance': 'pending: launch the extracted final application separately'}
     (output / 'build-receipt.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n')
     (output / 'SHA256SUMS').write_text(''.join(f'{v["sha256"]}  {k}\n' for k, v in artifacts.items()))
