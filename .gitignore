@@ -11,6 +11,8 @@ game/saves/
 game/tl/*/common.rpym
 *.rpyc
 *.rpymc
+__pycache__/
+*.py[cod]
 
 # Ren'Py logs and diagnostics
 log.txt
