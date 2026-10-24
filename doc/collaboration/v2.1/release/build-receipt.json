@@ -1,0 +1,25 @@
+{
+  "source_commit": "35896bcdbcdbe18c4c7b27803e93258a2a81291d",
+  "sdk": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/renpy-sdk/renpy-8.5.3-sdk",
+  "build_log": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/builds/35896bcd-hxua_jnk/build.log",
+  "notarized": false,
+  "bundle_identifier": "com.wbw.galgame",
+  "stripped_sdk_cache": [
+    "three_months_to_stay.app/Contents/Resources/autorun/game/cache/",
+    "three_months_to_stay.app/Contents/Resources/autorun/game/cache/build_info.json",
+    "three_months_to_stay.app/Contents/Resources/autorun/game/cache/bytecode-312.rpyb"
+  ],
+  "artifacts": {
+    "wbw-galgame-2.1.0-source.zip": {
+      "bytes": 242285497,
+      "sha256": "4da45914ea1535439041ffd4f2c6103e9296345fa4f318bb5b6eca7b66739fbd"
+    },
+    "wbw-galgame-2.1.0-mac.zip": {
+      "bytes": 155305556,
+      "sha256": "1a13851d273d2952dab9fd6fb83ff0878fec3694f5617eec971ff8739a075ec7"
+    }
+  },
+  "statement_mapping_sha256": "c2c3cdcbefcbb87ac05d0834bdcbc46b03c57b39864f078ce6822c3687625e7e",
+  "runtime_acceptance": "passed: release-acceptance.json; native clean app exited 0; no remaining process group",
+  "runtime_equivalence": "Sources/assets and story compiled IDs identical; verified compile-time identifiers differ, see acceptance/compilation-comparison.json."
+}

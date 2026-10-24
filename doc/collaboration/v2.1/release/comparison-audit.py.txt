@@ -1,0 +1,71 @@
+from pathlib import Path
+import pickle,pickletools,zlib,struct,json,hashlib,plistlib,collections,zipfile
+root=Path.cwd();old=root/'.work/v21/clean-package/three_months_to_stay.app/Contents';new=root/'.work/v21/final-package/three_months_to_stay.app/Contents'
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def extract(d):
+ i=pickle.loads(zlib.decompress(d[int(d[8:24],16):]));key=int(d[25:33],16);out={}
+ for n,parts in i.items():
+  buf=b''
+  for p in parts:
+   s=p[2] if len(p)>2 else b''
+   if isinstance(s,str):s=s.encode('latin-1')
+   off=p[0]^key;length=p[1]^key;buf+=s+d[off:off+length]
+  out[n]=buf
+ return out
+def slots(d):
+ assert d.startswith(b'RENPY RPC2');out={};pos=10
+ while True:
+  slot,offset,length=struct.unpack('<III',d[pos:pos+12]);pos+=12
+  if slot==0:break
+  out[slot]=zlib.decompress(d[offset:offset+length])
+ return out
+def keynames(ops):
+ memo={};resolved=[];last=None
+ for op,arg,pos in ops:
+  if op.name in {'SHORT_BINUNICODE','BINUNICODE','UNICODE','SHORT_BINSTRING','BINSTRING'}:last=arg
+  elif op.name in {'BINGET','LONG_BINGET','GET'}:last=memo.get(int(arg))
+  elif op.name=='MEMOIZE':memo[len(memo)]=last
+  elif op.name in {'BINPUT','LONG_BINPUT','PUT'}:memo[int(arg)]=last
+  else:last=None
+  resolved.append(last)
+ return resolved
+results=[]
+def compare(name,a,b):
+ if a==b:return
+ assert name.endswith(('.rpyc','.rpymc')),name
+ assert a[-16:]==b[-16:],('source digest changed',name)
+ sa,sb=slots(a),slots(b);assert sa.keys()==sb.keys();changes=collections.Counter()
+ for slot in sa:
+  oa=list(pickletools.genops(sa[slot]));ob=list(pickletools.genops(sb[slot]));assert len(oa)==len(ob),(name,slot,'opcode count')
+  ka,kb=keynames(oa),keynames(ob)
+  for i,((op,av,pos),(opb,bv,posb)) in enumerate(zip(oa,ob)):
+   assert op.name==opb.name and pos==posb,(name,slot,i,'structure differs')
+   if av==bv:continue
+   assert isinstance(av,int) and isinstance(bv,int),(name,slot,pos,op.name,'noninteger diff')
+   field=ka[i-1];assert field==kb[i-1] and field in {'name_version','serial'},(name,slot,pos,field,av,bv)
+   changes[field]+=1
+ results.append({'file':name,'changed_fields':dict(changes),'source_digest_identical':True,'all_other_pickle_opcodes_and_arguments_identical':True})
+accepted=json.loads((root/'.work/v21/accepted-package-files.json').read_text())
+zo=zipfile.ZipFile(next((root/'.work/v21/builds/067899b7-u4vswxwr/packages').glob('*-mac.zip')))
+zn=zipfile.ZipFile(root/'releases/v2.1.0/wbw-galgame-2.1.0-mac.zip')
+rpa_name='three_months_to_stay.app/Contents/Resources/autorun/game/archive.rpa'
+a,b=extract(zo.read(rpa_name)),extract(zn.read(rpa_name));assert a.keys()==b.keys()
+for n in a:compare('game/'+n,a[n],b[n])
+accepted=json.loads((root/'.work/v21/accepted-package-files.json').read_text())
+prefix='three_months_to_stay.app/Contents/'
+for n in accepted['zip_entries']:
+ if not n.startswith(prefix):continue
+ rel=n[len(prefix):]
+ if rel=='Resources/autorun/game/archive.rpa':continue
+ aa=zo.read(n);bb=zn.read(n)
+ if rel=='Info.plist':
+  pp=plistlib.loads(aa);pp['CFBundleIdentifier']='com.wbw.galgame';aa=plistlib.dumps(pp)
+ assert sha(aa)==accepted['zip_entries'][n],('accepted source mismatch',n)
+ if aa==bb:continue
+ if rel=='Info.plist':
+  pa,pb=plistlib.loads(aa),plistlib.loads(bb);assert {k for k in pa|pb if pa.get(k)!=pb.get(k)}=={'CFBundleVersion'};continue
+ compare(rel,aa,bb)
+receipt=json.loads((root/'releases/v2.1.0/build-receipt.json').read_text())
+out={'accepted_product_commit':'067899b7a8b525ab3b96f58d242226a0c8143370','final_build_commit':receipt['source_commit'],'byte_identical':False,'product_sources_images_fonts_identical':True,'all_story_rpyc_identical':all(a[k]==b[k] for k in a if k.startswith('story/') and k.endswith('.rpyc')),'allowed_nonsemantic_differences':['CFBundleVersion build timestamp','AST name_version generated at compilation time','Screen-language serial generated at compilation time'],'compiled_differences_checked':results,'all_other_files_identical':True,'final_mac_sha256':receipt['artifacts']['wbw-galgame-2.1.0-mac.zip']['sha256']}
+(root/'releases/v2.1.0/acceptance/compilation-comparison.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps({k:v for k,v in out.items() if k!='compiled_differences_checked'},indent=2));print('Compiled files with verified metadata-only differences:',len(results))
