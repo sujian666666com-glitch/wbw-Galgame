@@ -1,0 +1,506 @@
+{
+  "model": "gpt-6.1-sol",
+  "generation_method": "designated gen.sh, serial, --keep; no fallback accepted",
+  "assets": [
+    {
+      "id": "dana_worried",
+      "source_path": "image/v21/characters/dana_worried.png",
+      "source_sha256": "b857d7250d0f0530b6bf5a72edd4303e7449bed75afe963c4adce86328ccf377",
+      "source_size": [
+        1024,
+        1536
+      ],
+      "runtime_path": "game/images/v21/characters/dana_worried.png",
+      "runtime_sha256": "d793402b18d71590238af04b83c92c14cca3a87f0337d0ddc594e874afeab1c9",
+      "runtime_size": [
+        682,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "bbox": [
+          0,
+          25,
+          658,
+          948
+        ]
+      },
+      "references": [
+        {
+          "path": "game/images/sequel/characters/dana_normal.png",
+          "sha256": "243856796f95923e8cab8a8b2e8cafb599b247c7ec013322a89f8ad9e3bb8fb9"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16ccd-029d-70a0-8d25-7e430884a6ec/exec-785ef681-73b8-48f4-9206-b683c80fc1d3.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.unnmxQ",
+      "generation_log": ".work/art-logs/dana_worried.log",
+      "fallback_used": false,
+      "review": "担忧眉眼和抿唇清晰；粉色双马尾/衣裙/挥手保持；全身双鞋完整；深浅底合成无彩边。",
+      "visual_status": "passed",
+      "renpy_image_id": "dana worried",
+      "edge_evidence": "doc/collaboration/v2.1/art/qa/dana_worried-edges.png"
+    },
+    {
+      "id": "luna_soft",
+      "source_path": "image/v21/characters/luna_soft.png",
+      "source_sha256": "36c4ed09c0babc5e9870b1174a649ad040ce404721d88ab2f528d14b8991ca4e",
+      "source_size": [
+        1024,
+        1536
+      ],
+      "runtime_path": "game/images/v21/characters/luna_soft.png",
+      "runtime_sha256": "04d7ed4a372fa8b8d191b16ec9ce148c806568c8e3e68577bd187295b2bf1fc9",
+      "runtime_size": [
+        682,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "bbox": [
+          188,
+          58,
+          645,
+          987
+        ]
+      },
+      "references": [
+        {
+          "path": "game/images/sequel/characters/luna_normal.png",
+          "sha256": "17b43a80fdbe5aa710d4f4acc9f9a8a5a7e77948b5a6ce6c849346a0d1d4bc15"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16cce-c61f-7b61-9750-3732771ec880/exec-7380e90f-d703-437d-97ed-bf05a9584d7f.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.J5r0hX",
+      "generation_log": ".work/art-logs/luna_soft.log",
+      "fallback_used": false,
+      "review": "柔和微笑和温暖目光清晰；青绿短发/黑制服/书本/插袋手保持；全身双鞋完整；深浅底合成无彩边。",
+      "visual_status": "passed",
+      "renpy_image_id": "luna soft",
+      "edge_evidence": "doc/collaboration/v2.1/art/qa/luna_soft-edges.png"
+    },
+    {
+      "id": "irene_shaken",
+      "source_path": "image/v21/characters/irene_shaken.png",
+      "source_sha256": "33f3353016fcd7f0ba90214d8fd48f92244f87625bbdeb34aa1a51951dc561c5",
+      "source_size": [
+        1024,
+        1536
+      ],
+      "runtime_path": "game/images/v21/characters/irene_shaken.png",
+      "runtime_sha256": "7b16f5614864b7468bc412cc05241137073c9e9e0fc26a74646d49ad340e90ad",
+      "runtime_size": [
+        682,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "bbox": [
+          38,
+          20,
+          673,
+          963
+        ]
+      },
+      "references": [
+        {
+          "path": "game/images/sequel/characters/irene_normal.png",
+          "sha256": "7874fa33d74c0b67286e33586ff76579a7419ef957de888a6148eea5ce7dd3be"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16cd0-da4f-7f42-bf2a-ed90b0bccb06/exec-27ca9390-a7b8-482d-958b-09b52e3b57e1.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.fOuSBS",
+      "generation_log": ".work/art-logs/irene_shaken.log",
+      "fallback_used": false,
+      "review": "内收扬眉、轻启唇与脆弱目光表达动摇；金发盘发/环耳饰/白衬衣/牛仔裤/抱臂保持；深浅底合成通过。",
+      "visual_status": "passed",
+      "renpy_image_id": "irene shaken",
+      "edge_evidence": "doc/collaboration/v2.1/art/qa/irene_shaken-edges.png"
+    },
+    {
+      "id": "irene_relieved",
+      "source_path": "image/v21/characters/irene_relieved.png",
+      "source_sha256": "185cd65193acd57be7509bc3ac447a54ac324a253232b57fe083ae4cab389256",
+      "source_size": [
+        1024,
+        1536
+      ],
+      "runtime_path": "game/images/v21/characters/irene_relieved.png",
+      "runtime_sha256": "a8af43524ae7cb06f4604860df7a8963ffb40bfb7a4c2ec392d98682198108ae",
+      "runtime_size": [
+        682,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "bbox": [
+          27,
+          21,
+          663,
+          1024
+        ]
+      },
+      "references": [
+        {
+          "path": "game/images/sequel/characters/irene_normal.png",
+          "sha256": "7874fa33d74c0b67286e33586ff76579a7419ef957de888a6148eea5ce7dd3be"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16cd2-ec40-7752-8e28-f72663073637/exec-9440e7f3-22f9-44ed-a560-e661f9e6dbcc.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.mNzU6J",
+      "generation_log": ".work/art-logs/irene_relieved.log",
+      "fallback_used": false,
+      "review": "舒展眉眼与克制微笑表达释然；与动摇版本区别明确；服装/抱臂/完整双鞋保持；深浅底合成通过。",
+      "visual_status": "passed",
+      "renpy_image_id": "irene relieved",
+      "edge_evidence": "doc/collaboration/v2.1/art/qa/irene_relieved-edges.png"
+    },
+    {
+      "id": "ruby_resolute",
+      "source_path": "image/v21/characters/ruby_resolute.png",
+      "source_sha256": "8ba6adc1ac3cde87df14e8737ea5c38b9a73c70e47d8a2f280d2cede140d993e",
+      "source_size": [
+        1024,
+        1536
+      ],
+      "runtime_path": "game/images/v21/characters/ruby_resolute.png",
+      "runtime_sha256": "f283ddf205df7b2fc782774e96b05c1e3ca915ead7ca9ddd7a1e2ccd94224f11",
+      "runtime_size": [
+        682,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "bbox": [
+          91,
+          18,
+          621,
+          961
+        ]
+      },
+      "references": [
+        {
+          "path": "game/images/sequel/characters/ruby_normal.png",
+          "sha256": "91757f55d850e8c6ec688b673dca728100d51a494ae7561e9d2884b0c4696374"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16cd9-ae7f-7e62-8349-39f457d74f3f/exec-dbc695c6-eb1a-46aa-b099-0b8b52561e32.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.qvjJja",
+      "generation_log": ".work/art-logs/ruby_resolute.log",
+      "fallback_used": false,
+      "review": "稳定目光和略收眉表达安静坚定；银发卷双马尾/紫褐连衣裙/交握手/棕鞋保持；深浅底合成通过。",
+      "visual_status": "passed",
+      "renpy_image_id": "ruby resolute",
+      "edge_evidence": "doc/collaboration/v2.1/art/qa/ruby_resolute-edges.png"
+    },
+    {
+      "id": "bg_train_interior_dusk",
+      "source_path": "image/v21/backgrounds/bg_train_interior_dusk.png",
+      "source_sha256": "ba9d2990e2ef10a466d541e4c86a4f5bd5d6a5da90bbe18845907aeb264c3ff9",
+      "source_size": [
+        1672,
+        941
+      ],
+      "runtime_path": "game/images/v21/backgrounds/bg_train_interior_dusk.png",
+      "runtime_sha256": "fdb11058dec6ce4f8c1758ae55b2deb9acb7e33f9d79c2a5f25f8b3c25c7bdfb",
+      "runtime_size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "alpha": null,
+      "references": [
+        {
+          "path": "game/images/backgrounds/bg_train_platform.png",
+          "sha256": "2595a5c1f62db6b0a1648fbea6e577d2e5a4418ec4e86ad6245edc9cd4bcac92"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16cde-c27f-7793-9b62-aec1f48cf720/exec-42297a8b-73f0-44fd-a8d6-2ddd0cd0dc8d.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.kO3lcu",
+      "generation_log": ".work/art-logs/bg_train_interior_dusk.log",
+      "fallback_used": false,
+      "review": "夕阳列车内景、双座双杯；无人物和文字；窗景在上方，下方座椅可承载对话框。",
+      "visual_status": "passed",
+      "renpy_image_id": "bg v21_train_interior_dusk"
+    },
+    {
+      "id": "cg_xuwanqing_rain_close",
+      "source_path": "image/v21/cg/cg_xuwanqing_rain_close.png",
+      "source_sha256": "82b02580576d43a65b81dbf5f3f44e4eba35bc4306ac46a21e8a19814ed7b0b1",
+      "source_size": [
+        1672,
+        941
+      ],
+      "runtime_path": "game/images/v21/cg/cg_xuwanqing_rain_close.png",
+      "runtime_sha256": "b4a323511da72015516648fafa8c480e0b6dc8eb7f727d1c86e9d69505b1826a",
+      "runtime_size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "alpha": null,
+      "references": [
+        {
+          "path": "image/v21/rejected/cg_xuwanqing_rain_close_v2_narrow_face.png",
+          "sha256": "ba7e560cf45382f8f74f12db23e5abb3d8b2768510c36abb3340a1c525934d7f"
+        },
+        {
+          "path": "image/v21/references/wangbuwen_normal_head.png",
+          "sha256": "757d172e5d87b1a14d86e265843e5cdb0c35b2640227453f3f4497320f8b6cb2"
+        },
+        {
+          "path": "game/images/characters/wangbuwen_normal.png",
+          "sha256": "a1e2a32928c26aba60d208862e06c5553246e667363a0eec68729c3db38d2f70"
+        },
+        {
+          "path": "game/images/characters/xuwanqing_normal.png",
+          "sha256": "0bedbf5c7d797454bc935b8f8063b8acec28bf54391a7da609838ef303ac05df"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16cff-850d-7362-b4d6-125d95d52a0f/exec-3929bf65-4487-45ae-a907-ba0cf7573c02.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.62QMKg",
+      "generation_log": ".work/art-logs/cg_xuwanqing_rain_close.log",
+      "fallback_used": false,
+      "review": "已按当前王不稳normal锁定宽圆脸/眼镜/棕黑短发/蓝外套灰T，非早期CG男主；肢体自然、亲密行为克制自愿，脸位于对话框上方。",
+      "visual_status": "passed",
+      "renpy_image_id": "cg v21_xuwanqing_rain_close",
+      "independent_review": "主Agent已实看修订版，与当前normal身份对应，通过。"
+    },
+    {
+      "id": "cg_ruby_ending_kiss",
+      "source_path": "image/v21/cg/cg_ruby_ending_kiss.png",
+      "source_sha256": "59e4cba46011342aa0d45908d6ed356f4a295ed058d7f60ea48d73d368489151",
+      "source_size": [
+        1672,
+        941
+      ],
+      "runtime_path": "game/images/v21/cg/cg_ruby_ending_kiss.png",
+      "runtime_sha256": "f4271a688e70b58e2a4b6ab7ccbc07a1caa7e8093fa382a088cbefc3927dd13c",
+      "runtime_size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "alpha": null,
+      "references": [
+        {
+          "path": "image/v21/rejected/cg_ruby_ending_kiss_v1_male_drift.png",
+          "sha256": "33c65b8ca5a5abf11b6dea6879edce643d43ecce9381c945582b61a59e733370"
+        },
+        {
+          "path": "game/images/characters/wangbuwen_normal.png",
+          "sha256": "a1e2a32928c26aba60d208862e06c5553246e667363a0eec68729c3db38d2f70"
+        },
+        {
+          "path": "game/images/characters/wangbuwen_confident.png",
+          "sha256": "59075b051dcaa4a5a6079453a10be77af7050ad923e782b8157775caa63b42a8"
+        },
+        {
+          "path": "game/images/sequel/characters/ruby_normal.png",
+          "sha256": "91757f55d850e8c6ec688b673dca728100d51a494ae7561e9d2884b0c4696374"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16cf9-9352-7f60-9d78-7dcf5fe28619/exec-55176aa8-dc07-4b61-b0fe-cc6093260c60.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.w8AI1e",
+      "generation_log": ".work/art-logs/cg_ruby_ending_kiss.log",
+      "fallback_used": false,
+      "review": "已按当前王不稳normal锁定宽圆脸/眼镜/棕黑短发/蓝外套灰T，非早期CG男主；肢体自然、亲密行为克制自愿，脸位于对话框上方。",
+      "visual_status": "passed",
+      "renpy_image_id": "cg v21_ruby_ending_kiss",
+      "independent_review": "主Agent已实看修订版，与当前normal身份对应，通过。"
+    },
+    {
+      "id": "bg_old_house_mirror",
+      "source_path": "image/v21/backgrounds/bg_old_house_mirror.png",
+      "source_sha256": "1cfe5577dc784e2283dc7c58c62aa6021424195a2efef460cef631a5a60c8451",
+      "source_size": [
+        1672,
+        941
+      ],
+      "runtime_path": "game/images/v21/backgrounds/bg_old_house_mirror.png",
+      "runtime_sha256": "296c2092910513f0b7a9be97ceb57797433134b280d45141fd46635183daeb10",
+      "runtime_size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "alpha": null,
+      "references": [
+        {
+          "path": "game/images/sequel/backgrounds/bg_old_house_day.png",
+          "sha256": "11188d1fd533b931484bc97396de407e6f90503c25dd43ad55f503a75f91da2f"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16d10-3425-7241-a02a-383415db6bf1/exec-1c848467-ccef-4dda-a62c-0ef84efd6c71.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.r9OfVZ",
+      "generation_log": ".work/art-logs/bg_old_house_mirror.log",
+      "fallback_used": false,
+      "review": "凌晨旧宅走廊、竖向全身镜居中、木梁灰墙延续；镜面中心清空供代码叠字，无床/人/文字。已保存运行时图，遵用户暂停重负载指令等待主Agent独立审查。",
+      "renpy_image_id": "bg v21_old_house_mirror",
+      "visual_status": "passed_by_art_owner_pending_independent_review"
+    }
+  ],
+  "original_assets_verification": {
+    "file_count": 110,
+    "changed_files": [],
+    "hash_algorithm": "SHA-256",
+    "baseline_snapshot": "doc/collaboration/v2.1/art/original-hashes.json",
+    "snapshot_sha256": "8b387116efeac35b3915cf111c76da520626f513c4d600ff305fba35f40b9227"
+  },
+  "rejected_attempts": [
+    {
+      "id": "cg_xuwanqing_rain_close",
+      "source_path": "image/v21/rejected/cg_xuwanqing_rain_close_v1_wrong_male.png",
+      "source_sha256": "425732daebe634024d398f26f1934b5bfb4a830f0b0caa6d5dfbc7faa178b7d0",
+      "source_size": [
+        1672,
+        941
+      ],
+      "runtime_path": "game/images/v21/cg/cg_xuwanqing_rain_close.png",
+      "runtime_sha256": "166636e4da7119a1c9101935553d47944ab5443ab7cce09611647bb0f30dcb6f",
+      "runtime_size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "alpha": null,
+      "references": [
+        {
+          "path": "game/images/cg/cg_subway_meeting.png",
+          "sha256": "b188df9c31a339485912fbfab2834239247c3f9127b3c219f1633e0e3ff5e561"
+        },
+        {
+          "path": "game/images/characters/xuwanqing_normal.png",
+          "sha256": "0bedbf5c7d797454bc935b8f8063b8acec28bf54391a7da609838ef303ac05df"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16ce8-5713-76d1-9b2e-966b9a14b11c/exec-f4c8605e-fc72-4bc7-8b19-d084d7dfc610.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.w8CWq0",
+      "generation_log": ".work/art-logs/cg_xuwanqing_rain_close_v1.log",
+      "fallback_used": false,
+      "review": "误用早期CG男主，当前王不稳身份不符：缺眼镜、脸型过尖、黑衬衣错误。主Agent独立审查拒收。",
+      "visual_status": "rejected"
+    },
+    {
+      "id": "cg_ruby_ending_kiss_v1",
+      "source_path": "image/v21/rejected/cg_ruby_ending_kiss_v1_male_drift.png",
+      "sha256": "33c65b8ca5a5abf11b6dea6879edce643d43ecce9381c945582b61a59e733370",
+      "visual_status": "rejected",
+      "review": "男主虽有眼镜蓝外套，但脸型过窄，未以当前normal为权威身份；主动拒收重做。",
+      "generation_log": ".work/art-logs/cg_ruby_ending_kiss_v1.log"
+    },
+    {
+      "id": "cg_xuwanqing_rain_close_v2",
+      "source_path": "image/v21/rejected/cg_xuwanqing_rain_close_v2_narrow_face.png",
+      "sha256": "ba7e560cf45382f8f74f12db23e5abb3d8b2768510c36abb3340a1c525934d7f",
+      "visual_status": "rejected",
+      "review": "眼镜和衣装正确，但脸型鼻梁仍美型化、颈部过长。主Agent独立拒收；第三版增加normal头颈裁图并转正面三分之四角度。",
+      "generation_log": ".work/art-logs/cg_xuwanqing_rain_close_revision.log"
+    },
+    {
+      "id": "bg_old_house_mirror",
+      "source_path": "image/v21/rejected/bg_old_house_mirror_v1_wrong_room_time.png",
+      "source_sha256": "aa7124da11fcca38582dbbc9f11b5cc5c64109a2eb23159d2be7bd9fa1993078",
+      "source_size": [
+        1672,
+        941
+      ],
+      "runtime_path": "game/images/v21/backgrounds/bg_old_house_mirror.png",
+      "runtime_sha256": "582bcbdeb27834e991ca39ea1a5b92379c30af98a02ca4d199ad590cc113cc78",
+      "runtime_size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "alpha": null,
+      "references": [
+        {
+          "path": "game/images/sequel/backgrounds/bg_old_house_day.png",
+          "sha256": "11188d1fd533b931484bc97396de407e6f90503c25dd43ad55f503a75f91da2f"
+        },
+        {
+          "path": "game/images/sequel/backgrounds/bg_mirror_chamber.png",
+          "sha256": "01b575d78c24b5b75235daa8f6203bdce9da44d6db2d06fb10e03c833e470d3e"
+        }
+      ],
+      "model": "gpt-6.1-sol",
+      "tool_artifact_path": "/Users/ik/.codex/generated_images/01a16ce3-9e2a-7570-b0ce-2af8702b6b17/exec-45af31af-4740-497e-818a-7245046f1314.png",
+      "codex_work_path": "/var/folders/5g/n99g0d8n19b98wg0t6rt0f8c0000gn/T//codex-imagegen.DLrfgL",
+      "generation_log": ".work/art-logs/bg_old_house_mirror_v1.log",
+      "fallback_used": false,
+      "review": "未核对剧情导致场景/时间错误：白天卧室横镜不符合凌晨走廊全身镜；镜面偏右也不符合程序居中叠字。",
+      "visual_status": "rejected",
+      "renpy_image_id": "bg v21_old_house_mirror"
+    }
+  ],
+  "reference_derivatives": [
+    {
+      "path": "image/v21/references/wangbuwen_normal_head.png",
+      "sha256": "757d172e5d87b1a14d86e265843e5cdb0c35b2640227453f3f4497320f8b6cb2",
+      "source": "game/images/characters/wangbuwen_normal.png",
+      "source_sha256": "a1e2a32928c26aba60d208862e06c5553246e667363a0eec68729c3db38d2f70",
+      "operation": "Pillow crop (235,12,375,190), Lanczos resize 560x712, composite over gray #d8d8d8; no redraw"
+    }
+  ],
+  "generation_count": 13,
+  "accepted_asset_count": 9
+}
