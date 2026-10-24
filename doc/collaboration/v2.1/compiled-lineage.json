@@ -36,15 +36,15 @@
     },
     {
       "source": "game/options.rpy",
-      "source_sha256": "073a439c1cf050fa003b9b5c2de26fc8c61f21ed9efbaca6999dac8a0299a08f",
+      "source_sha256": "887bf0f86f8135d9a73f85be6dab1ff07b9e6f0de1f31e95f8580079e742e5da",
       "compiled": "old-game/options.rpyc",
-      "compiled_sha256": "23346e34826e31ac6a655a9ab595b87f361b3fb7de1d360bad16d42b2958deac"
+      "compiled_sha256": "2380311d49e39e460731b4d3a01a002bf376088bbebca168b3d20f1916464355"
     },
     {
       "source": "game/screens.rpy",
-      "source_sha256": "e816fa27fdb53e52cac01531848333ce68b5920906729f10f97b2af9ccf86579",
+      "source_sha256": "a2481e5e20bae43cf68bfdc9566e75dd116c9780e88a99cd2b2b0422a4beca6f",
       "compiled": "old-game/screens.rpyc",
-      "compiled_sha256": "cdf9bf8b53936a7f18266cf4a20dd2d960465b02644ff107fff2bb7de46a1be2"
+      "compiled_sha256": "a83e05cc1a91afdf1f6d311b223323c3e466de826507d38af28c8a9432d501e3"
     },
     {
       "source": "game/script.rpy",

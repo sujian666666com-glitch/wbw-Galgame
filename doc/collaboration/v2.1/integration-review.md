@@ -22,3 +22,5 @@ qa/resume-report.md是首次恢复阶段的失败快照，不代表最终验收�
 Pi最终报告已明确纠正old-game误判，4份兼容夹具、cold/warm 24用例81断言均通过。Cursor对监管的审查后，主Agent补充了SIGKILL后等待进程组消失，以及Darwin空组瞬时EPERM状态处理；三代进程、子与孙均忽略TERM的五项probe全部通过，确切mock已纳入tools/v21_supervisor_probe.py。外部主动SIGKILL监管器、进程自行setsid脱组不是现有RenPy调用链行为，仍不承诺监管器无法被强制杀死。
 
 原生验收发现三项自动化未覆盖的UI缺陷，已由Cursor修复并合入，见tech/native-ui-fixes.md。正常模式旧篇高低及全部六种结局表现已完成，续篇和发行包继续验收。
+
+原生自动播放未推进时定位到旧版选项默认名拼错：preferences.auto_forward_time不是引擎读取的afm_time，导致真实afm_time为0。主Agent改正该默认字段；这与Cursor正在修复的历史viewport文件不冲突。SDK display/behavior.py:732要求afm_time非零。须以新包默认设置及实际自动推进复测，不只断言afm_enable开关。

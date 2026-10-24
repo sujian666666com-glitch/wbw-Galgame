@@ -1,0 +1,13 @@
+{
+  "source_commit": "db9aaef4bb33b3786f4e50a1fd31bc2175e67e00",
+  "mac_archive_sha256": "75e9c2551f86a8734766d77fea1fba987fddf11f9b3cf9b2482f5ac2564c83c8",
+  "rpa": [
+    "three_months_to_stay.app/Contents/Resources/autorun/game/archive.rpa"
+  ],
+  "runtime_images_identical_to_source": 60,
+  "product_source_scripts_in_rpa": 26,
+  "test_instrumentation_in_rpa": false,
+  "sdk_license_present": true,
+  "cache_removed": true,
+  "native_startup": "pending"
+}
