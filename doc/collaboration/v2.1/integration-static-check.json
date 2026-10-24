@@ -88,6 +88,6 @@
       "hash_matched": true
     }
   ],
-  "native_playthrough": "pending",
-  "automated_regression": "pending"
+  "native_playthrough": "passed: native/final-acceptance.md",
+  "automated_regression": "passed: qa/final-ui-regression.md"
 }

@@ -1,0 +1,20 @@
+{
+  "source_commit": "9b64106",
+  "source_files": 17,
+  "counts": {
+    "labels": 46,
+    "notification": 86,
+    "scenes": 78,
+    "dialogue": 998,
+    "menus": 22,
+    "prompt": 19,
+    "option": 61,
+    "returns": 32,
+    "jumps": 21,
+    "endings": 9
+  },
+  "source_text_preserved": true,
+  "output": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/doc/collaboration/v2.1/readable-script/旺不稳的奇妙冒险-v2.1.0-完整剧本.txt",
+  "output_bytes": 103923,
+  "called_insert_count": 23
+}

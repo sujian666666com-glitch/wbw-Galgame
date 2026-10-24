@@ -1,3 +1,5 @@
+> 此文件保留早期过程快照。最终状态已由 [完整验收](final-acceptance.md) 和 [干净包复查](clean-package-smoke.md) 覆盖。
+
 # 原生界面验收进行记录
 
 2026-10-25，macOS 26.2 / Apple M4 / 1470×956逻辑显示器 / 2736×1540游戏drawable，1920×1080虚拟分辨率。正常run模式、隔离存档、只读observer，无testcases、不跳label或改状态。

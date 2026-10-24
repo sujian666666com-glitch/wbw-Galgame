@@ -194,6 +194,50 @@
       },
       "private_log": ".work/v21/logs/tech-story-integration.jsonl",
       "private_log_sha256": "145292e6e42db191aee052b26105d7f14b53d6b7b04a1cf0446e77e665e9053f"
+    },
+    {
+      "invocation": "qa-final-ui-run",
+      "models_observed": [
+        "deepseek-flash"
+      ],
+      "status": "completed",
+      "result_metadata": null,
+      "private_log": ".work/v21/logs/qa-final-ui-run.jsonl",
+      "private_log_sha256": "c84799b43f979eae94c417f989eaad838dbcf9a134d90ae6287d7455f0f85a23"
+    },
+    {
+      "invocation": "qa-frozen-build",
+      "models_observed": [
+        "deepseek-flash"
+      ],
+      "status": "completed",
+      "result_metadata": null,
+      "private_log": ".work/v21/logs/qa-frozen-build.jsonl",
+      "private_log_sha256": "4888dad4cf198e63f5d76bb517903c8436347b2d2ec007bff69c60f35c81c0bf"
+    },
+    {
+      "invocation": "qa-history-auto-design",
+      "models_observed": [
+        "deepseek-flash"
+      ],
+      "status": "completed",
+      "result_metadata": null,
+      "private_log": ".work/v21/logs/qa-history-auto-design.jsonl",
+      "private_log_sha256": "5d7737aca71f45014dd4d0096b2d4341d79771d3ebd5533119e035b2786e302c"
+    },
+    {
+      "invocation": "tech-history-fix",
+      "models_observed": [
+        "Grok 4.7 256K High"
+      ],
+      "status": "completed",
+      "result_metadata": {
+        "subtype": "success",
+        "is_error": false,
+        "duration_ms": 651464
+      },
+      "private_log": ".work/v21/logs/tech-history-fix.jsonl",
+      "private_log_sha256": "18675e3cb8cf2e36ec1e1f8c9c867a30365908af39325f9ac13d3323ef01b98b"
     }
   ],
   "art": {
@@ -201,7 +245,13 @@
     "model": "gpt-6.1-sol",
     "accepted_assets": 9,
     "serial_image_calls": 13,
-    "manifest": "art/manifest.json"
+    "manifest": "art/manifest.json",
+    "native_review": {
+      "agent": "/root/art_native_review",
+      "model": "gpt-6.1-sol",
+      "report": "art/native-review.md",
+      "result": "9/9 accepted; 2 nonblocking cosmetic notes"
+    }
   },
   "in_progress": []
 }

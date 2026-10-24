@@ -1,0 +1,30 @@
+[v21-lock 01:37:15] lock acquired; child group 52097; limit 45s
+[rpytest] [log] Running 1 test(s) marked with 'only' flag.
+[rpytest] [log] - global::save_load_smoke
+
+[rpytest] Starting test run
+[rpytest] Platform:      macOS-26.2-arm64-arm-64bit
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.3.26051504
+[rpytest] Game Version:  2.1.0
+
+[rpytest] [exc] + global
+[rpytest] [exc]   - save_load_smoke
+[rpytest] [exc]   - save_load_smoke (2.156 s)
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] PASSED  global               - (3.183 s)
+[rpytest]   PASSED  save_load_smoke      - (2.156 s)
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     3 |     1 passed |     0 xfailed |     0 failed |     0 xpassed |     2 skipped |     0 not run
+[rpytest] Test cases :    32 |     1 passed |     0 xfailed |     0 failed |     0 xpassed |    31 skipped |     0 not run
+[rpytest] Test hooks :     2 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     5 |     5 passed |     0 xfailed |     0 failed |     0 xpassed |
+
+[rpytest] Time: 3.183 s
+[rpytest] Status: PASSED
+
+[v21-lock 01:37:19] child group reaped; lock released

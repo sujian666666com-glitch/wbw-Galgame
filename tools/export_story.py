@@ -7,6 +7,7 @@ import subprocess
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
+from datetime import date
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -290,7 +291,7 @@ for path in all_files:
 commit = subprocess.check_output(['git', 'rev-parse', '--short=7', 'HEAD'], cwd=ROOT, text=True).strip()
 output = [
     '旺不稳的奇妙冒险', f'v{VERSION} 完整剧本 · 全分支阅读版', '',
-    f'整理日期：2026-10-24　来源提交：{commit}',
+    f'整理日期：{date.today().isoformat()}　来源提交：{commit}',
     '正文依据当前游戏实际执行的剧情脚本整理，旁白、对白、菜单文字和系统提示均保留原文。',
     '覆盖旧篇与续篇、全部选择及九类结局。旧篇的普通／理想结局表现也分别收录。', '',
     '阅读方法',

@@ -27,7 +27,7 @@ Ren’Py 8.5.3 中文 Galgame，当前源码版本 **2.1.0**，1920×1080，macO
 - `image/`：保留的原始素材；新增资源及未采用候选分开位于 `image/v21/`。
 - `old-game/`：Ren’Py 保存语句身份的编译映射，清洁构建需要它，不是可随意清除的缓存。
 - [协作契约](doc/collaboration/v2.1/CONTRACT.md)、[剧情接入表](doc/collaboration/v2.1/story/manifest.json)、[美术清单](doc/collaboration/v2.1/art/manifest.json)：实际分工与交付记录。
-- [路线图](doc/sequel-route-map.md)：原有选择和结局规则；本版完整可读剧本由实际脚本导出，包含条件、选项和所有后日谈。
+- [路线图](doc/sequel-route-map.md)：原有选择和结局规则；本版 [完整可读剧本](doc/collaboration/v2.1/readable-script/旺不稳的奇妙冒险-v2.1.0-完整剧本.txt) 由实际脚本导出，包含条件、选项和所有后日谈。
 - `tools/export_story.py`：导出完整剧本到 `releases/v2.1.0/`。
 - `tools/package_macos.py`：从干净的固定 Git 提交构建 macOS 包、完整源码 ZIP、校验值和构建回执。
 
