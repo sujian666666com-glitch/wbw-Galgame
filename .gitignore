@@ -30,3 +30,6 @@ ik.md
 
 # Production manifests must remain versioned even with a global *.json ignore.
 !doc/collaboration/**/*.json
+
+# Stable statement identities for save-compatible clean builds.
+!old-game/**/*.rpyc

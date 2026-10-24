@@ -1,0 +1,128 @@
+{
+  "baseline": "1737ed686bbc4c4a634d9a564d4ba24b4a1860dc",
+  "renpy": "8.5.3.26051504",
+  "origin": "Pi-generated natural v2.0 compatibility fixture project, never regenerated",
+  "fixture_manifest_sha256": "354b65b1cb1853b6a13567203990e70548302c26a844e3e1c5dde4e23e0890f9",
+  "files": [
+    {
+      "path": "old-game/core/characters.rpyc",
+      "sha256": "6060ab5bef314d32333df98d9cc3f9c25ad83ff35eade9ee5a8b01bc47bba9bb",
+      "bytes": 1862
+    },
+    {
+      "path": "old-game/core/images.rpyc",
+      "sha256": "95ddf182e07203fcc87cc09e082feccd58214d6d491133e984906342478b97cd",
+      "bytes": 6886
+    },
+    {
+      "path": "old-game/core/state.rpyc",
+      "sha256": "ad32a57d2a50aa6403959c90203747ee40db1a6c97dac43b9eca54e9c886135c",
+      "bytes": 3074
+    },
+    {
+      "path": "old-game/gui.rpyc",
+      "sha256": "3a2f6be10627dd922cadacd194f7c346dc821b4e4bf18591d9120921dbfb965b",
+      "bytes": 4888
+    },
+    {
+      "path": "old-game/options.rpyc",
+      "sha256": "781f7101336e317182ef91f47a03e2ebeb6be9f263eac8df3094569eb45122ae",
+      "bytes": 2590
+    },
+    {
+      "path": "old-game/screens.rpyc",
+      "sha256": "25af7f2188b1a03cc5c80a3847f5d01b3ee0b85d5a7372ff2ddc36ca7997f3ba",
+      "bytes": 15496
+    },
+    {
+      "path": "old-game/script.rpyc",
+      "sha256": "8c5570707113fa81eb227b3410052e4a65d9f3a1fed0d99d290e0b52d985043e",
+      "bytes": 1224
+    },
+    {
+      "path": "old-game/story/chapter_01.rpyc",
+      "sha256": "ba3c6928541266f28fdff37e493bc4405efe99df31d0fbfeb0e2b3e51cc56496",
+      "bytes": 5524
+    },
+    {
+      "path": "old-game/story/chapter_02.rpyc",
+      "sha256": "491c8da16ef40e7e61ff960a6a0131319b8ffd8ad389819e4f079b72e6b5f069",
+      "bytes": 7071
+    },
+    {
+      "path": "old-game/story/chapter_03.rpyc",
+      "sha256": "d2507b0ba60b6bcbd7b463ad0f00de9e4d6141be492c55d6ce6f51be00125bad",
+      "bytes": 9904
+    },
+    {
+      "path": "old-game/story/chapter_04.rpyc",
+      "sha256": "d974634f55f2d7c1ae5f695078c4dab6bf83412b716e9e7b2719bdd08ee80436",
+      "bytes": 5070
+    },
+    {
+      "path": "old-game/story/chapter_05.rpyc",
+      "sha256": "32580a9d64e2267a767a774391469961ee5f53e1c3f46219abcff9a0f97d4626",
+      "bytes": 6305
+    },
+    {
+      "path": "old-game/story/chapter_06.rpyc",
+      "sha256": "1530cec5a38e9ffd387aa04ad533057a451d3f78b6b3c575a3ff0058ed632b5e",
+      "bytes": 3170
+    },
+    {
+      "path": "old-game/story/endings.rpyc",
+      "sha256": "ab5ae1b867a734674db55bb13f445db479ac1b369ee86e53a48684f48cff88d3",
+      "bytes": 6611
+    },
+    {
+      "path": "old-game/story/prologue.rpyc",
+      "sha256": "fb8cec54ba485e12405199e3075371e6de1231e8bf877c44f1277bd3599756bf",
+      "bytes": 4180
+    },
+    {
+      "path": "old-game/story/sequel_chapter_01.rpyc",
+      "sha256": "af881fed45b04d172ec1a169413cf8f5e95e3cf0ea1e99555b61db127129ba47",
+      "bytes": 11898
+    },
+    {
+      "path": "old-game/story/sequel_chapter_02_spring.rpyc",
+      "sha256": "ba1278e728e0f2aef4ee8e6905622c6bd6c7c96f8cabef12d1deb6ae345eec1e",
+      "bytes": 11433
+    },
+    {
+      "path": "old-game/story/sequel_chapter_03_summer.rpyc",
+      "sha256": "bf64deefa67c292b448d46e9fb09d407692cbee22cbe820342d5e3d3ba94b1f8",
+      "bytes": 11546
+    },
+    {
+      "path": "old-game/story/sequel_chapter_04_autumn.rpyc",
+      "sha256": "b31904057839a3f3acff602cb81992f30c96901d6a483660237da652b385d102",
+      "bytes": 8397
+    },
+    {
+      "path": "old-game/story/sequel_chapter_05_winter.rpyc",
+      "sha256": "0fa287405f271a9ab0978132cb348c2ddf8642023a41f9fffadef5c2b5fea780",
+      "bytes": 8605
+    },
+    {
+      "path": "old-game/story/sequel_endings.rpyc",
+      "sha256": "12c1688cd74d1de77d539a36fc1228117ba61b33b1a3f8f437312462e50b764c",
+      "bytes": 11028
+    },
+    {
+      "path": "old-game/story/sequel_finale.rpyc",
+      "sha256": "dc220801c8f178b9ef618154c36fbb66a944c81c07b91caee8d736f14cd3ea94",
+      "bytes": 6069
+    },
+    {
+      "path": "old-game/story/sequel_prologue.rpyc",
+      "sha256": "ff2b0bdf5c9137c05855cd2e7c1cfd85ab9fa6ec920d1c6ea991bcaa573595ef",
+      "bytes": 9400
+    },
+    {
+      "path": "old-game/ui/status_screen.rpyc",
+      "sha256": "6ef4ca0fe0e7d0816f87f185eed351da8d3d404dfa3cab4e0bd7b9fd114e3b42",
+      "bytes": 5334
+    }
+  ]
+}
