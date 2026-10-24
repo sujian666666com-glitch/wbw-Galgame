@@ -50,6 +50,8 @@ label chapter_04:
 
             xw "……你不在意自己的东西被拿走吗？"
 
+    call v21_chapter_04
+
     scene bg bedroom_night with dissolve
 
     narrator "深夜，电脑屏幕的光照着王不稳的脸。"
@@ -62,7 +64,5 @@ label chapter_04:
     if not evidence_ready:
         $ evidence_ready = True
         $ notify_change("关键证据已整理完毕")
-
-    call v21_chapter_04
 
     jump chapter_05
