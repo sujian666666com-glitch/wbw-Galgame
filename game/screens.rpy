@@ -215,6 +215,8 @@ screen history():
     tag menu
     predict False
     use game_menu(_("历史记录"), scroll="viewport"):
+        # vscrollbar 继承 default，不继承 style bar 的 1000×28。
+        # 不限制 xsize 时，side 按整宽测量竖条，中间对白宽度变成 0。
         viewport:
             xsize 1060
             ysize 720
@@ -222,9 +224,18 @@ screen history():
             draggable True
             scrollbars "vertical"
             yinitial 1.0
+            child_size (1020, 32767)
+            vscrollbar_xsize 18
+            vscrollbar_yfill True
+            vscrollbar_bar_vertical True
+            vscrollbar_bar_invert True
+            vscrollbar_bar_resizing True
+            vscrollbar_base_bar Solid("#6d6588")
+            vscrollbar_thumb Solid("#fff8fc")
             vbox:
                 spacing 18
                 xfill True
+                xsize 1020
                 if not _history_list:
                     text "尚无对白记录。" color gui.idle_small_color
                 for h in _history_list:
@@ -237,6 +248,14 @@ screen history():
                                 xsize 1020
                         text h.what:
                             xsize 1020
+
+init python:
+    # 读档、覆盖、回主菜单、退出走 layout.* 字面量，不经过 _()。
+    # 不改 gui.UNKNOWN_TOKEN / gui.TRUST_TOKEN，也不动签名校验。
+    layout.LOADING = "读取存档会丢失未保存的进度。\n确定要继续吗？"
+    layout.OVERWRITE_SAVE = "确定要覆盖这个存档吗？"
+    layout.MAIN_MENU = "确定要返回主菜单吗？\n未保存的进度将会丢失。"
+    layout.QUIT = "确定要退出游戏吗？"
 
 screen confirm(message, yes_action, no_action):
     modal True
