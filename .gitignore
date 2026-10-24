@@ -25,3 +25,6 @@ releases/
 
 # Personal learning checklist
 ik.md
+
+# Production manifests must remain versioned even with a global *.json ignore.
+!doc/collaboration/**/*.json
