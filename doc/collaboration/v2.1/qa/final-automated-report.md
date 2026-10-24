@@ -35,6 +35,8 @@
 | `global` cold（新项目拷贝 + 新 saves） | **PASSED**，24 个回归用例；8 个 fixture/compat 跳过 | 22.6 s |
 | `global` warm（同拷贝/saves 重跑） | **PASSED** | 22.0 s |
 
+> 计数说明（后续更新）：本报告执行时 `global` 为 24 个用例。新增 `settings_smoke_main_menu_and_in_game` 后，最终冻结构建的 `global` 为 **25 个用例**（25/25 通过，103 断言）；机器可读计数见 `coverage-matrix.json` 的 `testcases` 字段，执行证据见 `frozen-build-regression.md`。
+
 - 所有进程在报告完成后正常退出（`Status: PASSED`，无“报告完成但不退出”）；未延长任何超时，未反复重试同一失败。
 - 四个 compat 的恢复位置：`chapter_01.rpy:391`、`chapter_06.rpy:748`、`sequel_prologue.rpy:1523`、`sequel_finale.rpy:1467`；旧值、persistent 与 2.1 新变量 `default`（`sequel_luna_observation_outcome == "unknown"`）全部一致。
 - Trace 现在包含正在显示的 screens 与 `confirm_text`。首个 compat trace 在读档后为 `screens: ["choice", "say"]`、`confirm_text: null`，证明未出现 UNKNOWN/TRUST 提示。

@@ -5,6 +5,8 @@
 - 本阶段状态：**未完成交付，卡在 2.0 存档兼容验证**；按“发现一次异常立刻停并报告”执行，未重试、未跑完整 suite、未 commit / 未 push
 - 唯一异常记录：`compat` 四项全部超时（详见第 4 节）
 
+> **历史更正（2026-10-25）**：本报告第 4 节关于 `old-game` “不是 Ren'Py 兼容机制”和“语句 ID 变化导致 4/4 失败”的结论**已作废**，由 `final-automated-report.md` 纠正。Ren'Py 8.5.3 确实会读取 `old-game`（`renpy/script.py:843` 以 `base + "/old-" + game` 加载）；当时 compat 超时的实际根因是 4 份夹具的签名验证弹窗（UNKNOWN/TRUST token）与 testsuite 嵌套错误，不是语句 ID 丢失。工具按该报告修复后 compat 4/4 通过。以下原文保留，不删除历史证据。
+
 ## 1. 本阶段已完成（工具与测试源码，均未提交）
 
 ### `game/testcases.rpy`（仅测试文件）
@@ -18,7 +20,7 @@
 
 ### `tools/v21_qa_project.py`（重写）
 
-- 复制 `game/`（仍排除 `.rpyc`/缓存，保证 build 反映源码）+ **复制 `old-game/` 且保留 `.rpyc`**（实测 25 个文件：24 个 rpyc + README）。
+- 复制 `game/`（仍排除 `.rpyc`/缓存，保证 build 反映源码）+ **复制 `old-game/` 且保留 `.rpyc`**（本报告时点实测 25 个文件：24 个 rpyc + README；最终冻结 v2.1 映射为 27 个文件 / 26 个 rpyc，见 `frozen-build-regression.md`）。
 - trace 模板改为仓库内可追踪文件 `tools/v21_qa_trace.rpy.txt`（`--trace` 时写入 `game/qa_trace.rpy`）；原 `.work/qa/trace/qa_trace.rpy` 不再被引用。
 - 路径不再依赖 `WORKTREE.parents[3]`：`REPO_ROOT = Path(__file__).resolve().parents[1]`，默认 `--dest <repo>/.work/qa/project`、`--saves <repo>/.work/qa/saves`，集成到主仓库根目录后同样成立。
 - `--clean` 安全：正白名单 `is_isolated()`（必须位于名为 `.work` 的目录之下且其下有具体目标），并拒绝目标等于 source 或 source 的祖先、拒绝 home / `/` / `renpy_saves` / `Library/RenPy`。实测探针：
@@ -75,6 +77,8 @@ renpy.test.types.RenpyTestTimeoutError: Until Statement timed out after 60.0 sec
 
 ### 根因相关的关键发现（需主 Agent 裁决）
 
+> **更正**：以下“`old-game` 不是 Ren'Py 兼容机制”的判断错误，已由 `final-automated-report.md` 推翻；保留原文仅作历史记录。
+
 `old-game/` **不是 Ren'Py 的兼容机制**：在 SDK `renpy/**/*.py` 中搜索 `old-game` / `old_game` 命中数为 **0**。因此
 
 1. 把 `old-game/*.rpyc` 复制进测试项目，对 Ren'Py 读档**没有任何作用**，它们只是审计/语句 ID lineage 归档（`doc/collaboration/v2.1/v20-compiled-lineage.json` 记录的是哈希清单）。
@@ -83,7 +87,7 @@ renpy.test.types.RenpyTestTimeoutError: Until Statement timed out after 60.0 sec
 
 ## 5. 未完成 / 建议下一步
 
-1. 由主 Agent 决定语句 ID 稳定性的修复方案（QA 侧不能改产品脚本）。修复后在隔离项目上重跑本条命令即可复核：
+1. ~~由主 Agent 决定语句 ID 稳定性的修复方案（QA 侧不能改产品脚本）。~~ **更正：实际无需产品侧语句 ID 修复**；根因是签名验证与 testsuite 嵌套，`final-automated-report.md` 已记录 4/4 通过。修复后在隔离项目上重跑本条命令即可复核：
    `python3 tools/v21_compat_check.py --project .work/qa/project-compat --max-runtime 90 --output .work/qa/logs/compat-report.json`
 2. 本阶段未运行完整 suite 与新增 8 个分支用例；compat 通过后再跑 `--case global`。
 3. 时间预算已超（约 12 分钟上限，实际因 4×92s 的 compat 超时拉长），未继续重试。工作树内新增/修改均未提交：

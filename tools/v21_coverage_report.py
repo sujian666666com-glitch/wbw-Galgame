@@ -32,6 +32,7 @@ EXPECTED_LABELS = 23
 MENU_RE = re.compile(r'^(\s*)menu(?:\s+\w+)?\s*:\s*$')
 OPTION_RE = re.compile(r'^(\s*)"((?:[^"\\]|\\.)+)"(?:\s+if\s+.+)?\s*:\s*$')
 CLICK_RE = re.compile(r'^\s*click\s+"((?:[^"\\]|\\.)+)"')
+TESTCASE_RE = re.compile(r'^(\s*)testcase\s+(\w+)')
 LABEL_RE = re.compile(r'^label\s+(v21_\w+)\s*:', re.M)
 CALL_RE = re.compile(r'^\s*(?:call|jump)\s+(v21_\w+)', re.M)
 
@@ -78,6 +79,24 @@ def scan_clicks():
     return clicks
 
 
+def scan_testcases():
+    """Count top-level (global) and nested (fixture/compat) testcases."""
+
+    global_cases, nested_cases = [], []
+    for line in TESTCASES.read_text(encoding="utf-8").splitlines():
+        m = TESTCASE_RE.match(line)
+        if not m:
+            continue
+        (global_cases if len(m.group(1)) == 0 else nested_cases).append(m.group(2))
+    return {
+        "global": len(global_cases),
+        "nested_fixture_compat": len(nested_cases),
+        "total": len(global_cases) + len(nested_cases),
+        "settings_smoke_present": "settings_smoke_main_menu_and_in_game" in global_cases,
+        "global_names": global_cases,
+    }
+
+
 def scan_labels():
     expected, calls = {}, []
     for path in sorted(STORY.glob("*.rpy")):
@@ -98,6 +117,7 @@ def main():
 
     menus, options = scan_options()
     clicks = scan_clicks()
+    testcases = scan_testcases()
     expected_labels, calls = scan_labels()
 
     for option in options:
@@ -156,6 +176,7 @@ def main():
                 for o in options
             ],
         },
+        "testcases": testcases,
         "v21_labels": {
             "expected": len(expected_labels),
             "dynamically_reached": len(labels_reached),
@@ -198,6 +219,7 @@ def main():
     for item in missing:
         print(f"  UNCOVERED {item['caption']} ({item['file']}:{item['line']})")
     print(f"v21 labels: {len(expected_labels)} (expected {EXPECTED_LABELS}), reached {len(labels_reached)}, missing {len(labels_missing)}")
+    print(f"testcases: {testcases['total']} total, {testcases['global']} global, {testcases['nested_fixture_compat']} fixture/compat")
     for name in labels_missing:
         print(f"  NOT REACHED {name}")
     print(f"compat results: {len(compat)}")
