@@ -53,6 +53,11 @@ QA_ROOT = REPO_ROOT / ".work/qa"
 SAVE_DIRECTORY = "three-months-to-stay-1"
 DEFAULT_MAX_RUNTIME = 90.0
 
+# The fixture set is source-controlled under doc/ as well, so a fresh clone or
+# a newly created worktree can verify 2.0 saves without .work scratch state.
+SOURCE_FIXTURES = REPO_ROOT / "doc/collaboration/v2.1/compatibility/v20"
+SCRATCH_FIXTURES = ".work/v21/compat-v20"
+
 # Keys where a 2.1 build must keep the 2.0 value exactly.
 EXACT_KEYS = [
     "ability",
@@ -197,17 +202,75 @@ def trust_fixture_public_keys(
     return fingerprints
 
 
+def find_save_artifacts(root: Path) -> list[Path]:
+    """Every Ren'Py save-state file (.save / persistent) below ``root``."""
+
+    found: list[Path] = []
+    if not root.is_dir():
+        return found
+    for path in sorted(root.rglob("*")):
+        if not path.is_file():
+            continue
+        if path.name == "persistent" or path.suffix == ".save":
+            found.append(path)
+    return found
+
+
+def require_clean_input(directory: Path, what: str) -> None:
+    """Refuse to verify 2.0 saves against a copy that already holds save state.
+
+    A project whose ``game/`` or ``saves/`` still contains a ``.save`` or
+    ``persistent`` can load state that was not the fixture under test, which
+    turns a compatibility run into a false pass. Nothing is deleted here: the
+    caller has to hand over a fresh isolated copy (tools/v21_qa_project.py).
+    """
+
+    offenders = find_save_artifacts(directory)
+    if not offenders:
+        return
+    shown = "\n".join(f"  {path}" for path in offenders[:10])
+    more = f"\n  ... {len(offenders) - 10} more" if len(offenders) > 10 else ""
+    raise SystemExit(
+        f"refusing fake compatibility check: {what} already contains Ren'Py save state:\n"
+        f"{shown}{more}\n"
+        "build a fresh isolated project with tools/v21_qa_project.py and pass that copy; "
+        "this tool never deletes save/persistent files it did not create."
+    )
+
+
+def validate_project(project: Path) -> None:
+    if not (project / "game/script.rpy").is_file():
+        raise SystemExit(f"project has no game/script.rpy: {project}")
+    if project.resolve() == REPO_ROOT.resolve():
+        raise SystemExit(
+            "refusing to verify compatibility against the source checkout itself; "
+            "pass a fresh isolated copy (tools/v21_qa_project.py --dest ...)"
+        )
+    if not any((project / "old-game").rglob("*.rpyc")):
+        raise SystemExit(
+            f"project has no compiled 2.0 old-game tree: {project / 'old-game'}\n"
+            "2.0 saves can only resume at their saved statement with the source "
+            "old-game present (tools/v21_qa_project.py copies it)."
+        )
+    require_clean_input(project / "game", "project game/")
+    require_clean_input(project / "saves", "project saves/")
+
+
 def find_fixtures_root(explicit: str | None) -> Path:
     if explicit:
         return Path(explicit).resolve()
     env = os.environ.get("V21_COMPAT_ROOT")
     if env:
         return Path(env).resolve()
+    # Prefer the fixture set that is committed with the source tree; fall back
+    # to the .work scratch copy that the capture tool writes.
+    if (SOURCE_FIXTURES / "manifest.json").is_file():
+        return SOURCE_FIXTURES
     for candidate in (REPO_ROOT, *REPO_ROOT.parents):
-        root = candidate / ".work/v21/compat-v20"
-        if root.is_dir():
+        root = candidate / SCRATCH_FIXTURES
+        if (root / "manifest.json").is_file():
             return root
-    return REPO_ROOT / ".work/v21/compat-v20"
+    return SOURCE_FIXTURES
 
 
 def statement_file(current: str | None) -> str | None:
@@ -286,7 +349,7 @@ def check_fixture(fixture: dict, after: dict, rc: int) -> list[str]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--project", default=str(QA_ROOT / "project"))
-    parser.add_argument("--fixtures", default=None, help="fixtures root (default: <repo>/.work/v21/compat-v20)")
+    parser.add_argument("--fixtures", default=None, help="fixtures root (default: doc/collaboration/v2.1/compatibility/v20, else <repo>/.work/v21/compat-v20)")
     parser.add_argument("--output", default=None, help="write a machine-readable JSON report here")
     parser.add_argument("--only", action="append", default=[])
     parser.add_argument("--keep", action="store_true", help="keep per-fixture save roots")
@@ -312,6 +375,7 @@ def main() -> int:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     wanted = set(args.only)
     project = Path(args.project).resolve()
+    validate_project(project)
     results = []
     failed = False
 
@@ -324,6 +388,10 @@ def main() -> int:
         if work.exists() and not args.keep:
             shutil.rmtree(work)
         saves = work / "saves"
+        # A ``--keep`` run may still hold the previous fixture state; refuse it
+        # rather than silently deleting anything, and never fall back to the
+        # user's own save directory.
+        require_clean_input(saves, f"fixture {fixture_id} saves root")
         (saves / SAVE_DIRECTORY).mkdir(parents=True, exist_ok=True)
 
         # The fixture hash check comes first: the public key may only be
