@@ -15,6 +15,8 @@ define config.window = "auto"
 define config.window_show_transition = Dissolve(.2)
 define config.window_hide_transition = Dissolve(.2)
 
+define config.history_length = 250
+
 default preferences.text_cps = 35
 default preferences.auto_forward_time = 10
 
