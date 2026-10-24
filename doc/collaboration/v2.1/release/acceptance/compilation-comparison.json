@@ -1,0 +1,631 @@
+{
+  "accepted_product_commit": "067899b7a8b525ab3b96f58d242226a0c8143370",
+  "final_build_commit": "35896bcdbcdbe18c4c7b27803e93258a2a81291d",
+  "byte_identical": false,
+  "product_sources_images_fonts_identical": true,
+  "all_story_rpyc_identical": true,
+  "allowed_nonsemantic_differences": [
+    "CFBundleVersion build timestamp",
+    "AST name_version generated at compilation time",
+    "Screen-language serial generated at compilation time"
+  ],
+  "compiled_differences_checked": [
+    {
+      "file": "game/ui/status_screen.rpyc",
+      "changed_fields": {
+        "name_version": 2,
+        "serial": 84
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "game/screens.rpyc",
+      "changed_fields": {
+        "name_version": 48,
+        "serial": 252
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "game/core/state.rpyc",
+      "changed_fields": {
+        "name_version": 50
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "game/core/characters.rpyc",
+      "changed_fields": {
+        "name_version": 20
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "game/core/v21_images.rpyc",
+      "changed_fields": {
+        "name_version": 36
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "game/core/images.rpyc",
+      "changed_fields": {
+        "name_version": 100
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "game/gui.rpyc",
+      "changed_fields": {
+        "name_version": 94
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "game/options.rpyc",
+      "changed_fields": {
+        "name_version": 36
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/000statements.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/000window.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00accessibility.rpyc",
+      "changed_fields": {
+        "name_version": 12,
+        "serial": 126
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00achievement.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00action_audio.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00action_control.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00action_data.rpyc",
+      "changed_fields": {
+        "name_version": 6
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00action_file.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00action_menu.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00action_other.rpyc",
+      "changed_fields": {
+        "name_version": 4,
+        "serial": 6
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00audio.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00barvalues.rpyc",
+      "changed_fields": {
+        "name_version": 6
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00build.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00compat.rpyc",
+      "changed_fields": {
+        "name_version": 6
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00console.rpyc",
+      "changed_fields": {
+        "name_version": 24,
+        "serial": 112
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00db.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00defaults.rpyc",
+      "changed_fields": {
+        "name_version": 16
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00definitions.rpyc",
+      "changed_fields": {
+        "name_version": 10
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00director.rpyc",
+      "changed_fields": {
+        "name_version": 74,
+        "serial": 400
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00gallery.rpyc",
+      "changed_fields": {
+        "name_version": 4,
+        "serial": 42
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00gamemenu.rpyc",
+      "changed_fields": {
+        "name_version": 8
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00gamepad.rpyc",
+      "changed_fields": {
+        "name_version": 8,
+        "serial": 58
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00gltest.rpyc",
+      "changed_fields": {
+        "name_version": 4,
+        "serial": 174
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00gui.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00iap.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00iconbutton.rpyc",
+      "changed_fields": {
+        "name_version": 2,
+        "serial": 14
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00images.rpyc",
+      "changed_fields": {
+        "name_version": 6
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00inputvalues.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00keymap.rpyc",
+      "changed_fields": {
+        "name_version": 10,
+        "serial": 12
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00layout.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00library.rpyc",
+      "changed_fields": {
+        "name_version": 16,
+        "serial": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00matrixcolor.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00matrixtransform.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00mixers.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00mousedisplayable.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00musicroom.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00nvl_mode.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00obsolete.rpyc",
+      "changed_fields": {
+        "name_version": 10
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00performance.rpyc",
+      "changed_fields": {
+        "name_version": 6,
+        "serial": 26
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00placeholder.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00preferences.rpyc",
+      "changed_fields": {
+        "name_version": 4,
+        "serial": 18
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00sideimage.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00speechbubble.rpyc",
+      "changed_fields": {
+        "name_version": 12,
+        "serial": 50
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00splines.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00sshtransition.rpyc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00start.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00steam.rpyc",
+      "changed_fields": {
+        "name_version": 6
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00style.rpyc",
+      "changed_fields": {
+        "name_version": 6
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00stylepreferences.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00sync.rpyc",
+      "changed_fields": {
+        "name_version": 8,
+        "serial": 74
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00textshader.rpyc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00themes.rpyc",
+      "changed_fields": {
+        "name_version": 10
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00touchkeyboard.rpyc",
+      "changed_fields": {
+        "name_version": 4,
+        "serial": 206
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00translation.rpyc",
+      "changed_fields": {
+        "name_version": 2,
+        "serial": 46
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00updater.rpyc",
+      "changed_fields": {
+        "name_version": 4,
+        "serial": 136
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/00voice.rpyc",
+      "changed_fields": {
+        "name_version": 6,
+        "serial": 20
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/_developer/developer.rpymc",
+      "changed_fields": {
+        "name_version": 24,
+        "serial": 288
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/_developer/inspector.rpymc",
+      "changed_fields": {
+        "name_version": 10,
+        "serial": 124
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/_errorhandling.rpymc",
+      "changed_fields": {
+        "name_version": 20,
+        "serial": 140
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/_layout/classic_joystick_preferences.rpymc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/_layout/classic_navigation.rpymc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/_layout/screen_load_save.rpymc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/_layout/screen_main_menu.rpymc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/_layout/screen_preferences.rpymc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/_layout/screen_yesno_prompt.rpymc",
+      "changed_fields": {
+        "name_version": 2
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    },
+    {
+      "file": "Resources/autorun/renpy/common/_shaders.rpymc",
+      "changed_fields": {
+        "name_version": 4
+      },
+      "source_digest_identical": true,
+      "all_other_pickle_opcodes_and_arguments_identical": true
+    }
+  ],
+  "all_other_files_identical": true,
+  "final_mac_sha256": "1a13851d273d2952dab9fd6fb83ff0878fec3694f5617eec971ff8739a075ec7"
+}

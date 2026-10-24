@@ -1,6 +1,6 @@
 # v2.1.0 端到端验收报告
 
-更新：2026-10-25。**macOS 静音版的代码、剧情、自动回归、原生完整游玩与独立包复查均通过。** 没有已知阻断流程的问题。
+更新：2026-10-25。最终发行构建固定于 `35896bc`，随后仅补交付回执文档。**macOS 静音版的代码、剧情、自动回归、原生完整游玩与独立包复查均通过。** 没有已知阻断流程的问题。
 
 | 范围 | 实际结果 | 证据 |
 | --- | --- | --- |
@@ -28,6 +28,8 @@
 产品代码和 26 份编译语句映射冻结于 `067899b7a8b525ab3b96f58d242226a0c8143370`。该产品已完成干净包复查；后续提交仅增加测试、文档与验收证据。最终交付仍从一个干净固定 Git 提交构建游戏 ZIP 和源码 ZIP，逐文件比较运行时内容与已验收产品，再解压检查。**最终构建提交、两个 ZIP 的 SHA-256 与重新启动结果记录在交付目录的 `build-receipt.json`、`release-acceptance.json` 和 `SHA256SUMS`**，不把压缩包元数据变化当成代码变化。
 
 源码 ZIP 包含全部产品、美术原件/新增候选、测试、兼容夹具、编译映射、阅读版剧本及各 Agent 的实际报告。游戏 ZIP 排除开发文档、原图、测试、个人记录、SDK、缓存和存档。字体 OFL 与 Ren’Py 许可证保留。实际模型与调用日志指纹见 [agent-runs.json](collaboration/v2.1/agent-runs.json)，原始 CLI 日志、凭据和推理内容不随包。
+
+最终回执已归档：[构建记录](collaboration/v2.1/release/build-receipt.json)、[最终实机验收](collaboration/v2.1/release/release-acceptance.json)。74 份初始化/UI/引擎编译文件的差异经逐项 pickle opcode 比较，仅为 `name_version`/`serial` 时间编号，另有 `CFBundleVersion` 构建时间变化；所有剧情编译文件与源码、素材一致。记录见 [编译对照](collaboration/v2.1/release/acceptance/compilation-comparison.json)。
 
 现有 [私有 GitHub 仓库](https://github.com/sujian666666com-glitch/wbw-Galgame) 保存源码与协作提交。发行版本由 `v2.1.0` 标签固定，是否已同步以远端提交核对和交付回执为准。
 

@@ -1,0 +1,65 @@
+{
+  "version": "2.1.0",
+  "build_commit": "35896bcdbcdbe18c4c7b27803e93258a2a81291d",
+  "tag": "v2.1.0",
+  "result": "passed",
+  "artifacts": {
+    "wbw-galgame-2.1.0-source.zip": {
+      "bytes": 242285497,
+      "sha256": "4da45914ea1535439041ffd4f2c6103e9296345fa4f318bb5b6eca7b66739fbd"
+    },
+    "wbw-galgame-2.1.0-mac.zip": {
+      "bytes": 155305556,
+      "sha256": "1a13851d273d2952dab9fd6fb83ff0878fec3694f5617eec971ff8739a075ec7"
+    }
+  },
+  "machine": {
+    "os": "macOS 26.2",
+    "chip": "Apple M4",
+    "arch": "arm64",
+    "renpy": "8.5.3.26051504"
+  },
+  "automated": {
+    "cases_passed": 27,
+    "assertions_passed": 122,
+    "compatibility_fixtures_passed": 4,
+    "compatibility_assertions_passed": 22,
+    "options_covered": 61,
+    "insert_scenes_covered": 23
+  },
+  "native": {
+    "full_routes": 4,
+    "ending_classes": 9,
+    "old_ending_variants": 6,
+    "normal_inputs_only": true,
+    "final_clean_package": {
+      "start": "2026-10-25T04:39:29+08:00",
+      "end": "2026-10-25T04:43:24+08:00",
+      "observer_or_test_scripts": false,
+      "loaded_natural_save": {
+        "ability": 3,
+        "affection": 0,
+        "money": 1100,
+        "chapter": 1
+      },
+      "sequel_mirror_scene_passed": true,
+      "exit_code": 0,
+      "process_group_reaped": true
+    }
+  },
+  "comparison": {
+    "file": "acceptance/compilation-comparison.json",
+    "byte_identical": false,
+    "code_resources_and_story_statement_ids_identical": true,
+    "compiled_files_with_only_verified_time_identifiers": 74
+  },
+  "notarized": false,
+  "signed": false,
+  "limitations": [
+    "Only Apple M4 macOS 26.2 tested, not Intel hardware or other OS.",
+    "Old saves verified for four naturally generated v2.0 fixtures with preserved statement lineage.",
+    "Two nonblocking art notes retained in art/native-review.md."
+  ],
+  "github_repository": "https://github.com/sujian666666com-glitch/wbw-Galgame",
+  "github_private_verified": true
+}
