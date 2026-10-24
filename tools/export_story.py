@@ -88,6 +88,19 @@ SCENES = {
     'bg v21_old_house_mirror': '旧宅镜面近景',
     'cg v21_xuwanqing_rain_close': '许晚晴雨伞亲近 CG',
     'cg v21_ruby_ending_kiss': 'Ruby 冬夜亲吻 CG',
+    'bg v21_time_old_house_night': '旧宅（夜间）',
+    'bg v21_time_spring_garden_dusk': '春庭（黄昏）',
+    'bg v21_time_spring_garden_evening': '春庭（傍晚）',
+    'bg v21_time_lighthouse_deep_night': '海岸灯塔（深夜）',
+    'bg v21_time_lighthouse_dawn': '海岸灯塔（黎明）',
+    'bg v21_time_archive_evening': '档案馆（傍晚）',
+    'bg v21_time_archive_night': '档案馆（夜间）',
+    'bg v21_time_company_street_dusk': '公司楼下街道（黄昏）',
+    'bg v21_time_company_street_rain': '公司楼下街道（雨夜）',
+    'bg v21_time_startup_morning': '创业工作室（清晨）',
+    'bg v21_time_station_first_snow': '樱镜町车站（初雪）',
+    'bg v21_time_city_street_morning': '原世界城市街道（清晨）',
+    'bg v21_time_station_boundary': '旧车站（四季交界）',
 }
 TRUTH = '春、夏、秋、冬四枚碎片全部取得，四位女孩的信任均至少为 3，洞察至少为 6，共同意志至少为 4'
 CONDITIONS = {
