@@ -1,0 +1,52 @@
+# Optional, read-only observer for an isolated native-UI acceptance copy.
+# This file is not a product .rpy and is excluded from the game package.
+# Copy it to an isolated copy as game/acceptance_observer.rpy only when
+# WBW_ACCEPTANCE_LOG points to a task-local JSONL file. All player input
+# remains native UI input; this observer never jumps, calls a label, sets
+# story values, dismisses dialogue, or invokes screen actions.
+
+init 999 python hide:
+    import json
+    import os
+    import time
+
+    destination = os.environ.get("WBW_ACCEPTANCE_LOG")
+    if destination:
+        observer = {"label": None, "previous": None}
+
+        def emit(record):
+            record["time"] = time.time()
+            with open(destination, "a", encoding="utf-8") as stream:
+                stream.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
+
+        def on_label(name, abnormal):
+            observer["label"] = name
+            emit({"event": "label", "name": name, "abnormal": abnormal})
+
+        def on_frame():
+            screens = []
+            for name in ("confirm", "save", "load", "history", "preferences", "status_panel", "choice", "main_menu", "say"):
+                if renpy.get_screen(name) is not None:
+                    screens.append(name)
+            choices = []
+            choice_screen = renpy.get_screen("choice")
+            if choice_screen is not None:
+                choices = [item.caption for item in choice_screen.scope.get("items", [])]
+            said = renpy.last_say()
+            values = {}
+            for name in ("story_arc", "chapter_progress", "ending_route", "affection", "ability", "money",
+                         "sequel_chapter_progress", "sequel_route", "sequel_origin_ending",
+                         "dana_affection", "luna_affection", "irene_affection", "ruby_affection",
+                         "sequel_insight", "sequel_resolve", "sequel_luna_observation_outcome",
+                         "spring_fragment", "summer_fragment", "autumn_fragment", "winter_fragment"):
+                values[name] = getattr(renpy.store, name, None)
+            record = {"event": "frame", "label": observer["label"], "screens": screens,
+                      "choices": choices, "what": getattr(said, "what", None),
+                      "who": getattr(said, "who", None), "values": values}
+            key = json.dumps(record, ensure_ascii=False, default=str, sort_keys=True)
+            if key != observer["previous"]:
+                observer["previous"] = key
+                emit(record)
+
+        config.label_callbacks.append(on_label)
+        config.periodic_callbacks.append(on_frame)
