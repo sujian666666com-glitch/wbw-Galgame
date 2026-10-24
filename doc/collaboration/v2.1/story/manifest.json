@@ -35,8 +35,8 @@
     "id": "v21_05_chapter_04_signature",
     "source_heading": "【新增剧情 · 失去的署名】",
     "target_label": "v21_chapter_04",
-    "placement": "第四章证据整理段结束后、jump chapter_05 之前；call v21_chapter_04",
-    "condition_summary": "affection >= 8 播放并肩与手部相碰；否则保留共同取证并删除身体接触。",
+    "placement": "第四章 menu 回复之后、scene bg bedroom_night 之前；call v21_chapter_04（走廊→当晚办公室→回家备份）",
+    "condition_summary": "本段为当晚办公室回顾，发生在回家备份前。affection >= 8 播放并肩与手部相碰；否则保留共同取证并删除身体接触。",
     "asset_ids": ["bg office_night", "wangbuwen normal", "xuwanqing normal", "xuwanqing serious"]
   },
   {
