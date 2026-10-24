@@ -6,6 +6,7 @@ import argparse
 import hashlib
 import json
 import os
+import plistlib
 from pathlib import Path
 import shutil
 import subprocess
@@ -64,7 +65,24 @@ def main():
     if len(packages) != 1:
         raise SystemExit(f'Expected one macOS archive; inspect {log}')
     mac_zip = output / 'wbw-galgame-2.1.0-mac.zip'
-    shutil.copy2(packages[0], mac_zip)
+    # The SDK injects build_info and bytecode cache after project classifiers.
+    # This unsigned distribution omits those generated files as scoped. Keep
+    # ZipInfo metadata unchanged so executable modes and symlinks survive.
+    stripped_cache = []
+    with zipfile.ZipFile(packages[0]) as original:
+        if any('/_CodeSignature/' in name for name in original.namelist()):
+            raise SystemExit('Refusing to rewrite an already signed application.')
+        with zipfile.ZipFile(mac_zip, 'w') as filtered:
+            for entry in original.infolist():
+                if '/game/cache/' in entry.filename:
+                    stripped_cache.append(entry.filename)
+                    continue
+                data = original.read(entry.filename)
+                if entry.filename.endswith('.app/Contents/Info.plist'):
+                    info = plistlib.loads(data)
+                    info['CFBundleIdentifier'] = 'com.wbw.galgame'
+                    data = plistlib.dumps(info)
+                filtered.writestr(entry, data)
     with zipfile.ZipFile(mac_zip) as archive:
         paths = archive.namelist()
         forbidden = [name for name in paths if any(part in name.split('/') for part in
@@ -82,7 +100,7 @@ def main():
     artifacts = {p.name: {'bytes': p.stat().st_size,
                  'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in (source_zip, mac_zip)}
     receipt = {'source_commit': commit, 'sdk': str(sdk), 'build_log': str(log),
-               'notarized': False, 'artifacts': artifacts, 'statement_mapping_sha256': hashlib.sha256(lineage.read_bytes()).hexdigest(),
+               'notarized': False, 'bundle_identifier': 'com.wbw.galgame', 'stripped_sdk_cache': stripped_cache, 'artifacts': artifacts, 'statement_mapping_sha256': hashlib.sha256(lineage.read_bytes()).hexdigest(),
                'runtime_acceptance': 'pending: launch the extracted final application separately'}
     (output / 'build-receipt.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + '\n')
     (output / 'SHA256SUMS').write_text(''.join(f'{v["sha256"]}  {k}\n' for k, v in artifacts.items()))
