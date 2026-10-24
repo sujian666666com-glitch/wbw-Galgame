@@ -120,6 +120,38 @@ init python:
 
 
 init python:
+    def v21_pref_slider_rect(field_name):
+        """Live screen rectangle (x, y, w, h) of a preferences slider.
+
+        The settings smoke test drives the real bar, not the preference
+        variable, so the geometry has to come from the rendered focus list.
+        A zero-height / oversized rect is the native regression where the
+        `slider` style fell back to the full remaining height and pushed the
+        next setting out of the clipped frame.
+        """
+
+        from renpy.display.behavior import Bar
+
+        for focus in renpy.display.focus.focus_list:
+            widget = getattr(focus, "widget", None)
+            if not isinstance(widget, Bar):
+                continue
+            value = getattr(widget, "value", None)
+            if getattr(value, "field", None) != field_name:
+                continue
+            if focus.x is None:
+                continue
+            rect = (int(focus.x), int(focus.y), int(focus.w), int(focus.h))
+            if rect[2] > 0 and rect[3] > 0:
+                return rect
+        raise Exception("preferences slider not rendered: " + field_name)
+
+    def v21_pref_slider_point(field_name, fraction):
+        """Absolute screen point at `fraction` across a preferences slider."""
+
+        x, y, w, h = v21_pref_slider_rect(field_name)
+        return (int(x + w * fraction), int(y + h / 2.0))
+
     # QA-only dynamic label coverage: record every v2.1 insert that the game
     # actually transfers control to. tools/v21_run_tests.py --label-file sets
     # V21_QA_LABEL_FILE for the whole run; the audit testcase at the end of the
@@ -696,6 +728,83 @@ testcase ui_features_smoke:
     assert eval (chapter_progress == 1)
     assert eval (renpy.get_screen("choice") is not None)
     assert eval (renpy.config.skipping is None)
+    run MainMenu(confirm=False)
+
+
+testcase settings_smoke_main_menu_and_in_game:
+    # Main menu -> preferences: both real sliders are rendered with the fixed
+    # 28 px track (not the old full-height blank), dragging changes the text
+    # speed / auto-forward preferences, and Esc / 返回 close back to the main
+    # menu instead of falling through to start.
+    assert eval (main_menu)
+    assert eval (renpy.get_screen("main_menu") is not None)
+    click "系统设置"
+    advance until screen "preferences"
+    assert eval (main_menu)
+    assert eval (renpy.get_screen("main_menu") is None)
+
+    $ _v21_text_rect = v21_pref_slider_rect("text_cps")
+    $ _v21_afm_rect = v21_pref_slider_rect("afm_time")
+    assert eval (_v21_text_rect[3] == 28 and _v21_afm_rect[3] == 28)
+    # The two slider rows must stay adjacent; the native bug inserted ~565 px
+    # of blank space between them and clipped the auto-forward control.
+    assert eval (0 < _v21_afm_rect[1] - _v21_text_rect[1] < 200)
+    assert eval (_v21_afm_rect[1] + _v21_afm_rect[3] <= renpy.config.screen_height)
+
+    $ _v21_saved_text_cps = preferences.text_cps
+    $ _v21_saved_afm_time = preferences.afm_time
+    # Hover first so the bar is focused before the synthetic button-down;
+    # test input posts motion and press in the same frame otherwise.
+    move pos v21_pref_slider_point("text_cps", 0.5)
+    pause 0.1
+    drag pos v21_pref_slider_point("text_cps", 0.5) to pos v21_pref_slider_point("text_cps", 0.2)
+    pause 0.1
+    assert eval (preferences.text_cps != _v21_saved_text_cps)
+    move pos v21_pref_slider_point("afm_time", 0.5)
+    pause 0.1
+    drag pos v21_pref_slider_point("afm_time", 0.5) to pos v21_pref_slider_point("afm_time", 0.2)
+    pause 0.1
+    assert eval (preferences.afm_time != _v21_saved_afm_time)
+
+    keysym "K_ESCAPE"
+    pause 0.3 until screen "main_menu"
+    assert eval (renpy.get_screen("preferences") is None)
+    assert eval (main_menu)
+    assert eval (not renpy.get_screen("say") and not renpy.get_screen("choice"))
+
+    # The visible 返回 control in the main-menu game menu takes the same exit.
+    click "系统设置"
+    advance until screen "preferences"
+    click "返回"
+    pause 0.3 until screen "main_menu"
+    assert eval (main_menu and renpy.get_screen("preferences") is None)
+
+    # In-game preferences must return to the exact saved statement, not start
+    # a new game or reset the progress just made.
+    click "旧篇：三个月，留下来"
+    advance until screen "choice"
+    click "把三个月的目标拆成行动清单。"
+    assert eval (story_arc == "old" and ability == 3)
+    $ _v21_progress_node = renpy.game.context().current
+    $ _v21_progress_chapter = chapter_progress
+    $ _v21_progress_ability = ability
+
+    click "设置"
+    advance until screen "preferences"
+    assert eval (not main_menu)
+    assert eval (v21_pref_slider_rect("text_cps")[3] == 28)
+
+    keysym "K_ESCAPE"
+    pause 0.3 until screen "say"
+    assert eval (renpy.get_screen("preferences") is None)
+    assert eval (not main_menu)
+    assert eval (renpy.get_screen("choice") is None)
+    assert eval (renpy.game.context().current == _v21_progress_node)
+    assert eval (chapter_progress == _v21_progress_chapter)
+    assert eval (ability == _v21_progress_ability)
+
+    $ preferences.text_cps = _v21_saved_text_cps
+    $ preferences.afm_time = _v21_saved_afm_time
     run MainMenu(confirm=False)
 
 
