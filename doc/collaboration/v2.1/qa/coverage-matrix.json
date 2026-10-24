@@ -1,0 +1,898 @@
+{
+  "generated_from": {
+    "story": "game/story",
+    "testcases": "game/testcases.rpy",
+    "labels_file": ".work/qa/logs/global-labels.txt",
+    "compat_report": ".work/qa/logs/compat-report.json"
+  },
+  "options": {
+    "menus": 22,
+    "total": 61,
+    "expected": 61,
+    "covered": 61,
+    "missing": 0,
+    "ok": true,
+    "items": [
+      {
+        "caption": "没事，我正好趁这个机会看看公司的数据。",
+        "file": "game/story/chapter_01.rpy",
+        "line": 47,
+        "covered": true,
+        "clicked_by_lines": [
+          192,
+          282,
+          434,
+          709,
+          767
+        ]
+      },
+      {
+        "caption": "杂活也得有人干，先干着呗。",
+        "file": "game/story/chapter_01.rpy",
+        "line": 56,
+        "covered": true,
+        "clicked_by_lines": [
+          502
+        ]
+      },
+      {
+        "caption": "别提了，烦得要死。",
+        "file": "game/story/chapter_01.rpy",
+        "line": 62,
+        "covered": true,
+        "clicked_by_lines": [
+          469
+        ]
+      },
+      {
+        "caption": "直接给主管发消息，报告数据异常。",
+        "file": "game/story/chapter_02.rpy",
+        "line": 15,
+        "covered": true,
+        "clicked_by_lines": [
+          471,
+          504
+        ]
+      },
+      {
+        "caption": "先自己跑一遍完整数据验证，确认后再汇报。",
+        "file": "game/story/chapter_02.rpy",
+        "line": 25,
+        "covered": true,
+        "clicked_by_lines": [
+          194,
+          436,
+          769
+        ]
+      },
+      {
+        "caption": "发到工作群里公开指出问题。",
+        "file": "game/story/chapter_02.rpy",
+        "line": 36,
+        "covered": true,
+        "clicked_by_lines": [
+          711
+        ]
+      },
+      {
+        "caption": "才第四天，急什么。",
+        "file": "game/story/chapter_02.rpy",
+        "line": 80,
+        "covered": true,
+        "clicked_by_lines": [
+          196,
+          438,
+          771
+        ]
+      },
+      {
+        "caption": "你一直在观察我？",
+        "file": "game/story/chapter_02.rpy",
+        "line": 88,
+        "covered": true,
+        "clicked_by_lines": [
+          506
+        ]
+      },
+      {
+        "caption": "被赶走也不怕，大不了换个地方。",
+        "file": "game/story/chapter_02.rpy",
+        "line": 95,
+        "covered": true,
+        "clicked_by_lines": [
+          473
+        ]
+      },
+      {
+        "caption": "我把数据报告发你，你先看，明天咱们碰。",
+        "file": "game/story/chapter_03.rpy",
+        "line": 36,
+        "covered": true,
+        "clicked_by_lines": [
+          508
+        ]
+      },
+      {
+        "caption": "要不现在就去公司跑一遍数据？",
+        "file": "game/story/chapter_03.rpy",
+        "line": 44,
+        "covered": true,
+        "clicked_by_lines": [
+          198,
+          440,
+          773
+        ]
+      },
+      {
+        "caption": "这个你比我懂，你定就行。",
+        "file": "game/story/chapter_03.rpy",
+        "line": 58,
+        "covered": true,
+        "clicked_by_lines": [
+          475
+        ]
+      },
+      {
+        "caption": "会后悄悄给她买一杯咖啡放在桌上。",
+        "file": "game/story/chapter_03.rpy",
+        "line": 89,
+        "covered": true,
+        "clicked_by_lines": [
+          200,
+          442,
+          775
+        ]
+      },
+      {
+        "caption": "当面说：这次多亏你的策划。",
+        "file": "game/story/chapter_03.rpy",
+        "line": 97,
+        "covered": true,
+        "clicked_by_lines": [
+          510
+        ]
+      },
+      {
+        "caption": "什么都没说，觉得这没什么。",
+        "file": "game/story/chapter_03.rpy",
+        "line": 103,
+        "covered": true,
+        "clicked_by_lines": [
+          477
+        ]
+      },
+      {
+        "caption": "你请？那我不客气了。",
+        "file": "game/story/chapter_03.rpy",
+        "line": 130,
+        "covered": true,
+        "clicked_by_lines": [
+          512
+        ]
+      },
+      {
+        "caption": "还是 AA 吧，我现在不富裕。",
+        "file": "game/story/chapter_03.rpy",
+        "line": 136,
+        "covered": true,
+        "clicked_by_lines": [
+          202,
+          444,
+          777
+        ]
+      },
+      {
+        "caption": "不用了，我回去还有事。",
+        "file": "game/story/chapter_03.rpy",
+        "line": 146,
+        "covered": true,
+        "clicked_by_lines": [
+          479
+        ]
+      },
+      {
+        "caption": "不是不说，是时候没到。我已经保留了所有的原始文件和时间记录。",
+        "file": "game/story/chapter_04.rpy",
+        "line": 26,
+        "covered": true,
+        "clicked_by_lines": [
+          204,
+          446,
+          779
+        ]
+      },
+      {
+        "caption": "说了又怎样？主管会信我还是信他？",
+        "file": "game/story/chapter_04.rpy",
+        "line": 38,
+        "covered": true,
+        "clicked_by_lines": [
+          514
+        ]
+      },
+      {
+        "caption": "无所谓，方案能跑通就行。",
+        "file": "game/story/chapter_04.rpy",
+        "line": 47,
+        "covered": true,
+        "clicked_by_lines": [
+          481
+        ]
+      },
+      {
+        "caption": "我不介意功劳被分，但方案不能出错。下次有问题直接找我。",
+        "file": "game/story/chapter_05.rpy",
+        "line": 49,
+        "covered": true,
+        "clicked_by_lines": [
+          206,
+          448,
+          781
+        ]
+      },
+      {
+        "caption": "什么都不说，坐回去继续处理数据。",
+        "file": "game/story/chapter_05.rpy",
+        "line": 57,
+        "covered": true,
+        "clicked_by_lines": [
+          483
+        ]
+      },
+      {
+        "caption": "希望下次你能用自己的方案。",
+        "file": "game/story/chapter_05.rpy",
+        "line": 63,
+        "covered": true,
+        "clicked_by_lines": [
+          516
+        ]
+      },
+      {
+        "caption": "签下公司的转正通知。",
+        "file": "game/story/chapter_06.rpy",
+        "line": 31,
+        "covered": true,
+        "clicked_by_lines": [
+          208,
+          485
+        ]
+      },
+      {
+        "caption": "接受另一家公司的 offer。",
+        "file": "game/story/chapter_06.rpy",
+        "line": 35,
+        "covered": true,
+        "clicked_by_lines": [
+          225,
+          518
+        ]
+      },
+      {
+        "caption": "拿起自己的项目企划书。",
+        "file": "game/story/chapter_06.rpy",
+        "line": 39,
+        "covered": true,
+        "clicked_by_lines": [
+          238,
+          450
+        ]
+      },
+      {
+        "caption": "把三个月的目标拆成行动清单。",
+        "file": "game/story/prologue.rpy",
+        "line": 30,
+        "covered": true,
+        "clicked_by_lines": [
+          190,
+          273,
+          432,
+          500,
+          660,
+          668,
+          707,
+          751,
+          765
+        ]
+      },
+      {
+        "caption": "先确认住处和今天的预算。",
+        "file": "game/story/prologue.rpy",
+        "line": 36,
+        "covered": true,
+        "clicked_by_lines": [
+          467
+        ]
+      },
+      {
+        "caption": "坦白自己是被银光带来，身份材料也不是本人办理。",
+        "file": "game/story/sequel_chapter_01.rpy",
+        "line": 63,
+        "covered": true,
+        "clicked_by_lines": [
+          300,
+          577,
+          809
+        ]
+      },
+      {
+        "caption": "暂时沿用材料中的转学生说法。",
+        "file": "game/story/sequel_chapter_01.rpy",
+        "line": 75,
+        "covered": true,
+        "clicked_by_lines": [
+          536
+        ]
+      },
+      {
+        "caption": "立即与 Luna 核对录入时间、账号和签名。",
+        "file": "game/story/sequel_chapter_01.rpy",
+        "line": 86,
+        "covered": true,
+        "clicked_by_lines": [
+          302,
+          579,
+          811
+        ]
+      },
+      {
+        "caption": "先完成报到，等拿到更多权限再查。",
+        "file": "game/story/sequel_chapter_01.rpy",
+        "line": 96,
+        "covered": true,
+        "clicked_by_lines": [
+          538
+        ]
+      },
+      {
+        "caption": "先问 Dana 需要什么，再按她的方案分工。",
+        "file": "game/story/sequel_chapter_02_spring.rpy",
+        "line": 38,
+        "covered": true,
+        "clicked_by_lines": [
+          304,
+          813
+        ]
+      },
+      {
+        "caption": "直接接过名单，替 Dana 指挥所有人。",
+        "file": "game/story/sequel_chapter_02_spring.rpy",
+        "line": 46,
+        "covered": true,
+        "clicked_by_lines": [
+          540
+        ]
+      },
+      {
+        "caption": "建议立刻解散活动，所有人各自回家。",
+        "file": "game/story/sequel_chapter_02_spring.rpy",
+        "line": 52,
+        "covered": true,
+        "clicked_by_lines": [
+          581
+        ]
+      },
+      {
+        "caption": "让每位见证者各自保存一小段，再互相核对。",
+        "file": "game/story/sequel_chapter_02_spring.rpy",
+        "line": 78,
+        "covered": true,
+        "clicked_by_lines": [
+          276,
+          306,
+          815
+        ]
+      },
+      {
+        "caption": "把全部记录交给 Dana，由她一个人保管。",
+        "file": "game/story/sequel_chapter_02_spring.rpy",
+        "line": 89,
+        "covered": true,
+        "clicked_by_lines": [
+          542
+        ]
+      },
+      {
+        "caption": "由王不稳建立一份唯一的总档案。",
+        "file": "game/story/sequel_chapter_02_spring.rpy",
+        "line": 95,
+        "covered": true,
+        "clicked_by_lines": [
+          583
+        ]
+      },
+      {
+        "caption": "执行 Luna 的分组方案，带回二号点原始纸带。",
+        "file": "game/story/sequel_chapter_03_summer.rpy",
+        "line": 42,
+        "covered": true,
+        "clicked_by_lines": [
+          308,
+          817
+        ]
+      },
+      {
+        "caption": "离开安全绳，直接冲向更近的三号设备。",
+        "file": "game/story/sequel_chapter_03_summer.rpy",
+        "line": 55,
+        "covered": true,
+        "clicked_by_lines": [
+          544
+        ]
+      },
+      {
+        "caption": "立即撤离，放弃全部现场数据。",
+        "file": "game/story/sequel_chapter_03_summer.rpy",
+        "line": 63,
+        "covered": true,
+        "clicked_by_lines": [
+          585
+        ]
+      },
+      {
+        "caption": "公开可复核证据，并邀请见证者补充各自记录。",
+        "file": "game/story/sequel_chapter_03_summer.rpy",
+        "line": 97,
+        "covered": true,
+        "clicked_by_lines": [
+          310,
+          819
+        ]
+      },
+      {
+        "caption": "立刻上传全部原始资料，让异常引发全镇关注。",
+        "file": "game/story/sequel_chapter_03_summer.rpy",
+        "line": 113,
+        "covered": true,
+        "clicked_by_lines": [
+          546
+        ]
+      },
+      {
+        "caption": "暂时封锁消息，只让五个人保留记录。",
+        "file": "game/story/sequel_chapter_03_summer.rpy",
+        "line": 119,
+        "covered": true,
+        "clicked_by_lines": [
+          587
+        ]
+      },
+      {
+        "caption": "让她把所有经过说完，再逐页核对证据。",
+        "file": "game/story/sequel_chapter_04_autumn.rpy",
+        "line": 24,
+        "covered": true,
+        "clicked_by_lines": [
+          312,
+          589,
+          821
+        ]
+      },
+      {
+        "caption": "当面指出她没有权力替所有人决定。",
+        "file": "game/story/sequel_chapter_04_autumn.rpy",
+        "line": 34,
+        "covered": true,
+        "clicked_by_lines": [
+          548
+        ]
+      },
+      {
+        "caption": "拒绝未经本人和众人同意的牺牲。",
+        "file": "game/story/sequel_chapter_04_autumn.rpy",
+        "line": 50,
+        "covered": true,
+        "clicked_by_lines": [
+          314,
+          591,
+          823
+        ]
+      },
+      {
+        "caption": "接受她的安排，先让小镇稳定下来。",
+        "file": "game/story/sequel_chapter_04_autumn.rpy",
+        "line": 61,
+        "covered": true,
+        "clicked_by_lines": [
+          550
+        ]
+      },
+      {
+        "caption": "请她亲手写下名字和意愿，让所有人共同读出。",
+        "file": "game/story/sequel_chapter_05_winter.rpy",
+        "line": 30,
+        "covered": true,
+        "clicked_by_lines": [
+          316,
+          593,
+          825
+        ]
+      },
+      {
+        "caption": "承诺无论发生什么，自己都不会忘记她。",
+        "file": "game/story/sequel_chapter_05_winter.rpy",
+        "line": 41,
+        "covered": true,
+        "clicked_by_lines": [
+          552
+        ]
+      },
+      {
+        "caption": "尊重 Ruby 的决定，与其他三人共同扶住钥印。",
+        "file": "game/story/sequel_chapter_05_winter.rpy",
+        "line": 54,
+        "covered": true,
+        "clicked_by_lines": [
+          318,
+          595,
+          827
+        ]
+      },
+      {
+        "caption": "抢过钥印，试图代替她成为承载者。",
+        "file": "game/story/sequel_chapter_05_winter.rpy",
+        "line": 64,
+        "covered": true,
+        "clicked_by_lines": [
+          554
+        ]
+      },
+      {
+        "caption": "让整个樱镜町共同记住四季。",
+        "file": "game/story/sequel_finale.rpy",
+        "line": 41,
+        "covered": true,
+        "clicked_by_lines": [
+          320
+        ]
+      },
+      {
+        "caption": "留下来，与 Dana 一起守住每一次相遇。",
+        "file": "game/story/sequel_finale.rpy",
+        "line": 45,
+        "covered": true,
+        "clicked_by_lines": [
+          341
+        ]
+      },
+      {
+        "caption": "留下来，与 Luna 一起建立公开的观测坐标。",
+        "file": "game/story/sequel_finale.rpy",
+        "line": 49,
+        "covered": true,
+        "clicked_by_lines": [
+          356
+        ]
+      },
+      {
+        "caption": "留下来，与 Irene 一起重写不再封闭的档案。",
+        "file": "game/story/sequel_finale.rpy",
+        "line": 53,
+        "covered": true,
+        "clicked_by_lines": [
+          371,
+          605
+        ]
+      },
+      {
+        "caption": "留下来，陪 Ruby 记住每一个冬夜的名字。",
+        "file": "game/story/sequel_finale.rpy",
+        "line": 57,
+        "covered": true,
+        "clicked_by_lines": [
+          386
+        ]
+      },
+      {
+        "caption": "回到原来的世界，带走这里真实存在过的证据。",
+        "file": "game/story/sequel_finale.rpy",
+        "line": 61,
+        "covered": true,
+        "clicked_by_lines": [
+          399,
+          564,
+          629,
+          651
+        ]
+      },
+      {
+        "caption": "逐项核对文件、日期和签名。",
+        "file": "game/story/sequel_prologue.rpy",
+        "line": 56,
+        "covered": true,
+        "clicked_by_lines": [
+          298,
+          575,
+          807
+        ]
+      },
+      {
+        "caption": "先确认住处，避免继续淋雨。",
+        "file": "game/story/sequel_prologue.rpy",
+        "line": 64,
+        "covered": true,
+        "clicked_by_lines": [
+          534
+        ]
+      }
+    ]
+  },
+  "v21_labels": {
+    "expected": 23,
+    "dynamically_reached": 23,
+    "missing": [],
+    "ok": true,
+    "items": [
+      {
+        "label": "v21_chapter_01",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/chapter_01.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_chapter_02",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/chapter_02.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_chapter_03",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/chapter_03.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_chapter_04",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/chapter_04.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_chapter_05",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/chapter_05.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_chapter_06",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/chapter_06.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_ending_rising",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/endings.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_ending_stable",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/endings.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_ending_startup",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/endings.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_prologue",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/prologue.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_chapter_01",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_chapter_01.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_chapter_02_spring",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_chapter_02_spring.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_chapter_03_summer",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_chapter_03_summer.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_chapter_04_autumn",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_chapter_04_autumn.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_chapter_05_winter",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_chapter_05_winter.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_ending_dana",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_endings.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_ending_irene",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_endings.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_ending_luna",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_endings.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_ending_return",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_endings.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_ending_ruby",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_endings.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_ending_true",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_endings.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_finale",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_finale.rpy"
+        ],
+        "reached_in_run": true
+      },
+      {
+        "label": "v21_sequel_prologue",
+        "defined_in": "game/story/v21_inserts.rpy",
+        "call_sites": [
+          "game/story/sequel_prologue.rpy"
+        ],
+        "reached_in_run": true
+      }
+    ]
+  },
+  "summer_m05": {
+    "values": [
+      "unknown",
+      "paper_tape",
+      "aborted",
+      "evacuated"
+    ],
+    "evidence": {
+      "unknown": "compat::compat_v20_sequel_* (2.0 default after load)",
+      "paper_tape": "sequel_full_flow_true_ending",
+      "aborted": "sequel_low_trust_flow",
+      "evacuated": "sequel_partial_trust_flow"
+    }
+  },
+  "low_trust_heroines": {
+    "values": {
+      "dana": 0,
+      "luna": 0,
+      "irene": 0,
+      "ruby": 0
+    },
+    "evidence": "sequel_low_trust_flow"
+  },
+  "true_ending": {
+    "met": "sequel_full_flow_true_ending / compat_v20_sequel_finale_menu (6 offered)",
+    "not_met": [
+      "sequel_true_gate_insight_short",
+      "sequel_true_gate_missing_fragment"
+    ]
+  },
+  "compat": {
+    "v20_old_chapter01_menu": {
+      "status": "passed",
+      "exit": 0,
+      "resumed": "('game/story/chapter_01.rpy', 1041769481, 391)",
+      "choice_captions": [
+        "没事，我正好趁这个机会看看公司的数据。",
+        "杂活也得有人干，先干着呗。",
+        "别提了，烦得要死。"
+      ],
+      "trusted_key_fingerprints": [
+        "0e50a5154116eed3662317f593ea441efe9319890f2dd25185bb47f3e35e1594"
+      ]
+    },
+    "v20_old_chapter06_menu": {
+      "status": "passed",
+      "exit": 0,
+      "resumed": "('game/story/chapter_06.rpy', 1041769482, 748)",
+      "choice_captions": [
+        "签下公司的转正通知。",
+        "接受另一家公司的 offer。",
+        "拿起自己的项目企划书。"
+      ],
+      "trusted_key_fingerprints": [
+        "d48b3f97558e5fef720c88bdd3032678e3da76b9d3bfa4aa3e3616596a162dbb"
+      ]
+    },
+    "v20_sequel_finale_menu": {
+      "status": "passed",
+      "exit": 0,
+      "resumed": "('game/story/sequel_finale.rpy', 1041769486, 1467)",
+      "choice_captions": [
+        "让整个樱镜町共同记住四季。",
+        "留下来，与 Dana 一起守住每一次相遇。",
+        "留下来，与 Luna 一起建立公开的观测坐标。",
+        "留下来，与 Irene 一起重写不再封闭的档案。",
+        "留下来，陪 Ruby 记住每一个冬夜的名字。",
+        "回到原来的世界，带走这里真实存在过的证据。"
+      ],
+      "trusted_key_fingerprints": [
+        "4963f40a90d8ffb8b2fb072af7a10c941ca3d5ba542aa1bc11cae00d26ae3100"
+      ]
+    },
+    "v20_sequel_first_menu": {
+      "status": "passed",
+      "exit": 0,
+      "resumed": "('game/story/sequel_prologue.rpy', 1041769486, 1523)",
+      "choice_captions": [
+        "逐项核对文件、日期和签名。",
+        "先确认住处，避免继续淋雨。"
+      ],
+      "trusted_key_fingerprints": [
+        "f32f8e19bee121ba083f6862cc7a493ce147c58bf37a0f6467aa7c351f8c12e8"
+      ]
+    }
+  }
+}
