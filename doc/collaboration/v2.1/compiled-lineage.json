@@ -1,0 +1,164 @@
+{
+  "renpy": "8.5.3.26051504",
+  "version": "2.1.0",
+  "seed": "v20-compiled-lineage.json",
+  "purpose": "Keep original v2.0 IDs and new v2.1 IDs across clean source builds.",
+  "files": [
+    {
+      "source": "game/core/characters.rpy",
+      "source_sha256": "7288ba0386dae359e0d151d53d312a887f580b41913a5bda7bad99503373cb5f",
+      "compiled": "old-game/core/characters.rpyc",
+      "compiled_sha256": "a89f3ca227c7923de2e20e7d23a11b104a758a0756a3f39fa69eb619089976e8"
+    },
+    {
+      "source": "game/core/images.rpy",
+      "source_sha256": "55f5f441896522a5f53fdf1bb0566d8767ca56400a039d20f516ec3fe1ecc5ac",
+      "compiled": "old-game/core/images.rpyc",
+      "compiled_sha256": "cda3e14ab42d6058d1a025fe911ea043c03752f0af0538cf0c26d01790b230c2"
+    },
+    {
+      "source": "game/core/state.rpy",
+      "source_sha256": "1df4ab6f3f60f769d1e8d3cbd4809d81e507f0fcdc10e97a8950ee8a7e8b620e",
+      "compiled": "old-game/core/state.rpyc",
+      "compiled_sha256": "36c903d803eb5a8a835bd907f5c7c1d5102e1649fdea4fa36fbabbfb07bab04a"
+    },
+    {
+      "source": "game/core/v21_images.rpy",
+      "source_sha256": "a16ef2cd0bdd9629aed74fac6a018ba038f7af5877eee28d5b674353e292103d",
+      "compiled": "old-game/core/v21_images.rpyc",
+      "compiled_sha256": "6fd8865f088726bd0e01701d7239a205c20e4c46a37d3501e63cf36dab06bb73"
+    },
+    {
+      "source": "game/gui.rpy",
+      "source_sha256": "ea4d1f0daad4d650c433f16d04c8e5158606901ba9e97c0cfbec0634af2d9217",
+      "compiled": "old-game/gui.rpyc",
+      "compiled_sha256": "1a90d7b6d6fe59d524659bdc30e5b8c991bce61b1a7d581cde270cc814bcaf90"
+    },
+    {
+      "source": "game/options.rpy",
+      "source_sha256": "887bf0f86f8135d9a73f85be6dab1ff07b9e6f0de1f31e95f8580079e742e5da",
+      "compiled": "old-game/options.rpyc",
+      "compiled_sha256": "2380311d49e39e460731b4d3a01a002bf376088bbebca168b3d20f1916464355"
+    },
+    {
+      "source": "game/screens.rpy",
+      "source_sha256": "a2481e5e20bae43cf68bfdc9566e75dd116c9780e88a99cd2b2b0422a4beca6f",
+      "compiled": "old-game/screens.rpyc",
+      "compiled_sha256": "a83e05cc1a91afdf1f6d311b223323c3e466de826507d38af28c8a9432d501e3"
+    },
+    {
+      "source": "game/script.rpy",
+      "source_sha256": "1572764577d4584a734aa5a2be638e8405617cb44327d932f1b9ac8bedb48b38",
+      "compiled": "old-game/script.rpyc",
+      "compiled_sha256": "8c5570707113fa81eb227b3410052e4a65d9f3a1fed0d99d290e0b52d985043e"
+    },
+    {
+      "source": "game/story/chapter_01.rpy",
+      "source_sha256": "615f0e438d4c6bddc490b2a1df5d15407d7ffd7a2be5a0035d3f4d3d79c64722",
+      "compiled": "old-game/story/chapter_01.rpyc",
+      "compiled_sha256": "91440f8868021249fda46badf12cca4ca35b0c52204f2346f33da487b28582c9"
+    },
+    {
+      "source": "game/story/chapter_02.rpy",
+      "source_sha256": "eb97371f8c58b77cb8be7b77e2d8e5988137e17c157a23c60c664144d507b95f",
+      "compiled": "old-game/story/chapter_02.rpyc",
+      "compiled_sha256": "08361cce43ab305bcbf2748e272c369f3bb41cd0f3a2c47d8907870c263942bf"
+    },
+    {
+      "source": "game/story/chapter_03.rpy",
+      "source_sha256": "76c6f02abebbc8d374e60e913b6150f3e14accf724afa78fe2b342d9ded17a32",
+      "compiled": "old-game/story/chapter_03.rpyc",
+      "compiled_sha256": "3425c6ba845f43f284b8f802c3950f2bae53acad52f3a3958b26e74dcbc09d82"
+    },
+    {
+      "source": "game/story/chapter_04.rpy",
+      "source_sha256": "1a4cd25de8417320529819371ee7c692753911530436d80a00b4908ca102cc99",
+      "compiled": "old-game/story/chapter_04.rpyc",
+      "compiled_sha256": "2ab20e7fd087f95581bd1b13e9f7e516b58746b102f1fe7a3f6b6bd0c7fd8e14"
+    },
+    {
+      "source": "game/story/chapter_05.rpy",
+      "source_sha256": "5c0f0b84207b0122a8c0b4dae58d16369ec6d10a9b459758a9360beb2a00bef9",
+      "compiled": "old-game/story/chapter_05.rpyc",
+      "compiled_sha256": "4e04205aac69f8879d7ff607e5ee97c06525d0969780d7ec6a15624dfaa83ca4"
+    },
+    {
+      "source": "game/story/chapter_06.rpy",
+      "source_sha256": "8f5d435a80039f82a7699af09df3803254fc54c414f5e0faf77ab7889c267545",
+      "compiled": "old-game/story/chapter_06.rpyc",
+      "compiled_sha256": "220c56cf318b251a5ecc8e0419d960a8c5c5c524dad5c882c3816869d4a9dce6"
+    },
+    {
+      "source": "game/story/endings.rpy",
+      "source_sha256": "aa9ecedbc60823dd2d3042b2dfc6750d138bd8f5dc73d3b6be73621570deac75",
+      "compiled": "old-game/story/endings.rpyc",
+      "compiled_sha256": "2c403998ca14e638989bc012343a109f9f0d03141cbae9d7b29e9eee82b2c52a"
+    },
+    {
+      "source": "game/story/prologue.rpy",
+      "source_sha256": "8aa9b9ebd02c43dce96fc369d6fd1adb47514cff82871eedf3c81ef43197abe8",
+      "compiled": "old-game/story/prologue.rpyc",
+      "compiled_sha256": "d4c888c1da6e5e821b3378c23798a3e14bea3eb2d68d180dc12f341acfa8180d"
+    },
+    {
+      "source": "game/story/sequel_chapter_01.rpy",
+      "source_sha256": "d0db70c1e23d063aa44427835add871261b822f8af63184133c19bdd749098e7",
+      "compiled": "old-game/story/sequel_chapter_01.rpyc",
+      "compiled_sha256": "35f01944ad1e240bde3050475d91cd07b661253b4c0c236b0829c8d14e500d98"
+    },
+    {
+      "source": "game/story/sequel_chapter_02_spring.rpy",
+      "source_sha256": "8eaf8fce866138cc4cf2fe5ab1adb6c5b179955902a24cd6363f399466757b02",
+      "compiled": "old-game/story/sequel_chapter_02_spring.rpyc",
+      "compiled_sha256": "07399ec5c9e6818771f04fb651bf88b7ed0895840deb1b89ad5db8b91d54c783"
+    },
+    {
+      "source": "game/story/sequel_chapter_03_summer.rpy",
+      "source_sha256": "69b0305dd719d9d438e59a368fc8f809b8b950e4bc575928df23c430cd1b83fe",
+      "compiled": "old-game/story/sequel_chapter_03_summer.rpyc",
+      "compiled_sha256": "5a3ca73ff8fe7ace2cdb2327bfa54f256cd0ad8698bf429ef4d823e3a3bb179c"
+    },
+    {
+      "source": "game/story/sequel_chapter_04_autumn.rpy",
+      "source_sha256": "3b05c39082dbfcabf56065f67cd1e3e43b6183231ef89a5491f0fa81ecc42be5",
+      "compiled": "old-game/story/sequel_chapter_04_autumn.rpyc",
+      "compiled_sha256": "ed9dfacd95d60d2175d9ccbb024e546e023db58958e5cc0c1c6b330caa695f31"
+    },
+    {
+      "source": "game/story/sequel_chapter_05_winter.rpy",
+      "source_sha256": "7d89c4679b64a902a07b4535b2280ecd3f54f7a1d5061473d16a3c8b78303163",
+      "compiled": "old-game/story/sequel_chapter_05_winter.rpyc",
+      "compiled_sha256": "a02d7d68548dadfa289e2ec9b243d3e462b1c41faa66646ee120f27e9e6f0dfc"
+    },
+    {
+      "source": "game/story/sequel_endings.rpy",
+      "source_sha256": "942b619009362692ed65b784bd5acb7cd34f5fe8259ddc278e2be3b24fe77320",
+      "compiled": "old-game/story/sequel_endings.rpyc",
+      "compiled_sha256": "d7fa2748827511aa1a15441a472541bfee5f991a47993aba4a6b1cfa498d91bc"
+    },
+    {
+      "source": "game/story/sequel_finale.rpy",
+      "source_sha256": "2edfc8c355cfe60dbc6cdbe2aadd92ca40781a4cb935e4471df83a715790ab87",
+      "compiled": "old-game/story/sequel_finale.rpyc",
+      "compiled_sha256": "459ad476e6ac88ff91f27dd1837892c0863c5910f604894c10e6df6d57c60fc3"
+    },
+    {
+      "source": "game/story/sequel_prologue.rpy",
+      "source_sha256": "ad833f4b0b4d3057af7848df09fc1f357a69db0070c4fca1d487f708577b9637",
+      "compiled": "old-game/story/sequel_prologue.rpyc",
+      "compiled_sha256": "a41f5c46f685c14bbfd396c25d825a6956a48275f90186dbc251daa27c4ec711"
+    },
+    {
+      "source": "game/story/v21_inserts.rpy",
+      "source_sha256": "97f1751c00ffdb9d68dce2ad5a3e4e7ac4acb19fb881c324fb7fe07e98bace07",
+      "compiled": "old-game/story/v21_inserts.rpyc",
+      "compiled_sha256": "ac8fd9f6a77c012fee39acff3a81adb9d36965e3512df506e37719d61023512a"
+    },
+    {
+      "source": "game/ui/status_screen.rpy",
+      "source_sha256": "a325a340bfea2a068e446b40d587121a594fd54b18f39afb14948d7bbbae6b5a",
+      "compiled": "old-game/ui/status_screen.rpyc",
+      "compiled_sha256": "5a0d2b8c6c3c6c802658b73c3f2a9cb5b034c99fa413020155f72224df71afa7"
+    }
+  ]
+}

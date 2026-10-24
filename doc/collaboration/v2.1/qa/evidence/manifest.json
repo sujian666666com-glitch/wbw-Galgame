@@ -1,0 +1,70 @@
+{
+  "normalization": "Trailing whitespace removed only; source logs remain in ignored QA worktree. No contents or results changed.",
+  "logs": [
+    {
+      "file": "compat-v20_old_chapter01_menu.log",
+      "original_sha256": "dea5ece2a65aa597bfa8ca6ec52fb7ee1f0cb12b6e83b1a9f72f6568d37812d7",
+      "delivered_sha256": "1eb09dd4e374eb80841d2c33e6eddab585f5f74edc4eeb7d6017b12d6e0c144d"
+    },
+    {
+      "file": "compat-v20_old_chapter06_menu.log",
+      "original_sha256": "2c69315efff5d5fe4899862447d565bb7c5930b74b0f8fcace23141641e7ee0d",
+      "delivered_sha256": "191880c454b16358b3f623771b54aa3ef14f37a5a1424bb9812f8c452407cd99"
+    },
+    {
+      "file": "compat-v20_sequel_finale_menu.log",
+      "original_sha256": "4de811c76ef2716585ff69668dcc19be5ec494feaed337e54ecaa76d58e32238",
+      "delivered_sha256": "19cfeee5b7cd3cc0f49f303dbdeb3f5240ebcb7118a5dc205a104e5647bbe7a2"
+    },
+    {
+      "file": "compat-v20_sequel_first_menu.log",
+      "original_sha256": "280779492fee0f17aed3574fcc8943f5ad34e5abd0386391a31539945f672e88",
+      "delivered_sha256": "e9d4129b42eab3ddd402a9b325ccbecf4ad30d004d40a26f5e4bdb51b7873677"
+    },
+    {
+      "file": "final-global-27.log",
+      "original_sha256": "29a83ee7fc78e7c4078238378bb5928c9e995e1f51da397cc2bebcee542a8d76",
+      "delivered_sha256": "0c85754d3434171f819ea2f53a54f9b38efed9267b97f69489f2cb6d49cc00e0"
+    },
+    {
+      "file": "global-cold.log",
+      "original_sha256": "26dbce6346ac9c327afaf38caaa81342aa8f8b9967523bcdf6fdb23a7d8b3022",
+      "delivered_sha256": "508a38e4893e687f7bc271333efc03e8e739eb0cb2236b057c2a9d77e4ac691c"
+    },
+    {
+      "file": "global-warm.log",
+      "original_sha256": "614c60d0aeafc148ee7cc712a8ae3eba22b5294778fe306a0f00261310b96527",
+      "delivered_sha256": "5701b2d29f588fe78cc5c776c08d03b7e278ac43909987702a8f751b58245efc"
+    },
+    {
+      "file": "seq-1-save_load_smoke.log",
+      "original_sha256": "c5183779be80c83e0fcc818414dce866972a1c0dd2b4b3807ad0b5a22f984b5f",
+      "delivered_sha256": "1e88ffca22a1ab7ef1503366876da500a6f75633024310b20570f3cd38afadfd"
+    },
+    {
+      "file": "seq-2-sequel_full_flow_true_ending.log",
+      "original_sha256": "e22db88469272ba89e826b0a3504c9eda11a0e90d4f0e3029d047ddad57f8970",
+      "delivered_sha256": "446d86f8023c3fb88fb80af1e3b8c3d9ea106c140683f35ca75d37e8ab6c3412"
+    },
+    {
+      "file": "single-save_load_smoke.log",
+      "original_sha256": "2babcec359dd32945aec28d2a389f97bc9ac288075eb34fff87da5335484d6f8",
+      "delivered_sha256": "8c45a20beb2f9103616d48a34871b52be7a230e70ae67ee16fef5ac87de05542"
+    },
+    {
+      "file": "single-sequel_full_flow_true_ending.log",
+      "original_sha256": "fb40b74eebe2ef53e62e20974620411bba53e41a0845311abf04b74fc068ea9f",
+      "delivered_sha256": "6b9c490832d23ad57a923d968ee3988631f3a63fa07fd2918cc9719cf31e17de"
+    },
+    {
+      "file": "ui-afm.log",
+      "original_sha256": "d6496544ed2dd369aeafff7d2ca3177e1d068f1b1f97df529213d16f8c2ecaaa",
+      "delivered_sha256": "2e6ba4b9d8abefad99fac1e951e39be602430ff8250ba512714f32d9833f51ef"
+    },
+    {
+      "file": "ui-history.log",
+      "original_sha256": "3bde9cec8dbca76a68bacb80535f0451c1c9372d0f71d6592594ee326cf07c4a",
+      "delivered_sha256": "e71073d5d1bfd5a3c96ea518c3b286721018f8f93994f914617c4f4fafe2dd01"
+    }
+  ]
+}

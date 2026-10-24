@@ -1,0 +1,30 @@
+[v21-lock 01:37:19] lock acquired; child group 52142; limit 45s
+[rpytest] [log] Running 1 test(s) marked with 'only' flag.
+[rpytest] [log] - global::sequel_full_flow_true_ending
+
+[rpytest] Starting test run
+[rpytest] Platform:      macOS-26.2-arm64-arm-64bit
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.3.26051504
+[rpytest] Game Version:  2.1.0
+
+[rpytest] [exc] + global
+[rpytest] [exc]   - sequel_full_flow_true_ending
+[rpytest] [exc]   - sequel_full_flow_true_ending (3.332 s)
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] PASSED  global               - (4.194 s)
+[rpytest]   PASSED  sequel_full_flow_true_ending - (3.332 s)
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     3 |     1 passed |     0 xfailed |     0 failed |     0 xpassed |     2 skipped |     0 not run
+[rpytest] Test cases :    32 |     1 passed |     0 xfailed |     0 failed |     0 xpassed |    31 skipped |     0 not run
+[rpytest] Test hooks :     2 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     6 |     6 passed |     0 xfailed |     0 failed |     0 xpassed |
+
+[rpytest] Time: 4.194 s
+[rpytest] Status: PASSED
+
+[v21-lock 01:37:24] child group reaped; lock released

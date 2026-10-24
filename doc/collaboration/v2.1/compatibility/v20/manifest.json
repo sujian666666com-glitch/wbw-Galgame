@@ -1,0 +1,259 @@
+{
+  "created_by": "tools/v21_capture_fixtures.py (Pi QA)",
+  "fixtures": [
+    {
+      "arc": "old",
+      "capture_testcase": "capture_v20_old_chapter01_menu",
+      "captured_at": "2026-10-24T08:05:25+00:00",
+      "description": "旧篇：主菜单→旧篇→序章选择后自然到达第一章菜单（ability=3，未做第一章选择）",
+      "files": [
+        {
+          "path": "saves/three-months-to-stay-1/1-1-LT1.save",
+          "sha256": "ff3ac6de0fcac3d2398a92c9b477a48e907c459692198f6ad581a59d67a305d5",
+          "size": 22111
+        },
+        {
+          "path": "saves/three-months-to-stay-1/persistent",
+          "sha256": "02883ca2a730e376b7584b8e4315114a4f4681af681f674a05c0b509a83e337a",
+          "size": 2525
+        }
+      ],
+      "game_version": "2.0.0",
+      "id": "v20_old_chapter01_menu",
+      "purpose": "2.1 在旧篇第一章前后插入片段时的早期菜单兼容性；验证 from 2.0 存档读入后数值与进度不变",
+      "renpy_version": [
+        8,
+        5,
+        3,
+        26051504
+      ],
+      "save_directory": "three-months-to-stay-1",
+      "slot": "page 1 / slot 1",
+      "state": {
+        "current": "('game/story/chapter_01.rpy', 1041769481, 391)",
+        "fixture": "v20_old_chapter01_menu",
+        "fragment_count": 0,
+        "game_version": "2.0.0",
+        "persistent": {
+          "old_ending_route": null,
+          "old_endings_seen": []
+        },
+        "save_directory": "three-months-to-stay-1",
+        "state": {
+          "ability": 3,
+          "affection": 0,
+          "autumn_fragment": false,
+          "chapter_progress": 1,
+          "dana_affection": 0,
+          "ending_route": "",
+          "evidence_ready": false,
+          "irene_affection": 0,
+          "luna_affection": 0,
+          "money": 1100,
+          "ruby_affection": 0,
+          "sequel_chapter_progress": 0,
+          "sequel_insight": 0,
+          "sequel_origin_ending": "unknown",
+          "sequel_resolve": 0,
+          "sequel_route": "",
+          "side_project_ready": false,
+          "spring_fragment": false,
+          "story_arc": "old",
+          "summer_fragment": false,
+          "winter_fragment": false
+        }
+      }
+    },
+    {
+      "arc": "old",
+      "capture_testcase": "capture_v20_old_chapter06_menu",
+      "captured_at": "2026-10-24T08:05:28+00:00",
+      "description": "旧篇：自然走完序章至第五章（理想数值路线），停在第六章三选项菜单",
+      "files": [
+        {
+          "path": "saves/three-months-to-stay-1/1-1-LT1.save",
+          "sha256": "00ebe2ce8ac28443b2f5a0ab6b147cc8b681a2ac18eb8d5023db910ee1b5eb33",
+          "size": 33612
+        },
+        {
+          "path": "saves/three-months-to-stay-1/persistent",
+          "sha256": "8d63aefea51c7a1452a32beea93d0f2a7eb7672a7df4830a705bd761d56ec58b",
+          "size": 5621
+        }
+      ],
+      "game_version": "2.0.0",
+      "id": "v20_old_chapter06_menu",
+      "purpose": "旧篇结局前插入（persistent 写入之前）与第六章菜单的兼容性；同时覆盖三结局选择入口",
+      "renpy_version": [
+        8,
+        5,
+        3,
+        26051504
+      ],
+      "save_directory": "three-months-to-stay-1",
+      "slot": "page 1 / slot 1",
+      "state": {
+        "current": "('game/story/chapter_06.rpy', 1041769482, 748)",
+        "fixture": "v20_old_chapter06_menu",
+        "fragment_count": 0,
+        "game_version": "2.0.0",
+        "persistent": {
+          "old_ending_route": null,
+          "old_endings_seen": []
+        },
+        "save_directory": "three-months-to-stay-1",
+        "state": {
+          "ability": 13,
+          "affection": 27,
+          "autumn_fragment": false,
+          "chapter_progress": 6,
+          "dana_affection": 0,
+          "ending_route": "",
+          "evidence_ready": true,
+          "irene_affection": 0,
+          "luna_affection": 0,
+          "money": 1832,
+          "ruby_affection": 0,
+          "sequel_chapter_progress": 0,
+          "sequel_insight": 0,
+          "sequel_origin_ending": "unknown",
+          "sequel_resolve": 0,
+          "sequel_route": "",
+          "side_project_ready": true,
+          "spring_fragment": false,
+          "story_arc": "old",
+          "summer_fragment": false,
+          "winter_fragment": false
+        }
+      }
+    },
+    {
+      "arc": "sequel",
+      "capture_testcase": "capture_v20_sequel_finale_menu",
+      "captured_at": "2026-10-24T08:05:35+00:00",
+      "description": "续篇：自然走完四季章节（全信任/高洞察路线），停在终章六选项菜单之前",
+      "files": [
+        {
+          "path": "saves/three-months-to-stay-1/1-1-LT1.save",
+          "sha256": "1b245e45a5ad79899be41544cbb540e8364bdf4620349792fea84e5eae5838ff",
+          "size": 32489
+        },
+        {
+          "path": "saves/three-months-to-stay-1/persistent",
+          "sha256": "72b6ab99ecf984b1fb972b446428f46ae99e8ca272f3795cf678eb0d39dc0fea",
+          "size": 12610
+        }
+      ],
+      "game_version": "2.0.0",
+      "id": "v20_sequel_finale_menu",
+      "purpose": "终章最终 menu 之前插入与真结局前置的兼容性；核对四碎片、insight/resolve、四人信任",
+      "renpy_version": [
+        8,
+        5,
+        3,
+        26051504
+      ],
+      "save_directory": "three-months-to-stay-1",
+      "slot": "page 1 / slot 1",
+      "state": {
+        "current": "('game/story/sequel_finale.rpy', 1041769486, 1467)",
+        "fixture": "v20_sequel_finale_menu",
+        "fragment_count": 4,
+        "game_version": "2.0.0",
+        "persistent": {
+          "old_ending_route": null,
+          "old_endings_seen": []
+        },
+        "save_directory": "three-months-to-stay-1",
+        "state": {
+          "ability": 2,
+          "affection": 0,
+          "autumn_fragment": true,
+          "chapter_progress": 0,
+          "dana_affection": 3,
+          "ending_route": "",
+          "evidence_ready": false,
+          "irene_affection": 3,
+          "luna_affection": 3,
+          "money": 2300,
+          "ruby_affection": 4,
+          "sequel_chapter_progress": 6,
+          "sequel_insight": 6,
+          "sequel_origin_ending": "unknown",
+          "sequel_resolve": 5,
+          "sequel_route": "",
+          "side_project_ready": false,
+          "spring_fragment": true,
+          "story_arc": "sequel",
+          "summer_fragment": true,
+          "winter_fragment": true
+        }
+      }
+    },
+    {
+      "arc": "sequel",
+      "capture_testcase": "capture_v20_sequel_first_menu",
+      "captured_at": "2026-10-24T08:05:30+00:00",
+      "description": "续篇：主菜单→新篇→序章自然到达第一个菜单，未做任何续篇选择",
+      "files": [
+        {
+          "path": "saves/three-months-to-stay-1/1-1-LT1.save",
+          "sha256": "46b9b4de295eb3fdd979c6ff9a3f5a6f3431116c95fb326217bd6312c14d8715",
+          "size": 16581
+        },
+        {
+          "path": "saves/three-months-to-stay-1/persistent",
+          "sha256": "af79c0c8992e0aa19f939660bf4fdf38cca6dc79802b6b99b3c6441618f8e1e0",
+          "size": 6147
+        }
+      ],
+      "game_version": "2.0.0",
+      "id": "v20_sequel_first_menu",
+      "purpose": "续篇序章/第一章新增片段的早期兼容性；验证 story_arc/续篇变量初始值",
+      "renpy_version": [
+        8,
+        5,
+        3,
+        26051504
+      ],
+      "save_directory": "three-months-to-stay-1",
+      "slot": "page 1 / slot 1",
+      "state": {
+        "current": "('game/story/sequel_prologue.rpy', 1041769486, 1523)",
+        "fixture": "v20_sequel_first_menu",
+        "fragment_count": 0,
+        "game_version": "2.0.0",
+        "persistent": {
+          "old_ending_route": null,
+          "old_endings_seen": []
+        },
+        "save_directory": "three-months-to-stay-1",
+        "state": {
+          "ability": 2,
+          "affection": 0,
+          "autumn_fragment": false,
+          "chapter_progress": 0,
+          "dana_affection": 0,
+          "ending_route": "",
+          "evidence_ready": false,
+          "irene_affection": 0,
+          "luna_affection": 0,
+          "money": 2300,
+          "ruby_affection": 0,
+          "sequel_chapter_progress": 0,
+          "sequel_insight": 0,
+          "sequel_origin_ending": "unknown",
+          "sequel_resolve": 0,
+          "sequel_route": "",
+          "side_project_ready": false,
+          "spring_fragment": false,
+          "story_arc": "sequel",
+          "summer_fragment": false,
+          "winter_fragment": false
+        }
+      }
+    }
+  ],
+  "purpose": "Ren'Py 2.0 -> 2.1 save compatibility fixtures (v2.1 acceptance)",
+  "save_directory": "three-months-to-stay-1"
+}

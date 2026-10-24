@@ -7,6 +7,7 @@ default quick_menu = True
 style button:
     background Solid("#332b4dcc")
     hover_background Solid("#6e5688dd")
+    selected_background Solid("#705a8ddd")
     padding (28, 16)
 
 style button_text:
@@ -14,10 +15,22 @@ style button_text:
     xalign 0.5
 
 style bar:
-    xsize 900
-    ysize 24
-    left_bar Solid(gui.accent_color)
-    right_bar Solid("#555064")
+    xsize 1000
+    ysize 28
+    ymaximum 28
+    left_bar Solid("#e6b7da")
+    right_bar Solid("#6d6588")
+    thumb Solid("#fff8fc", xsize=18, ysize=28)
+    bar_resizing True
+
+style slider:
+    xsize 1000
+    ysize 28
+    ymaximum 28
+    left_bar Solid("#e6b7da")
+    right_bar Solid("#6d6588")
+    thumb Solid("#fff8fc", xsize=18, ysize=28)
+    bar_resizing True
 
 screen say(who, what):
     window:
@@ -50,8 +63,9 @@ screen choice(items):
     style_prefix "choice"
     vbox:
         xalign 0.5
-        yalign 0.55
-        spacing 18
+        ypos 800
+        yanchor 1.0
+        spacing 12
         for i in items:
             textbutton i.caption action i.action
 
@@ -85,6 +99,7 @@ screen navigation():
         yalign 0.52
         spacing 22
         if main_menu:
+            text "平行世界线：只继承事业回顾，不继承恋爱。" size 24 color "#d5c6df" xsize 420
             textbutton "新篇：樱镜町" action Start("sequel_start")
             textbutton "旧篇：三个月，留下来" action Start("original_story_start")
         else:
@@ -108,15 +123,19 @@ screen main_menu():
         padding (90, 90)
         vbox:
             spacing 28
-            text config.name size 62 color "#ffffff"
+            text "旺不稳的\n奇妙冒险" size 62 color "#ffffff" xsize 420 line_spacing 8
             text "旺不稳的奇妙冒险，开始了。" size 30 color "#e6b7da"
             null height 50
             use navigation
 
 screen game_menu(title, scroll=None, yinitial=0.0):
     tag menu
+    # 无参数 Return()：主菜单里改为显示 main_menu，不结束主菜单交互；游戏内才返回对白。
+    key "game_menu" action Return()
     add gui.game_menu_background
     use navigation
+    if main_menu:
+        textbutton "返回" action Return() xpos 110 ypos 88
     text title:
         xpos 700
         ypos 70
@@ -129,6 +148,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         ysize 820
         background Solid("#242238dd")
         padding (45, 40)
+        clipping True
         transclude
 
 screen file_slots(title):
@@ -137,26 +157,30 @@ screen file_slots(title):
         vbox:
             spacing 24
             hbox:
-                spacing 18
+                spacing 16
                 textbutton "<" action FilePagePrevious()
                 button:
+                    xsize 460
                     key_events True
                     action page_name_value.Toggle()
-                    input value page_name_value
+                    input:
+                        value page_name_value
+                        xsize 420
                 textbutton ">" action FilePageNext()
             grid 3 2:
                 spacing 20
                 for i in range(6):
                     $ slot = i + 1
                     button:
-                        xsize 330
-                        ysize 280
+                        xsize 340
+                        ysize 278
+                        padding (12, 12)
                         action FileAction(slot)
                         vbox:
-                            spacing 10
-                            add FileScreenshot(slot) xsize 300 ysize 180
-                            text FileTime(slot, format=_("%Y-%m-%d %H:%M"), empty=_("空存档")) size 22
-                            text FileSaveName(slot) size 20
+                            spacing 8
+                            add FileScreenshot(slot) xsize 316 ysize 178
+                            text FileTime(slot, format=_("%Y-%m-%d %H:%M"), empty=_("空存档")) size 20 xsize 316
+                            text FileSaveName(slot) size 18 xsize 316
 
 screen save():
     tag menu
@@ -170,31 +194,68 @@ screen preferences():
     tag menu
     use game_menu(_("系统设置"), scroll="viewport"):
         vbox:
-            spacing 28
+            spacing 20
             text "显示模式" size 36 color gui.accent_color
             hbox:
                 spacing 18
                 textbutton "窗口" action Preference("display", "window")
                 textbutton "全屏" action Preference("display", "fullscreen")
             text "文字速度" size 36 color gui.accent_color
-            bar value Preference("text speed")
+            bar value Preference("text speed") style "slider" xsize 1000 ysize 28
             text "自动播放速度" size 36 color gui.accent_color
-            bar value Preference("auto-forward time")
+            bar value Preference("auto-forward time") style "slider" xsize 1000 ysize 28
+            text "快进" size 36 color gui.accent_color
+            hbox:
+                spacing 16
+                textbutton "未读文本" action Preference("skip", "toggle")
+                textbutton "选项后继续" action Preference("after choices", "toggle")
+                textbutton "跳过转场" action Preference("transitions", "toggle")
 
 screen history():
     tag menu
     predict False
     use game_menu(_("历史记录"), scroll="viewport"):
+        # vscrollbar 继承 default，不继承 style bar 的 1000×28。
+        # 不限制 xsize 时，side 按整宽测量竖条，中间对白宽度变成 0。
         viewport:
+            xsize 1060
+            ysize 720
             mousewheel True
             draggable True
+            scrollbars "vertical"
+            yinitial 1.0
+            child_size (1020, 32767)
+            vscrollbar_xsize 18
+            vscrollbar_yfill True
+            vscrollbar_bar_vertical True
+            vscrollbar_bar_invert True
+            vscrollbar_bar_resizing True
+            vscrollbar_base_bar Solid("#6d6588")
+            vscrollbar_thumb Solid("#fff8fc")
             vbox:
-                spacing 24
+                spacing 18
+                xfill True
+                xsize 1020
+                if not _history_list:
+                    text "尚无对白记录。" color gui.idle_small_color
                 for h in _history_list:
                     vbox:
+                        xfill True
+                        spacing 6
                         if h.who:
-                            text h.who color gui.accent_color
-                        text h.what
+                            text h.who:
+                                color gui.accent_color
+                                xsize 1020
+                        text h.what:
+                            xsize 1020
+
+init python:
+    # 读档、覆盖、回主菜单、退出走 layout.* 字面量，不经过 _()。
+    # 不改 gui.UNKNOWN_TOKEN / gui.TRUST_TOKEN，也不动签名校验。
+    layout.LOADING = "读取存档会丢失未保存的进度。\n确定要继续吗？"
+    layout.OVERWRITE_SAVE = "确定要覆盖这个存档吗？"
+    layout.MAIN_MENU = "确定要返回主菜单吗？\n未保存的进度将会丢失。"
+    layout.QUIT = "确定要退出游戏吗？"
 
 screen confirm(message, yes_action, no_action):
     modal True
@@ -230,3 +291,14 @@ transform notify_appear:
         linear .25 alpha 1
     on hide:
         linear .35 alpha 0
+
+screen v21_mirror_caption(message):
+    zorder 50
+    text message:
+        xalign 0.5
+        yalign 0.38
+        xmaximum 1200
+        text_align 0.5
+        size 40
+        color "#f7f4ff"
+        outlines [(2, "#120e1acc", 0, 0)]

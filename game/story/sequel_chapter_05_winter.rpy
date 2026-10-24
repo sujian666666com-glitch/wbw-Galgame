@@ -79,4 +79,6 @@ label sequel_chapter_05_winter:
     ruby "镜室醒了。"
     wbw "那就去把规则改掉。"
 
+    call v21_sequel_chapter_05_winter
+
     jump sequel_finale

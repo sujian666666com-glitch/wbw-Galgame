@@ -1,89 +1,40 @@
-# 测试报告
+# v2.1.0 端到端验收报告
 
-## 测试环境与结论
+更新：2026-10-25。**macOS 静音版的代码、剧情、自动回归、原生完整游玩与独立包复查均通过。** 没有已知阻断流程的问题。
 
-| 项目 | 记录 |
-| --- | --- |
-| 测试日期 | 2026-07-13 |
-| 游戏版本 | `2.0.0` |
-| Ren'Py SDK | 官方 Ren'Py 8.5.3，构建号 `8.5.3.26051504` |
-| SDK SHA-256 | `eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45` |
-| 操作系统 | macOS 26.2，Apple Silicon |
-| 设计分辨率 | `1920×1080` |
-| 总体结论 | 双篇 v2 通过 lint、真实素材加载和全部自动化路线验收；发布包尚未生成 |
-
-## 隔离验证方式
-
-最终测试没有直接使用用户现有存档和缓存。仓库被复制到 `.work/renpy-final-audit.*`，排除 `.git`、`.work`、`game/saves`、`game/cache` 与编译产物，并通过独立 `RENPY_PATH_TO_SAVES` 运行。
-
-```bash
-PROJECT="/Users/ik/Desktop/02_学习与资料/game/my-renpy-game"
-RENPY="$PROJECT/.work/renpy-sdk/renpy-8.5.3-sdk/renpy.sh"
-
-RENPY_PATH_TO_SAVES="<isolated-saves>" \
-  "$RENPY" "<isolated-project>" lint \
-  --error-code --check-unclosed-tags --all-problems
-
-RENPY_PATH_TO_SAVES="<isolated-saves>" \
-  "$RENPY" "<isolated-project>" test global --report-detailed
-```
-
-自动化还会在 suite 开始时备份 `persistent.old_ending_route` 与 `persistent.old_endings_seen`，teardown 时恢复并保存，避免测试结局写入用户记录。
-
-## 最终结果
-
-### Ren'Py lint
-
-```text
-Dialogue blocks: 686
-Menus: 22（旧篇 10，续篇 12）
-Image definitions: 50
-Screens: 14
-Errors: 0
-Warnings: 0
-```
-
-### 自动化
-
-```text
-Test suites:  1/1 passed
-Test cases:  14/14 passed
-Test hooks:  15/15 passed
-Assertions:  29/29 passed
-Time:        11.783 s
-Status:      PASSED
-```
-
-| 用例 | 覆盖内容 | 状态 |
+| 范围 | 实际结果 | 证据 |
 | --- | --- | --- |
-| `full_flow_stable_ideal` | 旧篇从主菜单到稳定理想结局；验证双篇状态隔离 | 通过 |
-| `rising_ideal` / `startup_ideal` | 旧篇上升、创业理想表现 | 通过 |
-| `stable_normal` / `rising_normal` / `startup_normal` | 旧篇三个普通表现 | 通过 |
-| `save_load_smoke` | 标准保存、继续选择、读取及能力值恢复 | 通过 |
-| `sequel_full_flow_true_ending` | 续篇 12 个自然选择、四碎片、全信任与真结局 | 通过 |
-| `sequel_dana_ending` | Dana《春日归邻》 | 通过 |
-| `sequel_luna_ending` | Luna《盛夏坐标》 | 通过 |
-| `sequel_irene_ending` | Irene《秋实之书》 | 通过 |
-| `sequel_ruby_ending` | Ruby《冬夜来信》 | 通过 |
-| `sequel_return_ending` | 返回现实《回到灯火》 | 通过 |
-| `sequel_origin_rising_smoke` | 旧篇 rising persistent 在续篇开场可读取，随后恢复 | 通过 |
+| 两篇剧情／23 新增片段 | 全部接入；Claude 对实际执行脚本交叉审查通过；原生经过 23/23 | [剧情审查](collaboration/v2.1/story/final-cross-review.md)、[原生汇总](collaboration/v2.1/native/acceptance-evidence.json) |
+| 原菜单、选项与素材 | 22 菜单、61 选项 caption/条件未变；110 份原图片文件哈希未变 | [静态记录](collaboration/v2.1/integration-static-check.json) |
+| 全量自动回归 | 最终 27/27 用例、122/122 断言、28/28 hooks；另 4/4 旧档、22/22 兼容断言 | [Pi 最终报告](collaboration/v2.1/qa/final-ui-regression.md)、[原始测试输出](collaboration/v2.1/qa/evidence/final-global-27.log) |
+| 基线两失败 | 原因定位为测试输入焦点/顺序状态，未延长超时或削弱断言；单跑、顺序组合、cold/warm 均通过；正常 UI 存读档通过 | [修复报告](collaboration/v2.1/qa/final-automated-report.md)、[证据目录](collaboration/v2.1/qa/evidence/) |
+| 61 选项／23 片段覆盖 | 全部选项有用例；23 片段由真实路径动态进入 | [覆盖矩阵](collaboration/v2.1/qa/coverage-matrix.json) |
+| 代表性 v2.0 存档 | 4/4 恢复原语句与原菜单、旧数值/persistent；新夏章状态为 unknown | [兼容回执](collaboration/v2.1/qa/compat-report.json) |
+| lint | 无错误或警告；998 对白、22 菜单、68 图片声明、15 屏幕 | [集成记录](collaboration/v2.1/integration-review.md) |
+| 美术 | 9 张新增资源逐张检查；全部进入真实画面，独立复审无阻断项 | [素材清单](collaboration/v2.1/art/manifest.json)、[GPT-6.1 Sol 原生复审](collaboration/v2.1/art/native-review.md) |
+| 原生完整游玩 | 旧篇高/低、续篇理想/低信任四条全程；9 类结局全部到达，旧篇三类普通/理想六种表现均正确 | [完整验收](collaboration/v2.1/native/final-acceptance.md)、[实际游玩记录](collaboration/v2.1/native/playthrough.jsonl) |
+| 存读档与交互 | 状态 3→4→读回 3；历史可见并可滚动；回滚、快进、自动、速度条、Esc、全屏、中文确认通过 | [原生验收](collaboration/v2.1/native/final-acceptance.md) |
+| 独立 macOS 包 | 无 SDK 启动；无 observer/testcases；双篇入口、自然存读档、新增镜面场景与正常退出通过 | [干净包复查](collaboration/v2.1/native/clean-package-smoke.md)、[包内容检查](collaboration/v2.1/package-content-check.json) |
+| 完整可读剧本 | 从产品脚本导出，998 对白、61 选项、9 类结局、23 插入，原句全量一致 | [全分支阅读版](collaboration/v2.1/readable-script/旺不稳的奇妙冒险-v2.1.0-完整剧本.txt) |
 
-## 素材与显示校验
+## 实际游玩与自动化的边界
 
-- `game/images/` 共 51 张图片；所有文件可被 Ren'Py lint 和测试加载。
-- 9 张续篇背景与 6 张续篇 CG 均为真正的 `1920×1080` PNG。
-- 4 张续篇立绘运行时尺寸为 `682×1024`、RGBA，alpha 范围 `0..255`，四角 alpha 均为 `0`。
-- 主菜单实际使用 `1920×1080` 的 `bg_main_menu_cover_wide.jpg`，左侧有菜单留白、右侧保留原漫画人物。
-- 四位女主立绘与四人客厅合影逐一视觉比对：脸型、发色、服装和从左到右身份顺序一致。
-- 六张新增 CG 完成视觉抽检：人物无重复、关键道具与季节场景正确、无烘焙文字或水印。
+四条原生路线从主菜单开始，其他结局从自然终章存档进入，不跳 label 或改状态。普通对白部分使用快进，关键新增片段、关系转折、低信任表达和结局停下来检查，并留有被动全程记录；不声称四遍逐字慢速阅读或全部 61 选项均为手动点击。自动化覆盖全部选项、四种夏章状态、真结局门槛满足与不足；原生验证实际体验、图像与交互。二者互相补充。
 
-## 过程问题与处理
+原生发现的 slider 溢出、标题折行、Esc 返回、历史 viewport 被滚动条挤成零宽、自动播放默认字段拼错均已修复。新增回归直接检查渲染尺寸与零输入自动推进，避免只查变量而漏掉空白界面。
 
-第一次真实素材回归中，续篇全流程加载六张高分辨率 CG，超过测试原设的 25 秒单例上限；此前已执行的 24 个断言全部通过，日志明确为 `RenpyTestTimeoutError`，不是剧情或分支错误。测试预算随后调整为 60 秒，保留全部点击与断言，重新从空缓存执行后 14 个用例在 11.783 秒内全部通过。
+## 构建与交付对应关系
 
-## 已知边界
+产品代码和 26 份编译语句映射冻结于 `067899b7a8b525ab3b96f58d242226a0c8143370`。该产品已完成干净包复查；后续提交仅增加测试、文档与验收证据。最终交付仍从一个干净固定 Git 提交构建游戏 ZIP 和源码 ZIP，逐文件比较运行时内容与已验收产品，再解压检查。**最终构建提交、两个 ZIP 的 SHA-256 与重新启动结果记录在交付目录的 `build-receipt.json`、`release-acceptance.json` 和 `SHA256SUMS`**，不把压缩包元数据变化当成代码变化。
 
-- 当前为静音版本，未验证音乐、音效或配音混合。
-- 自动化覆盖主线和所有结局，但不替代对每个非理想选项文案、连续回滚和快进节奏的发行前人工体验。
-- 尚未生成 Windows、macOS、Linux 发布包。
-- 正式发布前需复核 SDK 随附字体的再分发条款。
+源码 ZIP 包含全部产品、美术原件/新增候选、测试、兼容夹具、编译映射、阅读版剧本及各 Agent 的实际报告。游戏 ZIP 排除开发文档、原图、测试、个人记录、SDK、缓存和存档。字体 OFL 与 Ren’Py 许可证保留。实际模型与调用日志指纹见 [agent-runs.json](collaboration/v2.1/agent-runs.json)，原始 CLI 日志、凭据和推理内容不随包。
+
+现有 [私有 GitHub 仓库](https://github.com/sujian666666com-glitch/wbw-Galgame) 保存源码与协作提交。发行版本由 `v2.1.0` 标签固定，是否已同步以远端提交核对和交付回执为准。
+
+## 测试环境与已知限制
+
+实际机器为 macOS 26.2、Apple M4、arm64，Ren’Py 8.5.3.26051504；虚拟分辨率 1920×1080，窗口 drawable 2736×1540，另检查全屏。包包含 Intel/Apple Silicon 引擎，但未宣称 Intel 实机通过。此包未签名、公证；Windows、Linux、音频、城市地图、日程探索不在本轮范围。
+
+代表性旧档为本任务在冻结 v2.0 基线上自然生成的合成存档；任意历史开发快照若没有相同编译语句映射，不在已验证范围内。测试只信任自身已核验夹具的公共验证 key，不读取用户私钥、不关闭签名验证。用户存档和全局 persistent 未改动。所有图形任务串行受锁和时限监管，退出后整组回收。
+
+美术复审保留两项非阻断观感意见：列车人物景别略有差异、镜面提示比叙述中的浅字更亮。没有新增人物身份漂移、缺图、遮脸或流程阻断问题。

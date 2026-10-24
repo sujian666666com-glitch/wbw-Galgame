@@ -118,6 +118,7 @@ label sequel_chapter_02_spring:
     luna "正常情况下不能。所以我要亲眼确认。"
     wbw "我和你一起去。带上离线记录设备，也带上春庭的分布式副本。"
     luna "可以。但到了现场，必须遵守我的安全方案。"
+    call v21_sequel_chapter_02_spring
     narrator "夜色落下前，一行人向海边灯塔出发。"
 
     jump sequel_chapter_03_summer

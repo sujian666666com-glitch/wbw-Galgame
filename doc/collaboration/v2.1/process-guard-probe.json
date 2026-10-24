@@ -1,0 +1,87 @@
+[
+  {
+    "case": "normal",
+    "exit": 0,
+    "expected": 0,
+    "descendants_dead": true,
+    "lock_released": true,
+    "pids": [
+      53723,
+      53724,
+      53725
+    ],
+    "ignores_sigterm": [
+      "child",
+      "grandchild"
+    ],
+    "generations": 3
+  },
+  {
+    "case": "deadline",
+    "exit": 41,
+    "expected": 41,
+    "descendants_dead": true,
+    "lock_released": true,
+    "pids": [
+      53750,
+      53751,
+      53752
+    ],
+    "ignores_sigterm": [
+      "child",
+      "grandchild"
+    ],
+    "generations": 3
+  },
+  {
+    "case": "signal",
+    "exit": 143,
+    "expected": 143,
+    "descendants_dead": true,
+    "lock_released": true,
+    "pids": [
+      53764,
+      53765,
+      53766
+    ],
+    "ignores_sigterm": [
+      "child",
+      "grandchild"
+    ],
+    "generations": 3
+  },
+  {
+    "case": "pause",
+    "exit": 42,
+    "expected": 42,
+    "descendants_dead": true,
+    "lock_released": true,
+    "pids": [
+      53780,
+      53781,
+      53782
+    ],
+    "ignores_sigterm": [
+      "child",
+      "grandchild"
+    ],
+    "generations": 3
+  },
+  {
+    "case": "owner",
+    "exit": 43,
+    "expected": 43,
+    "descendants_dead": true,
+    "lock_released": true,
+    "pids": [
+      53792,
+      53793,
+      53794
+    ],
+    "ignores_sigterm": [
+      "child",
+      "grandchild"
+    ],
+    "generations": 3
+  }
+]

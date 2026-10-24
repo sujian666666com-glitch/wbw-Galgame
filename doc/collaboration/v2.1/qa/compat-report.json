@@ -1,0 +1,109 @@
+{
+  "checked": 4,
+  "fixtures_root": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/worktrees/qa/doc/collaboration/v2.1/compatibility/v20",
+  "generated_at": "2026-10-24T20:18:23+00:00",
+  "max_runtime": 120.0,
+  "ok": true,
+  "project": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/worktrees/qa/.work/qa/project-final-compat",
+  "results": [
+    {
+      "arc": "old",
+      "choice_captions": [
+        "没事，我正好趁这个机会看看公司的数据。",
+        "杂活也得有人干，先干着呗。",
+        "别提了，烦得要死。"
+      ],
+      "exit": 0,
+      "expected_current": "('game/story/chapter_01.rpy', 1041769481, 391)",
+      "fixture": "v20_old_chapter01_menu",
+      "loaded_current": "('game/story/chapter_01.rpy', 1041769481, 391)",
+      "log": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/worktrees/qa/.work/qa/logs/compat-v20_old_chapter01_menu.log",
+      "persistent": {
+        "old_ending_route": null,
+        "old_endings_seen": []
+      },
+      "problems": [],
+      "status": "passed",
+      "trusted_key_fingerprints": [
+        "0e50a5154116eed3662317f593ea441efe9319890f2dd25185bb47f3e35e1594"
+      ]
+    },
+    {
+      "arc": "old",
+      "choice_captions": [
+        "签下公司的转正通知。",
+        "接受另一家公司的 offer。",
+        "拿起自己的项目企划书。"
+      ],
+      "exit": 0,
+      "expected_current": "('game/story/chapter_06.rpy', 1041769482, 748)",
+      "fixture": "v20_old_chapter06_menu",
+      "loaded_current": "('game/story/chapter_06.rpy', 1041769482, 748)",
+      "log": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/worktrees/qa/.work/qa/logs/compat-v20_old_chapter06_menu.log",
+      "persistent": {
+        "old_ending_route": null,
+        "old_endings_seen": []
+      },
+      "problems": [],
+      "status": "passed",
+      "trusted_key_fingerprints": [
+        "d48b3f97558e5fef720c88bdd3032678e3da76b9d3bfa4aa3e3616596a162dbb"
+      ]
+    },
+    {
+      "arc": "sequel",
+      "choice_captions": [
+        "让整个樱镜町共同记住四季。",
+        "留下来，与 Dana 一起守住每一次相遇。",
+        "留下来，与 Luna 一起建立公开的观测坐标。",
+        "留下来，与 Irene 一起重写不再封闭的档案。",
+        "留下来，陪 Ruby 记住每一个冬夜的名字。",
+        "回到原来的世界，带走这里真实存在过的证据。"
+      ],
+      "exit": 0,
+      "expected_current": "('game/story/sequel_finale.rpy', 1041769486, 1467)",
+      "fixture": "v20_sequel_finale_menu",
+      "loaded_current": "('game/story/sequel_finale.rpy', 1041769486, 1467)",
+      "log": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/worktrees/qa/.work/qa/logs/compat-v20_sequel_finale_menu.log",
+      "persistent": {
+        "old_ending_route": null,
+        "old_endings_seen": []
+      },
+      "problems": [],
+      "status": "passed",
+      "trusted_key_fingerprints": [
+        "4963f40a90d8ffb8b2fb072af7a10c941ca3d5ba542aa1bc11cae00d26ae3100"
+      ]
+    },
+    {
+      "arc": "sequel",
+      "choice_captions": [
+        "逐项核对文件、日期和签名。",
+        "先确认住处，避免继续淋雨。"
+      ],
+      "exit": 0,
+      "expected_current": "('game/story/sequel_prologue.rpy', 1041769486, 1523)",
+      "fixture": "v20_sequel_first_menu",
+      "loaded_current": "('game/story/sequel_prologue.rpy', 1041769486, 1523)",
+      "log": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/worktrees/qa/.work/qa/logs/compat-v20_sequel_first_menu.log",
+      "persistent": {
+        "old_ending_route": null,
+        "old_endings_seen": []
+      },
+      "problems": [],
+      "status": "passed",
+      "trusted_key_fingerprints": [
+        "f32f8e19bee121ba083f6862cc7a493ce147c58bf37a0f6467aa7c351f8c12e8"
+      ]
+    }
+  ],
+  "trust_policy": {
+    "approved_fixtures": [
+      "v20_old_chapter01_menu",
+      "v20_old_chapter06_menu",
+      "v20_sequel_finale_menu",
+      "v20_sequel_first_menu"
+    ],
+    "trusted_material": "public verification key from each fixture's own save/persistent signature only; no private key, no global token store"
+  }
+}

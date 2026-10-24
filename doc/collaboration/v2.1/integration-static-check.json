@@ -1,0 +1,93 @@
+{
+  "checked_at": "2026-10-25",
+  "basis": "89dac5ffdd289da21598be5cb7d5ca17127a313c",
+  "original_image_files_unchanged": 110,
+  "original_options_captions_and_conditions_unchanged": 61,
+  "insert_calls_unique": 23,
+  "runtime_image_count": 60,
+  "new_assets": [
+    {
+      "id": "dana_worried",
+      "size": [
+        682,
+        1024
+      ],
+      "mode": "RGBA",
+      "hash_matched": true
+    },
+    {
+      "id": "luna_soft",
+      "size": [
+        682,
+        1024
+      ],
+      "mode": "RGBA",
+      "hash_matched": true
+    },
+    {
+      "id": "irene_shaken",
+      "size": [
+        682,
+        1024
+      ],
+      "mode": "RGBA",
+      "hash_matched": true
+    },
+    {
+      "id": "irene_relieved",
+      "size": [
+        682,
+        1024
+      ],
+      "mode": "RGBA",
+      "hash_matched": true
+    },
+    {
+      "id": "ruby_resolute",
+      "size": [
+        682,
+        1024
+      ],
+      "mode": "RGBA",
+      "hash_matched": true
+    },
+    {
+      "id": "bg_train_interior_dusk",
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "hash_matched": true
+    },
+    {
+      "id": "cg_xuwanqing_rain_close",
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "hash_matched": true
+    },
+    {
+      "id": "cg_ruby_ending_kiss",
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "hash_matched": true
+    },
+    {
+      "id": "bg_old_house_mirror",
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "hash_matched": true
+    }
+  ],
+  "native_playthrough": "passed: native/final-acceptance.md",
+  "automated_regression": "passed: qa/final-ui-regression.md"
+}

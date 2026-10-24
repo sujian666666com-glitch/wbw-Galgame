@@ -1,0 +1,97 @@
+[v21-lock 01:38:50] lock acquired; child group 53275; limit 240s
+
+[rpytest] Starting test run
+[rpytest] Platform:      macOS-26.2-arm64-arm-64bit
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.3.26051504
+[rpytest] Game Version:  2.1.0
+
+[rpytest] [exc] + global
+[rpytest] [exc]   - full_flow_stable_ideal
+[rpytest] [exc]   - full_flow_stable_ideal (2.208 s)
+[rpytest] [exc]   - rising_ideal
+[rpytest] [exc]   - rising_ideal (0.347 s)
+[rpytest] [exc]   - startup_ideal
+[rpytest] [exc]   - startup_ideal (0.318 s)
+[rpytest] [exc]   - stable_normal
+[rpytest] [exc]   - stable_normal (0.125 s)
+[rpytest] [exc]   - rising_normal
+[rpytest] [exc]   - rising_normal (0.121 s)
+[rpytest] [exc]   - startup_normal
+[rpytest] [exc]   - startup_normal (0.134 s)
+[rpytest] [exc]   - save_load_smoke
+[rpytest] [exc]   - save_load_smoke (2.264 s)
+[rpytest] [exc]   - sequel_full_flow_true_ending
+[rpytest] [exc]   - sequel_full_flow_true_ending (2.842 s)
+[rpytest] [exc]   - sequel_dana_ending
+[rpytest] [exc]   - sequel_dana_ending (0.250 s)
+[rpytest] [exc]   - sequel_luna_ending
+[rpytest] [exc]   - sequel_luna_ending (0.257 s)
+[rpytest] [exc]   - sequel_irene_ending
+[rpytest] [exc]   - sequel_irene_ending (0.241 s)
+[rpytest] [exc]   - sequel_ruby_ending
+[rpytest] [exc]   - sequel_ruby_ending (0.307 s)
+[rpytest] [exc]   - sequel_return_ending
+[rpytest] [exc]   - sequel_return_ending (0.214 s)
+[rpytest] [exc]   - sequel_origin_rising_smoke
+[rpytest] [exc]   - sequel_origin_rising_smoke (0.011 s)
+[rpytest] [exc]   - full_flow_startup_ideal
+[rpytest] [exc]   - full_flow_startup_ideal (1.591 s)
+[rpytest] [exc]   - full_flow_low_old
+[rpytest] [exc]   - full_flow_low_old (1.431 s)
+[rpytest] [exc]   - full_flow_mid_old
+[rpytest] [exc]   - full_flow_mid_old (1.497 s)
+[rpytest] [exc]   - sequel_low_trust_flow
+[rpytest] [exc]   - sequel_low_trust_flow (2.552 s)
+[rpytest] [exc]   - sequel_partial_trust_flow
+[rpytest] [exc]   - sequel_partial_trust_flow (2.212 s)
+[rpytest] [exc]   - sequel_true_gate_insight_short
+[rpytest] [exc]   - sequel_true_gate_insight_short (0.260 s)
+[rpytest] [exc]   - sequel_true_gate_missing_fragment
+[rpytest] [exc]   - sequel_true_gate_missing_fragment (0.223 s)
+[rpytest] [exc]   - ui_features_smoke
+[rpytest] [exc]   - ui_features_smoke (0.357 s)
+[rpytest] [exc]   - old_chapter_02_public_evidence
+[rpytest] [exc]   - old_chapter_02_public_evidence (0.310 s)
+[rpytest] [exc]   - v21_label_traversal_audit
+[rpytest] [exc]   - v21_label_traversal_audit (0.006 s)
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] PASSED  global               - (21.320 s)
+[rpytest]   PASSED  full_flow_stable_ideal - (2.208 s)
+[rpytest]   PASSED  rising_ideal         - (0.347 s)
+[rpytest]   PASSED  startup_ideal        - (0.318 s)
+[rpytest]   PASSED  stable_normal        - (0.125 s)
+[rpytest]   PASSED  rising_normal        - (0.121 s)
+[rpytest]   PASSED  startup_normal       - (0.134 s)
+[rpytest]   PASSED  save_load_smoke      - (2.264 s)
+[rpytest]   PASSED  sequel_full_flow_true_ending - (2.842 s)
+[rpytest]   PASSED  sequel_dana_ending   - (0.250 s)
+[rpytest]   PASSED  sequel_luna_ending   - (0.257 s)
+[rpytest]   PASSED  sequel_irene_ending  - (0.241 s)
+[rpytest]   PASSED  sequel_ruby_ending   - (0.307 s)
+[rpytest]   PASSED  sequel_return_ending - (0.214 s)
+[rpytest]   PASSED  sequel_origin_rising_smoke - (0.011 s)
+[rpytest]   PASSED  full_flow_startup_ideal - (1.591 s)
+[rpytest]   PASSED  full_flow_low_old    - (1.431 s)
+[rpytest]   PASSED  full_flow_mid_old    - (1.497 s)
+[rpytest]   PASSED  sequel_low_trust_flow - (2.552 s)
+[rpytest]   PASSED  sequel_partial_trust_flow - (2.212 s)
+[rpytest]   PASSED  sequel_true_gate_insight_short - (0.260 s)
+[rpytest]   PASSED  sequel_true_gate_missing_fragment - (0.223 s)
+[rpytest]   PASSED  ui_features_smoke    - (0.357 s)
+[rpytest]   PASSED  old_chapter_02_public_evidence - (0.310 s)
+[rpytest]   PASSED  v21_label_traversal_audit - (0.006 s)
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     3 |     1 passed |     0 xfailed |     0 failed |     0 xpassed |     2 skipped |     0 not run
+[rpytest] Test cases :    32 |    24 passed |     0 xfailed |     0 failed |     0 xpassed |     8 skipped |     0 not run
+[rpytest] Test hooks :    25 |    25 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :    81 |    81 passed |     0 xfailed |     0 failed |     0 xpassed |
+
+[rpytest] Time: 21.320 s
+[rpytest] Status: PASSED
+
+[v21-lock 01:39:12] child group reaped; lock released

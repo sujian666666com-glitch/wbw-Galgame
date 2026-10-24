@@ -1,72 +1,36 @@
 # 旺不稳的奇妙冒险
 
-基于 Ren'Py 8.5.3 制作的中文视觉小说，当前版本为 `2.0.0`。默认入口是完整续篇《樱镜町·四季镜》，同时保留旧篇《三个月，留下来》作为独立可游路线。
+Ren’Py 8.5.3 中文 Galgame，当前源码版本 **2.1.0**，1920×1080，macOS 静音版。两篇共 22 组选择、61 个选项、9 类结局；本版接入 23 段日常、恋爱互动与后日谈。
 
-## 内容概览
+- 《三个月，留下来》：六章职场与恋爱故事，稳定、上升、创业三类结局各有普通／理想表现。
+- 《樱镜町·四季镜》：春夏秋冬四位角色、四个角色结局、返回现实与“四季同在”真结局。
+- 两篇采用平行感情世界线；续篇只回顾已完成的旧篇事业经历，感情关系独立成立。
+- 沿用原有角色和 51 张图片，新增 5 张表情、2 张背景、2 张 CG；原始素材保持不变。
 
-- 续篇共八段：异象穿越、身份与相遇、春 / Dana、夏 / Luna、秋 / Irene、冬 / Ruby、四季镜终局、后日谈。
-- 续篇含 12 组会改变信任、洞察或共同意志的选择，以及 Dana、Luna、Irene、Ruby、返回现实、四季同在 6 个结局。
-- 旧篇完整保留开场、六章、10 组选择与稳定、上升、创业 3 个结局。
-- 主菜单提供“新篇：樱镜町”和“旧篇：三个月，留下来”两个明确入口。
-- 两篇状态相互隔离；旧篇结局写入 persistent，续篇会把该结果作为穿越前记忆接续，同时不破坏旧存档目录。
-- 运行时共 51 张图片：27 张背景、16 张透明角色立绘、8 张剧情 CG；续篇生成源图另存于 `image/续篇/生成源图/`。
-- 最终回归为 14/14 自动化用例、29/29 断言通过；Ren'Py lint 无错误或警告。
+## 运行
 
-完整剧情见 [续篇大纲](doc/new-chapter-outline.md)，变量、菜单与结局条件见 [路线图](doc/sequel-route-map.md)。
+已构建的 macOS 包解压后运行其中的 `.app`，不需要安装 SDK。本轮包未公证；使用常规 macOS“打开”流程，勿修改全局安全设置。实际构建、运行状态以 [验收报告](doc/test-report.md) 和随包 `build-receipt.json` 为准。
 
-## 启动与检查
-
-使用 Ren'Py Launcher 添加本仓库根目录后启动。仓库本地验证使用官方 Ren'Py 8.5.3 SDK：
+开发时使用官方 **Ren’Py 8.5.3** Launcher 添加仓库根目录，选择“启动项目”。也可运行：
 
 ```bash
-PROJECT="/Users/ik/Desktop/02_学习与资料/game/my-renpy-game"
-RENPY="$PROJECT/.work/renpy-sdk/renpy-8.5.3-sdk/renpy.sh"
-
-"$RENPY" "$PROJECT" run
-"$RENPY" "$PROJECT" lint --error-code --check-unclosed-tags --all-problems
-"$RENPY" "$PROJECT" test global --report-detailed
+/path/to/renpy-8.5.3-sdk/renpy.sh /path/to/my-renpy-game run
 ```
 
-`.work/` 是本机忽略目录；其他环境可把 `RENPY` 换成本机 SDK 入口。直接点击“开始”会进入续篇，也可从主菜单选择任一篇章。
+主菜单可独立选择两篇。单击或空格推进，快捷栏提供保存、读档、回退、历史、快进和自动播放；Esc 打开菜单。设置中可切换窗口／全屏、文字速度和自动播放速度。此版没有音频，设置不显示无效音量控制。
 
-## 项目结构
+存档目录仍为 `three-months-to-stay-1`。不要为了升级删除个人存档。四份自然生成的 v2.0 代表性存档及编译语句映射纳入兼容验收；不同历史开发快照的任意编译缓存不在已验证范围内。
 
-```text
-my-renpy-game/
-├── README.md
-├── doc/
-│   ├── new-chapter-outline.md # 续篇完整剧情
-│   ├── sequel-route-map.md    # 选择、变量、结局与素材映射
-│   ├── game-story.md          # 旧篇剧情基线
-│   ├── game-script.md         # 旧篇脚本基线
-│   ├── asset-inventory.md
-│   ├── development-tasks.md
-│   └── test-report.md
-├── image/                     # 原始素材与生成源图，只读保留
-└── game/
-    ├── core/                  # 双篇角色、图片定义与状态
-    ├── fonts/
-    ├── images/                # 规范化运行时素材
-    ├── story/                 # 旧篇与续篇可执行剧情
-    ├── ui/
-    ├── options.rpy
-    ├── gui.rpy
-    ├── screens.rpy
-    ├── script.rpy
-    └── testcases.rpy
-```
+## 源码与验收
 
-## 开发约定
+- `game/`：可执行剧情、状态、UI、字体与 60 张运行图片。
+- `image/`：保留的原始素材；新增资源及未采用候选分开位于 `image/v21/`。
+- `old-game/`：Ren’Py 保存语句身份的编译映射，清洁构建需要它，不是可随意清除的缓存。
+- [协作契约](doc/collaboration/v2.1/CONTRACT.md)、[剧情接入表](doc/collaboration/v2.1/story/manifest.json)、[美术清单](doc/collaboration/v2.1/art/manifest.json)：实际分工与交付记录。
+- [路线图](doc/sequel-route-map.md)：原有选择和结局规则；本版 [完整可读剧本](doc/collaboration/v2.1/readable-script/旺不稳的奇妙冒险-v2.1.0-完整剧本.txt) 由实际脚本导出，包含条件、选项和所有后日谈。
+- `tools/export_story.py`：导出完整剧本到 `releases/v2.1.0/`。
+- `tools/package_macos.py`：从干净的固定 Git 提交构建 macOS 包、完整源码 ZIP、校验值和构建回执。
 
-- `image/` 保存原始素材和处理前版本；只在复制到 `game/images/` 后做缩放、转码与抠图。
-- 运行时素材使用英文文件名与英文 image 标识，背景和 CG 统一为 `1920×1080`，角色立绘统一为 RGBA 且显示高度不超过 1024 像素。
-- 剧情按章节拆分，公共角色、图片和状态分别放在 `game/core/`；两篇不得复用会污染存档的普通变量。
-- 新增路线必须同步补自动化点击与结局断言，并更新 `doc/` 中的路线和素材记录。
+自动化测试必须使用隔离工程、独立存档目录和 `tools/v21_run_tests.py` 的共享 GUI 锁／超时监管。不要同时启动多个 Ren’Py 测试实例。测试输入适配只用于 `test` 命令，发布包不包含测试脚本；正常模式和最终包仍需原生界面验收。
 
-## 当前边界
-
-- 当前为静音版本，未引入音乐、音效和配音。
-- 尚未生成 Windows、macOS 或 Linux 发布包。
-- 正式发布前仍需复核 SDK 随附字体的再分发条款，并做一次发布包人工回滚与全屏体验检查。
-
-验收明细见 [测试报告](doc/test-report.md)，素材来源、生成方式与提示词规范见 [素材清单](doc/asset-inventory.md)。
+发布包排除开发文档、原图、测试、工具、SDK、缓存与存档，保留运行引擎及许可证。Source Han 字体许可证见 [OFL](licenses/SourceHanSansLite-OFL.txt)，其他声明见 [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt)。

@@ -1,0 +1,32 @@
+[v21-lock 04:18:17] lock acquired; child group 99560; limit 120s
+[rpytest] [log] Running 1 test(s) marked with 'only' flag.
+[rpytest] [log] - global.compat::compat_v20_old_chapter01_menu
+
+[rpytest] Starting test run
+[rpytest] Platform:      macOS-26.2-arm64-arm-64bit
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.3.26051504
+[rpytest] Game Version:  2.1.0
+
+[rpytest] [exc] + global
+[rpytest] [exc]   + compat
+[rpytest] [exc]     - compat_v20_old_chapter01_menu
+[rpytest] [exc]     - compat_v20_old_chapter01_menu (0.091 s)
+
+[rpytest] Test outcomes (Detailed)
+[rpytest] PASSED  global               - (0.990 s)
+[rpytest]   PASSED  compat               - (0.188 s)
+[rpytest]     PASSED  compat_v20_old_chapter01_menu - (0.091 s)
+
+====================
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     3 |     2 passed |     0 xfailed |     0 failed |     0 xpassed |     1 skipped |     0 not run
+[rpytest] Test cases :    35 |     1 passed |     0 xfailed |     0 failed |     0 xpassed |    34 skipped |     0 not run
+[rpytest] Test hooks :     3 |     3 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     5 |     5 passed |     0 xfailed |     0 failed |     0 xpassed |
+
+[rpytest] Time: 0.991 s
+[rpytest] Status: PASSED
+
+[v21-lock 04:18:19] child group reaped; lock released

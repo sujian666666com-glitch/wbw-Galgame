@@ -1,0 +1,208 @@
+# QA-only instrumentation overlay. Never shipped, never included in the
+# product build. Written by tools/v21_qa_project.py into the isolated test
+# project when V21_QA_TRACE is set.
+#
+# Records, for every synthetic test click and every frame where the window
+# focus / game statement changes, enough state to diagnose lost clicks.
+# Output: JSON lines at $V21_QA_TRACE.
+
+init -100 python:
+    import os as _qa_os
+    import json as _qa_json
+    import time as _qa_time
+
+    _qa_trace_file = _qa_os.environ.get("V21_QA_TRACE", "")
+    _qa_t0 = _qa_time.time()
+    _qa_last_key = [None]
+
+    def _qa_write(record):
+        if not _qa_trace_file:
+            return
+        try:
+            record["t"] = round(_qa_time.time() - _qa_t0, 4)
+            with open(_qa_trace_file, "a", encoding="utf-8") as f:
+                f.write(_qa_json.dumps(record, ensure_ascii=False, default=repr) + "\n")
+        except Exception:
+            pass
+
+    def _qa_snapshot():
+        try:
+            i = renpy.game.interface
+        except Exception:
+            return {}
+        try:
+            ctx = renpy.game.context()
+            current = repr(ctx.current)
+            menu = repr(getattr(ctx, "_menu", None))
+        except Exception:
+            current = "?"
+            menu = "?"
+        screens = []
+        try:
+            # Only screens that are actually showing (get_screen returns None
+            # for defined-but-hidden screens).
+            for name in (
+                "main_menu", "choice", "say", "confirm", "save", "load",
+                "history", "preferences", "notification", "file_slots",
+            ):
+                if renpy.get_screen(name) is not None:
+                    screens.append(name)
+        except Exception:
+            screens = ["?"]
+        confirm_text = None
+        try:
+            confirm = renpy.get_screen("confirm")
+            if confirm is not None:
+                confirm_text = confirm.scope.get("message")
+        except Exception:
+            pass
+        rv = {
+            "mouse_focused": bool(getattr(i, "mouse_focused", None)),
+            "keyboard_focused": bool(getattr(i, "keyboard_focused", None)),
+            "current": current,
+            "menu": menu,
+            "screens": sorted(set(screens)),
+            "confirm_text": confirm_text,
+            "trans_pause": bool(getattr(i, "trans_pause", None)),
+            "ongoing_transition": bool(getattr(i, "ongoing_transition", None)),
+            "interact": getattr(renpy.store, "_qa_interact_counter", None),
+        }
+        return rv
+
+    def _qa_periodic():
+        if not _qa_trace_file:
+            return
+        try:
+            snap = _qa_snapshot()
+            key = (snap.get("mouse_focused"), snap.get("current"), snap.get("menu"))
+            key = key + (tuple(snap.get("screens") or ()), snap.get("confirm_text"))
+            if key != _qa_last_key[0]:
+                _qa_last_key[0] = key
+                rec = {"kind": "state"}
+                rec.update(snap)
+                _qa_write(rec)
+        except Exception as e:
+            _qa_write({"kind": "trace_error", "error": repr(e)})
+
+    if _qa_trace_file:
+        config.periodic_callbacks.append(_qa_periodic)
+
+    # Deterministic reproduction aid: simulate the host window losing OS focus
+    # (SDL ACTIVEEVENT, mouse-focus bit, gain = 0). Used for the A/B run that
+    # proves the lost-choice-click root cause. Off unless V21_QA_FOCUS_CHAOS=1.
+    _qa_focus_chaos = _qa_os.environ.get("V21_QA_FOCUS_CHAOS", "")
+    _qa_last_chaos = [0.0]
+
+    def _qa_post_focus_loss():
+        if not _qa_focus_chaos:
+            return
+        now = _qa_time.time()
+        if now - _qa_last_chaos[0] >= 0.3:
+            _qa_last_chaos[0] = now
+            try:
+                # Ren'Py blocks unused event types at startup; make sure the
+                # simulated focus event is allowed through the event loop.
+                renpy.pygame.event.set_allowed(renpy.pygame.ACTIVEEVENT)
+                posted = renpy.pygame.event.post(
+                    renpy.pygame.event.Event(renpy.pygame.ACTIVEEVENT, gain=0, state=1)
+                )
+                _qa_write(
+                    {
+                        "kind": "chaos_post",
+                        "posted": posted,
+                        "mouse_focused": bool(getattr(renpy.game.interface, "mouse_focused", None)),
+                    }
+                )
+            except Exception as e:
+                _qa_write({"kind": "chaos_error", "error": repr(e)})
+
+    if _qa_focus_chaos:
+        config.periodic_callbacks.append(_qa_post_focus_loss)
+
+    if _qa_trace_file:
+        try:
+            import renpy.test.testast as _qa_testast
+
+            _qa_orig_click = _qa_testast.click_mouse
+            _qa_orig_move = _qa_testast.move_mouse
+
+            def _qa_click_mouse(button, x, y):
+                rec = {"kind": "click", "button": button, "x": x, "y": y}
+                try:
+                    nf = renpy.display.render.focus_at_point(x, y)
+                    rec["focus_at_point"] = repr(getattr(nf, "widget", None))[:100]
+                except Exception as e:
+                    rec["focus_at_point"] = "error:" + repr(e)
+                texts = []
+                try:
+                    for f in renpy.display.focus.focus_list:
+                        try:
+                            texts.append(f.widget._tts_all(False) if f.x is not None else "<default>")
+                        except Exception:
+                            texts.append("?")
+                except Exception:
+                    pass
+                rec["focused_texts"] = texts[:14]
+                rec.update(_qa_snapshot())
+                _qa_write(rec)
+                return _qa_orig_click(button, x, y)
+
+            def _qa_move_mouse(x, y):
+                rec = {"kind": "move", "x": x, "y": y}
+                rec.update(_qa_snapshot())
+                _qa_write(rec)
+                return _qa_orig_move(x, y)
+
+            _qa_testast.click_mouse = _qa_click_mouse
+            _qa_testast.move_mouse = _qa_move_mouse
+        except Exception as e:
+            _qa_write({"kind": "trace_error", "error": "patch:" + repr(e)})
+
+        try:
+            from renpy.display import behavior as _qa_behavior
+
+            _qa_orig_button_event = _qa_behavior.Button.event
+
+            def _qa_button_event(self, ev, x, y, st):
+                rv = _qa_orig_button_event(self, ev, x, y, st)
+                if getattr(ev, "test", False):
+                    try:
+                        text = self._tts_all(False)[:40]
+                    except Exception:
+                        text = "?"
+                    _qa_write(
+                        {
+                            "kind": "button_event",
+                            "text": text,
+                            "type": int(ev.type),
+                            "focused": bool(self.is_focused()),
+                            "rv": repr(rv)[:80],
+                        }
+                    )
+                return rv
+
+            _qa_behavior.Button.event = _qa_button_event
+        except Exception as e:
+            _qa_write({"kind": "trace_error", "error": "button:" + repr(e)})
+
+        # Log every event the interface processes for mouse/focus types.
+        try:
+            _qa_orig_mouse_handler = renpy.display.focus.mouse_handler
+
+            def _qa_mouse_handler(ev, x, y, default=False):
+                if ev is not None:
+                    _qa_write(
+                        {
+                            "kind": "mouse_event",
+                            "type": int(ev.type),
+                            "x": x,
+                            "y": y,
+                            "test": bool(getattr(ev, "test", False)),
+                            "button": getattr(ev, "button", None),
+                        }
+                    )
+                return _qa_orig_mouse_handler(ev, x, y, default=default)
+
+            renpy.display.focus.mouse_handler = _qa_mouse_handler
+        except Exception as e:
+            _qa_write({"kind": "trace_error", "error": "mouse:" + repr(e)})
