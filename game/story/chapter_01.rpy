@@ -66,4 +66,6 @@ label chapter_01:
             xw "那你当初来干嘛？"
             narrator "她微微皱眉。"
 
+    call v21_chapter_01
+
     jump chapter_02

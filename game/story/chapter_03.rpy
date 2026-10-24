@@ -150,4 +150,6 @@ label chapter_03:
             xw "哦。那好吧。"
             narrator "她的脚步慢了半拍。"
 
+    call v21_chapter_03
+
     jump chapter_04

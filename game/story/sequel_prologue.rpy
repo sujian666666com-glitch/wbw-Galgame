@@ -96,4 +96,6 @@ label sequel_prologue:
     narrator "王不稳看着她远去，又看了一眼手机中刚拍下的文件。照片仍在。"
     wbw "（内心）先验证身份，再弄清楚她为什么认识我。"
 
+    call v21_sequel_prologue
+
     jump sequel_chapter_01

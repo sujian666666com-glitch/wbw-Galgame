@@ -96,4 +96,6 @@ label chapter_05:
 
     wbw "还在选。"
 
+    call v21_chapter_05
+
     jump chapter_06

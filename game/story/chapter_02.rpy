@@ -98,4 +98,6 @@ label chapter_02:
             show xuwanqing happy
             xw "嘴硬。"
 
+    call v21_chapter_02
+
     jump chapter_03
