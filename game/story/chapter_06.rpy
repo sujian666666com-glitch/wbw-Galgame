@@ -25,6 +25,8 @@ label chapter_06:
 
     xw "那就看远一点。"
 
+    call v21_chapter_06
+
     menu:
         "签下公司的转正通知。":
             $ ending_route = "stable"

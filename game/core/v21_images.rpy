@@ -32,25 +32,21 @@ image bg v21_old_house_mirror = "images/v21/backgrounds/bg_old_house_mirror.png"
 image cg v21_xuwanqing_rain_close = "images/v21/cg/cg_xuwanqing_rain_close.png"
 image cg v21_ruby_ending_kiss = "images/v21/cg/cg_ruby_ending_kiss.png"
 
-image bg v21_time_old_house_night:
-    "bg old_house_day"
-    matrixcolor TintMatrix("#8ea0c8") * BrightnessMatrix(-0.22)
+image bg v21_time_company_street_rain:
+    "bg company_street_night"
+    matrixcolor TintMatrix("#b7c6d8") * BrightnessMatrix(-0.06)
 
-image bg v21_time_spring_garden_dusk:
-    "bg spring_garden"
-    matrixcolor TintMatrix("#f0b27a") * BrightnessMatrix(-0.06)
+image bg v21_time_company_street_dusk:
+    "bg company_street_night"
+    matrixcolor TintMatrix("#ffc49a") * BrightnessMatrix(0.12)
+
+image bg v21_time_startup_morning:
+    "bg startup_studio"
+    matrixcolor TintMatrix("#ffe4c2") * BrightnessMatrix(0.10)
 
 image bg v21_time_spring_garden_evening:
     "bg spring_garden"
     matrixcolor TintMatrix("#e09a62") * BrightnessMatrix(-0.16)
-
-image bg v21_time_lighthouse_deep_night:
-    "bg lighthouse_night"
-    matrixcolor TintMatrix("#9aafd4") * BrightnessMatrix(-0.16)
-
-image bg v21_time_lighthouse_dawn:
-    "bg lighthouse_night"
-    matrixcolor TintMatrix("#ffd0b0") * BrightnessMatrix(0.28)
 
 image bg v21_time_archive_evening:
     "bg archive_autumn"
@@ -60,25 +56,13 @@ image bg v21_time_archive_night:
     "bg archive_autumn"
     matrixcolor TintMatrix("#8d97b8") * BrightnessMatrix(-0.24)
 
-image bg v21_time_company_street_dusk:
-    "bg company_street_night"
-    matrixcolor TintMatrix("#ffc49a") * BrightnessMatrix(0.12)
-
-image bg v21_time_company_street_rain:
-    "bg company_street_night"
-    matrixcolor TintMatrix("#b7c6d8") * BrightnessMatrix(-0.06)
-
-image bg v21_time_startup_morning:
-    "bg startup_studio"
-    matrixcolor TintMatrix("#ffe4c2") * BrightnessMatrix(0.10)
+image bg v21_time_lighthouse_dawn:
+    "bg lighthouse_night"
+    matrixcolor TintMatrix("#ffd0b0") * BrightnessMatrix(0.28)
 
 image bg v21_time_station_first_snow:
     "bg sakurakagami_station_winter"
     matrixcolor TintMatrix("#d7e6f6") * BrightnessMatrix(0.08)
-
-image bg v21_time_city_street_morning:
-    "bg company_street_night"
-    matrixcolor TintMatrix("#ffe0c2") * BrightnessMatrix(0.20)
 
 image bg v21_time_station_boundary:
     "bg sakurakagami_station_rain"

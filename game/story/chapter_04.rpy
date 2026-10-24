@@ -63,4 +63,6 @@ label chapter_04:
         $ evidence_ready = True
         $ notify_change("关键证据已整理完毕")
 
+    call v21_chapter_04
+
     jump chapter_05

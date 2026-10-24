@@ -55,6 +55,9 @@ init python:
     build.classify("**/renpy-sdk/**", None)
     build.classify("**/renpy-*-sdk/**", None)
 
+    build.classify("THIRD_PARTY_NOTICES.txt", "all")
+    build.classify("licenses/**", "all")
+
     build.classify("game/fonts/**", "archive")
     build.classify("game/**.ttf", "archive")
     build.classify("game/**.otf", "archive")

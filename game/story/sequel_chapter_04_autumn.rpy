@@ -73,6 +73,9 @@ label sequel_chapter_04_autumn:
 
     scene bg archive_autumn with dissolve
     show irene normal
+    call v21_sequel_chapter_04_autumn
+    scene bg archive_autumn with dissolve
+    show irene normal
     irene "最后一页只记了一个称谓：冬之承载者。"
     wbw "Ruby。"
     irene "如果镜开始收回她的名字，我们剩下的时间不会超过一夜。"

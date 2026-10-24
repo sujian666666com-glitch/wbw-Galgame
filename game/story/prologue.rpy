@@ -37,4 +37,6 @@ label prologue:
             $ notify_change("资金保持不变")
             wbw "先安顿下来，别乱花钱。"
 
+    call v21_prologue
+
     jump chapter_01

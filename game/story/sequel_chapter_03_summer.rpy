@@ -141,4 +141,6 @@ label sequel_chapter_03_summer:
     narrator "她转身走下灯塔。远处海面已经恢复平静，仿佛逆流从未发生。"
     narrator "但春与夏的两枚碎片仍在黑暗中发光，证明这个夜晚无法再被彻底抹去。"
 
+    call v21_sequel_chapter_03_summer
+
     jump sequel_chapter_04_autumn
