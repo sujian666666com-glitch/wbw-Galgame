@@ -2,8 +2,8 @@
   "generated_from": {
     "story": "game/story",
     "testcases": "game/testcases.rpy",
-    "labels_file": ".work/qa/logs/global-labels-final.txt",
-    "compat_report": ".work/qa/logs/frozen-compat-report.json"
+    "labels_file": ".work/qa/logs/global-labels-final-27.txt",
+    "compat_report": ".work/qa/logs/compat-report-final.json"
   },
   "options": {
     "menus": 22,
@@ -19,11 +19,11 @@
         "line": 47,
         "covered": true,
         "clicked_by_lines": [
-          224,
-          314,
-          466,
-          818,
-          876
+          285,
+          375,
+          527,
+          879,
+          1028
         ]
       },
       {
@@ -32,7 +32,7 @@
         "line": 56,
         "covered": true,
         "clicked_by_lines": [
-          534
+          595
         ]
       },
       {
@@ -41,7 +41,7 @@
         "line": 62,
         "covered": true,
         "clicked_by_lines": [
-          501
+          562
         ]
       },
       {
@@ -50,8 +50,8 @@
         "line": 15,
         "covered": true,
         "clicked_by_lines": [
-          503,
-          536
+          564,
+          597
         ]
       },
       {
@@ -60,9 +60,9 @@
         "line": 25,
         "covered": true,
         "clicked_by_lines": [
-          226,
-          468,
-          878
+          287,
+          529,
+          1030
         ]
       },
       {
@@ -71,7 +71,7 @@
         "line": 36,
         "covered": true,
         "clicked_by_lines": [
-          820
+          881
         ]
       },
       {
@@ -80,9 +80,9 @@
         "line": 80,
         "covered": true,
         "clicked_by_lines": [
-          228,
-          470,
-          880
+          289,
+          531,
+          1032
         ]
       },
       {
@@ -91,7 +91,7 @@
         "line": 88,
         "covered": true,
         "clicked_by_lines": [
-          538
+          599
         ]
       },
       {
@@ -100,7 +100,7 @@
         "line": 95,
         "covered": true,
         "clicked_by_lines": [
-          505
+          566
         ]
       },
       {
@@ -109,7 +109,7 @@
         "line": 36,
         "covered": true,
         "clicked_by_lines": [
-          540
+          601
         ]
       },
       {
@@ -118,9 +118,9 @@
         "line": 44,
         "covered": true,
         "clicked_by_lines": [
-          230,
-          472,
-          882
+          291,
+          533,
+          1034
         ]
       },
       {
@@ -129,7 +129,7 @@
         "line": 58,
         "covered": true,
         "clicked_by_lines": [
-          507
+          568
         ]
       },
       {
@@ -138,9 +138,9 @@
         "line": 89,
         "covered": true,
         "clicked_by_lines": [
-          232,
-          474,
-          884
+          293,
+          535,
+          1036
         ]
       },
       {
@@ -149,7 +149,7 @@
         "line": 97,
         "covered": true,
         "clicked_by_lines": [
-          542
+          603
         ]
       },
       {
@@ -158,7 +158,7 @@
         "line": 103,
         "covered": true,
         "clicked_by_lines": [
-          509
+          570
         ]
       },
       {
@@ -167,7 +167,7 @@
         "line": 130,
         "covered": true,
         "clicked_by_lines": [
-          544
+          605
         ]
       },
       {
@@ -176,9 +176,9 @@
         "line": 136,
         "covered": true,
         "clicked_by_lines": [
-          234,
-          476,
-          886
+          295,
+          537,
+          1038
         ]
       },
       {
@@ -187,7 +187,7 @@
         "line": 146,
         "covered": true,
         "clicked_by_lines": [
-          511
+          572
         ]
       },
       {
@@ -196,9 +196,9 @@
         "line": 26,
         "covered": true,
         "clicked_by_lines": [
-          236,
-          478,
-          888
+          297,
+          539,
+          1040
         ]
       },
       {
@@ -207,7 +207,7 @@
         "line": 38,
         "covered": true,
         "clicked_by_lines": [
-          546
+          607
         ]
       },
       {
@@ -216,7 +216,7 @@
         "line": 47,
         "covered": true,
         "clicked_by_lines": [
-          513
+          574
         ]
       },
       {
@@ -225,9 +225,9 @@
         "line": 49,
         "covered": true,
         "clicked_by_lines": [
-          238,
-          480,
-          890
+          299,
+          541,
+          1042
         ]
       },
       {
@@ -236,7 +236,7 @@
         "line": 57,
         "covered": true,
         "clicked_by_lines": [
-          515
+          576
         ]
       },
       {
@@ -245,7 +245,7 @@
         "line": 63,
         "covered": true,
         "clicked_by_lines": [
-          548
+          609
         ]
       },
       {
@@ -254,8 +254,8 @@
         "line": 31,
         "covered": true,
         "clicked_by_lines": [
-          240,
-          517
+          301,
+          578
         ]
       },
       {
@@ -264,8 +264,8 @@
         "line": 35,
         "covered": true,
         "clicked_by_lines": [
-          257,
-          550
+          318,
+          611
         ]
       },
       {
@@ -274,8 +274,8 @@
         "line": 39,
         "covered": true,
         "clicked_by_lines": [
-          270,
-          482
+          331,
+          543
         ]
       },
       {
@@ -284,16 +284,18 @@
         "line": 30,
         "covered": true,
         "clicked_by_lines": [
-          222,
-          305,
-          464,
-          532,
-          692,
-          700,
-          786,
-          816,
-          860,
-          874
+          283,
+          366,
+          525,
+          593,
+          753,
+          761,
+          847,
+          877,
+          898,
+          945,
+          1012,
+          1026
         ]
       },
       {
@@ -302,7 +304,7 @@
         "line": 36,
         "covered": true,
         "clicked_by_lines": [
-          499
+          560
         ]
       },
       {
@@ -311,9 +313,9 @@
         "line": 63,
         "covered": true,
         "clicked_by_lines": [
-          332,
-          609,
-          918
+          393,
+          670,
+          1070
         ]
       },
       {
@@ -322,7 +324,7 @@
         "line": 75,
         "covered": true,
         "clicked_by_lines": [
-          568
+          629
         ]
       },
       {
@@ -331,9 +333,9 @@
         "line": 86,
         "covered": true,
         "clicked_by_lines": [
-          334,
-          611,
-          920
+          395,
+          672,
+          1072
         ]
       },
       {
@@ -342,7 +344,7 @@
         "line": 96,
         "covered": true,
         "clicked_by_lines": [
-          570
+          631
         ]
       },
       {
@@ -351,8 +353,8 @@
         "line": 38,
         "covered": true,
         "clicked_by_lines": [
-          336,
-          922
+          397,
+          1074
         ]
       },
       {
@@ -361,7 +363,7 @@
         "line": 46,
         "covered": true,
         "clicked_by_lines": [
-          572
+          633
         ]
       },
       {
@@ -370,7 +372,7 @@
         "line": 52,
         "covered": true,
         "clicked_by_lines": [
-          613
+          674
         ]
       },
       {
@@ -379,9 +381,9 @@
         "line": 78,
         "covered": true,
         "clicked_by_lines": [
-          308,
-          338,
-          924
+          369,
+          399,
+          1076
         ]
       },
       {
@@ -390,7 +392,7 @@
         "line": 89,
         "covered": true,
         "clicked_by_lines": [
-          574
+          635
         ]
       },
       {
@@ -399,7 +401,7 @@
         "line": 95,
         "covered": true,
         "clicked_by_lines": [
-          615
+          676
         ]
       },
       {
@@ -408,8 +410,8 @@
         "line": 42,
         "covered": true,
         "clicked_by_lines": [
-          340,
-          926
+          401,
+          1078
         ]
       },
       {
@@ -418,7 +420,7 @@
         "line": 55,
         "covered": true,
         "clicked_by_lines": [
-          576
+          637
         ]
       },
       {
@@ -427,7 +429,7 @@
         "line": 63,
         "covered": true,
         "clicked_by_lines": [
-          617
+          678
         ]
       },
       {
@@ -436,8 +438,8 @@
         "line": 97,
         "covered": true,
         "clicked_by_lines": [
-          342,
-          928
+          403,
+          1080
         ]
       },
       {
@@ -446,7 +448,7 @@
         "line": 113,
         "covered": true,
         "clicked_by_lines": [
-          578
+          639
         ]
       },
       {
@@ -455,7 +457,7 @@
         "line": 119,
         "covered": true,
         "clicked_by_lines": [
-          619
+          680
         ]
       },
       {
@@ -464,9 +466,9 @@
         "line": 24,
         "covered": true,
         "clicked_by_lines": [
-          344,
-          621,
-          930
+          405,
+          682,
+          1082
         ]
       },
       {
@@ -475,7 +477,7 @@
         "line": 34,
         "covered": true,
         "clicked_by_lines": [
-          580
+          641
         ]
       },
       {
@@ -484,9 +486,9 @@
         "line": 50,
         "covered": true,
         "clicked_by_lines": [
-          346,
-          623,
-          932
+          407,
+          684,
+          1084
         ]
       },
       {
@@ -495,7 +497,7 @@
         "line": 61,
         "covered": true,
         "clicked_by_lines": [
-          582
+          643
         ]
       },
       {
@@ -504,9 +506,9 @@
         "line": 30,
         "covered": true,
         "clicked_by_lines": [
-          348,
-          625,
-          934
+          409,
+          686,
+          1086
         ]
       },
       {
@@ -515,7 +517,7 @@
         "line": 41,
         "covered": true,
         "clicked_by_lines": [
-          584
+          645
         ]
       },
       {
@@ -524,9 +526,9 @@
         "line": 54,
         "covered": true,
         "clicked_by_lines": [
-          350,
-          627,
-          936
+          411,
+          688,
+          1088
         ]
       },
       {
@@ -535,7 +537,7 @@
         "line": 64,
         "covered": true,
         "clicked_by_lines": [
-          586
+          647
         ]
       },
       {
@@ -544,7 +546,7 @@
         "line": 41,
         "covered": true,
         "clicked_by_lines": [
-          352
+          413
         ]
       },
       {
@@ -553,7 +555,7 @@
         "line": 45,
         "covered": true,
         "clicked_by_lines": [
-          373
+          434
         ]
       },
       {
@@ -562,7 +564,7 @@
         "line": 49,
         "covered": true,
         "clicked_by_lines": [
-          388
+          449
         ]
       },
       {
@@ -571,8 +573,8 @@
         "line": 53,
         "covered": true,
         "clicked_by_lines": [
-          403,
-          637
+          464,
+          698
         ]
       },
       {
@@ -581,7 +583,7 @@
         "line": 57,
         "covered": true,
         "clicked_by_lines": [
-          418
+          479
         ]
       },
       {
@@ -590,10 +592,10 @@
         "line": 61,
         "covered": true,
         "clicked_by_lines": [
-          431,
-          596,
-          661,
-          683
+          492,
+          657,
+          722,
+          744
         ]
       },
       {
@@ -602,9 +604,9 @@
         "line": 56,
         "covered": true,
         "clicked_by_lines": [
-          330,
-          607,
-          916
+          391,
+          668,
+          1068
         ]
       },
       {
@@ -613,15 +615,15 @@
         "line": 64,
         "covered": true,
         "clicked_by_lines": [
-          566
+          627
         ]
       }
     ]
   },
   "testcases": {
-    "global": 25,
+    "global": 27,
     "nested_fixture_compat": 8,
-    "total": 33,
+    "total": 35,
     "settings_smoke_present": true,
     "global_names": [
       "full_flow_stable_ideal",
@@ -648,6 +650,8 @@
       "ui_features_smoke",
       "settings_smoke_main_menu_and_in_game",
       "old_chapter_02_public_evidence",
+      "history_panel_visible_text",
+      "auto_forward_advances_by_default",
       "v21_label_traversal_audit"
     ]
   },

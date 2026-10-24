@@ -152,6 +152,67 @@ init python:
         x, y, w, h = v21_pref_slider_rect(field_name)
         return (int(x + w * fraction), int(y + h / 2.0))
 
+    def v21_history_metrics(pattern):
+        """Live geometry and laid-out text of the displayed 历史 panel.
+
+        Returns `(bar_width, center_width, text_width, text_height)`, or None
+        while the panel is still being built (nothing in the panel is drawn
+        before the first render). Used by `history_panel_visible_text`.
+
+        `bar_width` is what the `side("c r")` that `viewport ... scrollbars
+        "vertical"` builds (renpy/ui.py:viewport_common) measured for the
+        vertical scrollbar. Without `vscrollbar_xsize` the bar is sized at the
+        whole frame width, `Side.render` then clamps the middle column
+        (`renpy/display/layout.py:Side`) to zero, and the dialogue column is
+        laid out but never visible. `center_width` is the measured centre
+        column, `text_*` come from the Layout the history `Text` was actually
+        rendered with (renpy/text/text.py:Text.get_layout), so keeping the
+        string in `_history_list` alone cannot satisfy this helper.
+        """
+
+        screen = renpy.get_screen("history")
+        if screen is None or screen.child is None:
+            return None
+
+        items = []
+        screen.visit_all(items.append)
+
+        side = None
+        for d in items:
+            if not isinstance(d, renpy.display.layout.Side):
+                continue
+            for child in d.visit():
+                if isinstance(child, renpy.display.viewport.Viewport):
+                    side = d
+                    break
+            if side is not None:
+                break
+
+        if side is None or not hasattr(side, "right"):
+            return None
+
+        for d in items:
+            if not isinstance(d, renpy.text.text.Text):
+                continue
+            try:
+                text = d._tts(False)
+            except Exception:
+                continue
+            if pattern not in text:
+                continue
+            layout = d.get_layout()
+            if layout is None:
+                return None
+            width, height = layout.unscale_pair(*layout.size)
+            return (
+                int(side.right),
+                int(getattr(side, "cwidth", 0)),
+                int(round(width)),
+                int(round(height)),
+            )
+
+        return None
+
     # QA-only dynamic label coverage: record every v2.1 insert that the game
     # actually transfers control to. tools/v21_run_tests.py --label-file sets
     # V21_QA_LABEL_FILE for the whole run; the audit testcase at the end of the
@@ -821,6 +882,97 @@ testcase old_chapter_02_public_evidence:
     assert eval (chapter_progress == 2)
     assert eval (ability == 5 and affection == 4)
     assert eval (evidence_ready)
+    run MainMenu(confirm=False)
+
+
+testcase history_panel_visible_text:
+    # Regression for the native 2.1 history panel that stayed blank while
+    # _history_list had entries (tech/history-native-fix.md): the vertical
+    # scrollbar was measured at the full `side` width, so the dialogue column
+    # shrank to 0 and nothing was drawn. This drives the real 历史 screen and
+    # inspects the live side()/viewport geometry plus the Layout the history
+    # Text was rendered with; a string only present in _history_list is not
+    # enough.
+    click "旧篇：三个月，留下来"
+    advance until screen "choice"
+    click "把三个月的目标拆成行动清单。"
+    assert eval (ability == 3)
+    # Passive wait: `advance until` would click and could skip the very line
+    # this test needs in the history. The say is up once its history entry is
+    # recorded, and it is the last entry at this point in the prologue.
+    pause 0.2 until eval (any("先把能做的事列清楚" in (h.what or "") for h in _history_list)) timeout 10.0
+    assert screen "say" timeout 2.0
+    assert eval (any("先把能做的事列清楚" in (h.what or "") for h in _history_list))
+
+    click "历史"
+    assert screen "history"
+    pause 0.2 until eval (v21_history_metrics("先把能做的事列清楚") is not None) timeout 10.0
+    $ _v21_history_bar_width, _v21_history_center_width, _v21_history_text_width, _v21_history_text_height = v21_history_metrics("先把能做的事列清楚")
+
+    # vscrollbar_xsize 18 keeps the bar a narrow track; the full 1160 px frame
+    # used to be handed to it instead and pushed the centre column to zero.
+    assert eval (0 < _v21_history_bar_width <= 64)
+    assert eval (_v21_history_center_width >= 900)
+    # The stored line must be laid out at real text width and height inside the
+    # live panel (about 400 px at gui.text_size 34), not a zero-width column.
+    assert eval (_v21_history_text_width >= 200)
+    assert eval (0 < _v21_history_text_height <= 400)
+
+    click "返回游戏"
+    assert eval (renpy.get_screen("history") is None)
+    run MainMenu(confirm=False)
+
+
+testcase auto_forward_advances_by_default:
+    # Regression for the v2.1 default that read `afm_time` (SDK name) while the
+    # game set a misspelled field: afm_enable could be switched on, but the
+    # SayBehavior delay stayed 0 (renpy/display/behavior.py: SayBehavior.event),
+    # so nothing advanced. This asserts a positive default and then a real
+    # advance to the next line with no further input.
+    assert eval (preferences.afm_time > 0)
+
+    # Keep the wait dominated by afm_time, not by the typewriter: instant text
+    # removes Text.get_time() from the SayBehavior delay. Auto-forward starts
+    # off so the toggle below is the only thing that enables it. All three
+    # preferences are restored at the end and none of them is game progress.
+    $ _v21_saved_text_cps = preferences.text_cps
+    $ _v21_saved_afm_enable = preferences.afm_enable
+    $ preferences.text_cps = 0
+    $ preferences.afm_enable = False
+
+    click "旧篇：三个月，留下来"
+    advance until screen "choice"
+    click "把三个月的目标拆成行动清单。"
+    assert eval (ability == 3)
+    # Passive wait for the say (an `advance until` here could skip it).
+    pause 0.2 until eval (any("先把能做的事列清楚" in (h.what or "") for h in _history_list)) timeout 10.0
+    assert screen "say" timeout 2.0
+
+    $ _v21_afm_node = id(renpy.game.context().current)
+    $ _v21_afm_history = len(_history_list)
+
+    # Real quick-menu control (caption 自动, Preference alt text "Auto forward").
+    # Hover first so the button owns the focus before the synthetic press; a
+    # click while the say is focused would dismiss the line and, with
+    # using_afm_enable, switch auto-forward back off in SayBehavior.event.
+    move "Auto forward"
+    pause 0.1
+    click "Auto forward"
+    assert eval (preferences.afm_enable)
+
+    # No further input from here on: the next line must arrive by itself.
+    pause 0.2 until eval (len(_history_list) > _v21_afm_history) timeout 25.0
+
+    assert screen "say" timeout 2.0
+    assert eval (id(renpy.game.context().current) != _v21_afm_node)
+    assert eval (len(_history_list) == _v21_afm_history + 1)
+    assert eval ("楼道里的感应灯坏了三盏" in (_history_list[-1].what or ""))
+    assert eval (preferences.afm_enable)
+    assert eval (renpy.config.skipping is None)
+
+    $ preferences.afm_enable = False
+    $ preferences.text_cps = _v21_saved_text_cps
+    $ preferences.afm_enable = _v21_saved_afm_enable
     run MainMenu(confirm=False)
 
 

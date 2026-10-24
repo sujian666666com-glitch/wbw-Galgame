@@ -1,10 +1,10 @@
 {
   "checked": 4,
-  "fixtures_root": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/compat-v20",
-  "generated_at": "2026-10-24T17:39:45+00:00",
-  "max_runtime": 45.0,
+  "fixtures_root": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/worktrees/qa/doc/collaboration/v2.1/compatibility/v20",
+  "generated_at": "2026-10-24T20:18:23+00:00",
+  "max_runtime": 120.0,
   "ok": true,
-  "project": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/worktrees/qa/.work/qa/project-compat",
+  "project": "/Users/ik/Desktop/02_学习与资料/game/my-renpy-game/.work/v21/worktrees/qa/.work/qa/project-final-compat",
   "results": [
     {
       "arc": "old",
