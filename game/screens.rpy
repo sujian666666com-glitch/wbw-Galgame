@@ -156,12 +156,12 @@ screen file_slots(title):
                     $ slot = i + 1
                     button:
                         xsize 340
-                        ysize 250
+                        ysize 278
                         padding (12, 12)
                         action FileAction(slot)
                         vbox:
                             spacing 8
-                            add FileScreenshot(slot) xsize 316 ysize 154
+                            add FileScreenshot(slot) xsize 316 ysize 178
                             text FileTime(slot, format=_("%Y-%m-%d %H:%M"), empty=_("空存档")) size 20 xsize 316
                             text FileSaveName(slot) size 18 xsize 316
 
