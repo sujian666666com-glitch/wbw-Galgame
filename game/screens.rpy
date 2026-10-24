@@ -7,6 +7,7 @@ default quick_menu = True
 style button:
     background Solid("#332b4dcc")
     hover_background Solid("#6e5688dd")
+    selected_background Solid("#705a8ddd")
     padding (28, 16)
 
 style button_text:
@@ -14,10 +15,22 @@ style button_text:
     xalign 0.5
 
 style bar:
-    xsize 900
-    ysize 24
-    left_bar Solid(gui.accent_color)
-    right_bar Solid("#555064")
+    xsize 1000
+    ysize 28
+    ymaximum 28
+    left_bar Solid("#e6b7da")
+    right_bar Solid("#6d6588")
+    thumb Solid("#fff8fc", xsize=18, ysize=28)
+    bar_resizing True
+
+style slider:
+    xsize 1000
+    ysize 28
+    ymaximum 28
+    left_bar Solid("#e6b7da")
+    right_bar Solid("#6d6588")
+    thumb Solid("#fff8fc", xsize=18, ysize=28)
+    bar_resizing True
 
 screen say(who, what):
     window:
@@ -110,15 +123,19 @@ screen main_menu():
         padding (90, 90)
         vbox:
             spacing 28
-            text config.name size 62 color "#ffffff"
+            text "旺不稳的\n奇妙冒险" size 62 color "#ffffff" xsize 420 line_spacing 8
             text "旺不稳的奇妙冒险，开始了。" size 30 color "#e6b7da"
             null height 50
             use navigation
 
 screen game_menu(title, scroll=None, yinitial=0.0):
     tag menu
+    # 无参数 Return()：主菜单里改为显示 main_menu，不结束主菜单交互；游戏内才返回对白。
+    key "game_menu" action Return()
     add gui.game_menu_background
     use navigation
+    if main_menu:
+        textbutton "返回" action Return() xpos 110 ypos 88
     text title:
         xpos 700
         ypos 70
@@ -177,16 +194,22 @@ screen preferences():
     tag menu
     use game_menu(_("系统设置"), scroll="viewport"):
         vbox:
-            spacing 28
+            spacing 20
             text "显示模式" size 36 color gui.accent_color
             hbox:
                 spacing 18
                 textbutton "窗口" action Preference("display", "window")
                 textbutton "全屏" action Preference("display", "fullscreen")
             text "文字速度" size 36 color gui.accent_color
-            bar value Preference("text speed")
+            bar value Preference("text speed") style "slider" xsize 1000 ysize 28
             text "自动播放速度" size 36 color gui.accent_color
-            bar value Preference("auto-forward time")
+            bar value Preference("auto-forward time") style "slider" xsize 1000 ysize 28
+            text "快进" size 36 color gui.accent_color
+            hbox:
+                spacing 16
+                textbutton "未读文本" action Preference("skip", "toggle")
+                textbutton "选项后继续" action Preference("after choices", "toggle")
+                textbutton "跳过转场" action Preference("transitions", "toggle")
 
 screen history():
     tag menu
